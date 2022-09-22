@@ -2,7 +2,7 @@
 
 FEATURES:
   • Users can request a new course to be added (create a form or smthn)
-  • Users can delete/ edit reviews (show edit status?)
+  • Users can delete/ edit reviews (show edit status)
   • Users can send one review per course (can delete and resend or edit)
   • Users give ratings for courses (out of 5)
   • Users can add and access resources for the respective course
