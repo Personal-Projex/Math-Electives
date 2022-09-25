@@ -154,13 +154,6 @@ a{
 }
 
 
-.lists {
-    margin-top: 7px;
-}
-
-.options {
-    margin-left: 19px;
-}
 
 
 .courses{
@@ -192,7 +185,9 @@ a{
     border-radius: 10px;
 }
 */
-
+.lists {
+    margin-top: 7px;
+}
 .course-heading span {
     font-size: 3.0rem;
     color: black;
