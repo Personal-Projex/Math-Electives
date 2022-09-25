@@ -213,7 +213,7 @@ body h3 {
 }
 
 .review-box:hover{
-    transform: translate(28vw, -3px);
+    transform: translate(25vw, -3px);
     transition: all ease 0.7s;
 }
 
