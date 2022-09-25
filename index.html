@@ -28,14 +28,26 @@
             <br>
 
             <!--search-box-->
-            <div class="search-box">
-                <input class="search-txt" type="text" name="" placeholder="Type to search for courses">
-                <a class="search-btn" href="#">
-                    <i class="fas fa-search"></i>
+            <div class="search-bar">
+                <div class="select" id="select">
+                    <p id="selectText">All categories</p>
+                    <i class="fa-solid fa-caret-down"></i>
+                    <ul id="list">
+                        <li class="options">All Categories</li>
+                        <li class="options">Most Recent</li>
+                        <li class="options">Highest Rating to Lowest</li>
+                        <li class="options">Lowest Rating to Highest</li>
+                    </ul>
+                </div>
+                <input type="text" id="inputfield" placeholder="Search Key Words">
+                <a class="search-btn">
+                    <i class="fa-solid fa-magnifying-glass fa-xl"></i>
                 </a>
-                
             </div>
-        
+            
+
+
+
             <!-- <h1>Course List</h1> -->
         </div>
 
@@ -403,5 +415,26 @@
         </div>
 
     </section>
+
+    <script>
+        let select = document.getElementById("select");
+        let list = document.getElementById("list");
+        let selectText = document.getElementById("selectText");
+        let options = document.getElementsByClassName("options");
+        let inputfield = document.getElementById("inputfield");
+
+        select.onclick = function() {
+            list.classList.toggle("open");
+        }
+
+        for(option of options) {
+            option.onclick = function() {
+                selectText.innerHTML = this.innerHTML;
+                inputfield.placeholder = selectText.innerHTML;
+            }
+        }
+    </script>
+
+
 </body>
 </html>

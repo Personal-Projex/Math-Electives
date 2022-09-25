@@ -28,6 +28,7 @@ a{
     text-decoration: none;
 }
 
+/*
 .search-box{
     margin-bottom: 20px;
     transform: translate(-50, 50);
@@ -36,8 +37,9 @@ a{
     height: 40px;
     border-radius: 40px;
 }
+*/
 
-
+/*
 .search-btn{
     color: orange;
     float: right;
@@ -49,8 +51,9 @@ a{
     justify-content: center;
     align-items: center; 
 }
+*/
 
-
+/*
 .search-txt {
     border: black;
     background: none;
@@ -64,6 +67,89 @@ a{
     width: 300px;
     margin-left: 20px;
 }
+*/
+
+
+.search-bar {
+    background: #fff;
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    padding: 2px;
+    border-radius: 4px;
+    height: 70px;
+    justify-content: center;
+}
+
+
+.search-btn{
+    color: navy;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-top: 12px;
+    margin-right: 12px;
+}
+
+.select {
+    background: #160053;
+    display: flex;
+    align-items: center;
+    top: -2px;
+    left: -3px;
+    justify-content: space-between;
+    color: #fff;
+    width: 300px;
+    padding: 25px 20px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 4px;
+    height: 70px;
+}
+
+.select fa-caret-down {
+    width: 15px;
+}
+.select ul {
+    position: absolute;
+    top: 90%;
+    left: 0%;
+    list-style-type: none;
+    background: #fff;
+    color: #555;
+    width: 100%;
+    border-radius: 4px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.select ul li {
+    padding: 5px 2px;
+    cursor: pointer;
+}
+.select ul li:hover {
+    background: rgb(6, 87, 157, 0.2);
+}
+
+.select ul.open{
+    max-height: 300px;
+}
+
+.search-bar input {
+    padding: 10px 25px;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 18px;
+}
+
+
 
 
 .courses{
@@ -195,3 +281,5 @@ a{
     margin-left: 5px;
     margin-right: 5px;
 }
+
+
