@@ -71,8 +71,9 @@ SPAN.li  {
 	color:#000000;
 	font-size:18px;
 	font-weight:bold;
-	line-height:5px;
+    line-height: 25px;
     text-align: center;
+    white-space: normal;
 }
 .about-text p:nth-child(3),.about-text p:nth-child(7){
 	color:#000000;
@@ -190,7 +191,7 @@ SPAN.li  {
 }
 
 .review-box-container{
-    display: inline-block;
+    display: flex;
     flex-direction: column;
     margin: auto;
     justify-content: center;
@@ -200,7 +201,6 @@ SPAN.li  {
 }
 
 .review-box{
-    transform: translateX(55%);
     outline: 3px solid black;
     border-radius: 15px;
     width: 650px;
