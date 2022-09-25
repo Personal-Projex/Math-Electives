@@ -3,20 +3,78 @@
     padding: 0px;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
-    background-color: white;
 }
+
+.hr1 {
+    color: black;
+    background-color: black;
+    width: 100%;
+    height: 5px;
+}
+
+
+.body {
+    background-color: #5cdb95;
+    background-color: orange;
+    background-color: #1985fe;
+}
+
+::placeholder {
+    color: black
+}
+
 
 a{
     text-decoration: none;
 }
 
-#courses{
+.search-box{
+    margin-bottom: 20px;
+    transform: translate(-50, 50);
+    background: white;
+    color: white;
+    height: 40px;
+    border-radius: 40px;
+}
+
+
+.search-btn{
+    color: orange;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+
+.search-txt {
+    border: black;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: black;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 300px;
+    margin-left: 20px;
+}
+
+
+.courses{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 100%;
 }
+
+
 
 .course-heading{
     letter-spacing: 1px;
@@ -27,14 +85,16 @@ a{
     align-items: center;
 }
 
+/*
 .course-heading h1{
-    font-size: 1.3rem;
+    font-size: 1.0rem;
     font-weight: 500;
     background-color: black;
     color: white;
     padding: 10px 20px;
     border-radius: 10px;
 }
+*/
 
 .course-heading span {
     font-size: 3.0rem;

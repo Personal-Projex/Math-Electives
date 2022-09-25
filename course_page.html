@@ -32,7 +32,7 @@
             </p>
             <p>Conditions for Enrolment</p>
             <p>Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014</p>
-            <a href="https://www.handbook.unsw.edu.au/undergraduate/courses/2022/MATH2901/" rel="noreferrer" target="_blank"><i aria-hidden="true" class="external icon"></i> MATH2901 Handbook Page</a>
+            <a href="https://www.handbook.unsw.edu.au/undergraduate/courses/2023/MATH2901/?year=2023" rel="noreferrer" target="_blank"><i aria-hidden="true" class="external icon"></i> MATH2901 Handbook Page</a>
         </div>
     </div>
     <h3>Reviews</h3> 
@@ -48,6 +48,9 @@
             </ul>
         </div>
         <input type="text" id="inputfield" placeholder="Search Key Words">
+        <a class="search-btn">
+            <i class="fas fa-search fa-xl"></i>
+        </a>
     </div>
     <div class="review-box-container">
         <div class="review-box">
@@ -125,7 +128,7 @@
         for(option of options) {
             option.onclick = function() {
                 selectText.innerHTML = this.innerHTML;
-                inputfield.placeholder = "Displaying " + selectText.innerHTML;
+                inputfield.placeholder = selectText.innerHTML;
             }
         }
     </script>
