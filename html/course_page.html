@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <title>Math-Electives</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="course_page.css">
+    <script src="https://kit.fontawesome.com/cc0a631b45.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <a href="#" class="link">Math-Electives</a>
+        <button class="link">Login</button>
+    </div>
+    </div>
+    <div class="about-container">
+        <div class="about-text">
+            <p>MATH2901</p>
+            <p>Higher Theory of Statistics</p>
+            <p>Overview</p>
+            <p>As for MATH2801 but in greater depth: This course provides an introduction to the theoretical underpinning of statistics; it covers fundamental results from probability and distribution theory and shows how to apply the theory to the analysis of data. </p>
+            <p>Topics include:</p>
+             <p>   <SPAN class=li>Random variables, univariate and bivariate distributions</SPAN>
+                <SPAN class=li>Transformations of random variables</SPAN>
+                <SPAN class=li>Convergence of random variables, the sampling distribution and the Central Limit Theorem</SPAN>
+                <SPAN class=li>Estimation and inference including moment and likelihood estimation, interval estimation, and hypothesis testing</SPAN>
+            </p>
+            <p>Conditions for Enrolment</p>
+            <p>Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014</p>
+            <a href="https://www.handbook.unsw.edu.au/undergraduate/courses/2022/MATH2901/" rel="noreferrer" target="_blank"><i aria-hidden="true" class="external icon"></i> MATH2901 Handbook Page</a>
+        </div>
+    </div>
+    <h3>Reviews</h3> 
+    <div class="search-bar">
+        <div class="select" id="select">
+            <p id="selectText">All categories</p>
+            <i class="fa-solid fa-caret-down"></i>
+            <ul id="list">
+                <li class="options">All Categories</li>
+                <li class="options">Most Recent</li>
+                <li class="options">Highest Rating to Lowest</li>
+                <li class="options">Lowest Rating to Highest</li>
+            </ul>
+        </div>
+        <input type="text" id="inputfield" placeholder="Search Key Words">
+    </div>
+    <div class="review-box-container">
+        <div class="review-box">
+            <div class="box-top">
+                <div class="title">
+                    <strong>Hard course, but managable with a good group</strong>
+                </div>
+                <div class="review"></div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+            </div>
+            <div class="comment">
+                <p>I had a great premade group (same people I did 1531 with), and although the course was definitely intense, it was also very rewarding to see us progress through and look back on our work at the end.
+
+                    Be prepared for a lot of work. I did it with 2 other courses and was *ok*, wouldn't recommend taking anything else that's too heavy with it though.
+                    
+                    Most students should probably underload to 2 subjects OR do a gen ed or something so you don't go too crazy.</p>
+            </div>
+        </div>
+        <div class="review-box">
+            <div class="box-top">
+                <div class="title">
+                    <strong>Interesting but not friendly course</strong>
+                </div>
+                <div class="review"></div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+            </div>
+            <div class="comment">
+                <p>Honestly, if you work hard each week to learn the content and engage with it through practice/effort, you'll genuinely be ok for this course. Exam can be somewhat tough, but as a whole I actually really enjoyed it lol</p>
+            </div>
+        </div>
+        <div class="review-box">
+            <div class="box-top">
+                <div class="title">
+                    <strong>THE WORKLOAD OMG</strong>
+                </div>
+                <div class="review"></div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                    <i class="far fa-star"></i>
+                </div>
+            </div>
+            <div class="comment">
+                <p>This course has far too much content in it. I really did enjoy all the work on OOP and design patterns (which I've already applied to many of my own projects), and the assignment was by far the coolest project I've worked on at university, but it was just so much to handle. I feel like they need to cut back on the specifications for the assignment a lot, and take a few parts of the course out (concurrency can be covered in other courses), and reconsider the difficulty of their final exam, which was nearly impossible.
+
+                    I think this course is a necessity for anyone that wants to do anything in an OOP paradigm, and has a huge amount of potential to be one of the best courses that UNSW has to offer, but as of 21T3 it was still in need of some major refactoring to fix its numerous design smells.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        let select = document.getElementById("select");
+        let list = document.getElementById("list");
+        let selectText = document.getElementById("selectText");
+        let options = document.getElementsByClassName("options");
+        let inputfield = document.getElementById("inputfield");
+
+        select.onclick = function() {
+            list.classList.toggle("open");
+        }
+
+        for(option of options) {
+            option.onclick = function() {
+                selectText.innerHTML = this.innerHTML;
+                inputfield.placeholder = "Displaying " + selectText.innerHTML;
+            }
+        }
+    </script>
+</body>
+</html>
