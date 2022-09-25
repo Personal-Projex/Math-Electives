@@ -25,14 +25,6 @@ SPAN.li  {
     gap: 1rem;
 }
 
-body h3 {
-    margin-top: 20px;
-    color:#000000;
-	font-size: 20px;
-	line-height:5px;
-    margin-left: 25%;
-}
-
 .link {
     background: none;
     border: none;
@@ -73,14 +65,14 @@ body h3 {
 	font-weight:bold;
 	font-size:28px;
 	line-height:0px;
-    margin-left: 38%;
+    text-align: center;
 }
 .about-text p:nth-child(2){
 	color:#000000;
 	font-size:18px;
 	font-weight:bold;
 	line-height:5px;
-    margin-left: 33%;
+    text-align: center;
 }
 .about-text p:nth-child(3),.about-text p:nth-child(7){
 	color:#000000;
@@ -113,13 +105,13 @@ body h3 {
 
 .search-bar {
     background: #fff;
-    width: 90%;
+    width: 52%;
     max-width: 800px;
     display: flex;
     padding: 2px;
     border-radius: 4px;
     height: 70px;
-    margin-left: 25%;
+    margin-left: 23.5%;
     margin-bottom: 10px;
 }
 
@@ -163,7 +155,9 @@ body h3 {
     position: absolute;
     top: 90%;
     left: 0%;
-    list-style-type: none;
+    box-shadow: 2px 20px 30px rgba(0, 0, 0, 0.3);
+    list-style: none;
+    padding-left: 0;
     background: #fff;
     color: #555;
     width: 100%;
@@ -171,12 +165,14 @@ body h3 {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s;
+    text-align:  center;
 }
 
 .select ul li {
     padding: 5px 2px;
     cursor: pointer;
 }
+
 .select ul li:hover {
     background: rgb(6, 87, 157, 0.2);
 }
@@ -192,17 +188,21 @@ body h3 {
     outline: none;
     font-size: 18px;
 }
+
 .review-box-container{
     display: inline-block;
+    flex-direction: column;
     margin: auto;
     justify-content: center;
     align-items: center;
     background-color: #160053;
     width: 100%;
 }
+
 .review-box{
-    transform: translateX(25vw);
-    border-radius:15px;
+    transform: translateX(55%);
+    outline: 3px solid black;
+    border-radius: 15px;
     width: 650px;
     box-shadow: 2px 20px 30px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
@@ -233,6 +233,11 @@ body h3 {
     color: #4b4b4b;
 }
 
+.review-text {
+    color: black;
+    font-size: 23px;
+    text-align:  center;
+}
 .review-box:hover{
     /*transform: translate(25vw, -3px); */
     transition: all ease 0.7s;
