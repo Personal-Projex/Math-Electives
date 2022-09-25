@@ -20,12 +20,13 @@
 }
 
 ::placeholder {
-    color: black
+    color: black;
 }
 
 
 a{
     text-decoration: none;
+    color: black;
 }
 
 /*
@@ -119,7 +120,9 @@ a{
     position: absolute;
     top: 90%;
     left: 0%;
-    list-style-type: none;
+    box-shadow: 2px 20px 30px rgba(0, 0, 0, 0.3);
+    list-style: none;
+    padding-left: 0;
     background: #fff;
     color: #555;
     width: 100%;
@@ -127,6 +130,7 @@ a{
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s;
+    text-align:  center;
 }
 
 .select ul li {
@@ -150,13 +154,6 @@ a{
 }
 
 
-.lists {
-    margin-top: 7px;
-}
-
-.options {
-    margin-left: 19px;
-}
 
 
 .courses{
@@ -188,7 +185,9 @@ a{
     border-radius: 10px;
 }
 */
-
+.lists {
+    margin-top: 7px;
+}
 .course-heading span {
     font-size: 3.0rem;
     color: black;
