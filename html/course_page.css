@@ -26,11 +26,11 @@ SPAN.li  {
 }
 
 body h3 {
-    margin-top: 100px;
+    margin-top: 20px;
     color:#000000;
 	font-size: 20px;
 	line-height:5px;
-    margin-left: 27%;
+    margin-left: 25%;
 }
 
 .link {
@@ -120,6 +120,7 @@ body h3 {
     border-radius: 4px;
     height: 70px;
     margin-left: 25%;
+    margin-bottom: 10px;
 }
 
 .search-btn{
@@ -150,6 +151,7 @@ body h3 {
     position: relative;
     border-radius: 4px;
     height: 70px;
+    z-index: 1;
 }
 
 
@@ -191,9 +193,10 @@ body h3 {
     font-size: 18px;
 }
 .review-box-container{
-    top: 25vh;
+    display: inline-block;
     margin: auto;
-    position: relative;
+    justify-content: center;
+    align-items: center;
     background-color: #160053;
     width: 100%;
 }
@@ -231,7 +234,7 @@ body h3 {
 }
 
 .review-box:hover{
-    transform: translate(25vw, -3px);
+    /*transform: translate(25vw, -3px); */
     transition: all ease 0.7s;
 }
 
