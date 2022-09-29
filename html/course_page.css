@@ -20,7 +20,7 @@ SPAN.li  {
 .header {
     background-color: #160053;  
     display: flex;
-    align-items: baseline;
+    align-items: center;
     padding: 0.5rem;
     gap: 1rem;
 }
@@ -42,21 +42,21 @@ SPAN.li  {
 }
 
 .about-container{
-	width:80%;
+	width: 85%;
 	background:#ffffff;
 	border-radius:20px;
 	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.2);
 	display: flex;
 	margin: 2%  auto 20px auto;
 	position: relative;
-	justify-content:space-evenly;
-	align-items: center;
+	flex-direction: column;
+    align-items: center;
 }
 .about-container img{
 	height:250px;
 }
 .about-text{
-	width:50%;
+	width:60%;
     background: white;
     margin-bottom: 1rem;
 } 
@@ -108,25 +108,27 @@ SPAN.li  {
     background: #fff;
     width: 52%;
     max-width: 800px;
-    display: flex;
     padding: 2px;
     border-radius: 4px;
-    height: 70px;
-    margin-left: 23.5%;
-    margin-bottom: 10px;
+    height: 75px;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-bottom: 1.8%;
+    justify-content: center;
+    align-items: center;
 }
 
 .search-btn{
     color: navy;
     float: right;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background: white;
     display: flex;
     justify-content: center;
     align-items: center; 
-    margin-top: 12px;
     margin-right: 12px;
 }
 
@@ -200,14 +202,40 @@ SPAN.li  {
     width: 100%;
 }
 
+.one:hover,
+.one:hover ~ .two,
+.one:hover ~ .three,
+.one:hover:hover ~ .four,
+.one:hover ~ .five,
+.two:hover,
+.two:hover ~ .three,
+.two:hover ~ .four,
+.two:hover ~ .five,
+.three:hover,
+.three:hover ~ .four,
+.three:hover ~ .five,
+.four:hover,
+.four:hover ~ .five,
+.five:hover {
+    color: #042358;
+    cursor: pointer;
+}
+
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
 .review-box{
     outline: 3px solid black;
-    border-radius: 15px;
+    border-radius: 20px;
     width: 650px;
     box-shadow: 2px 20px 30px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
     padding: 20px;
-    margin: 20px;
+    margin-top: 2%;
+    margin-bottom: 2%;
     cursor: pointer;
 }
 
@@ -248,12 +276,6 @@ SPAN.li  {
   
 }
 
-.fa-star:hover{
-    color: #09347e;
-    cursor: pointer;
-  
-}
-
 .fa-star-half-stroke{
     color: rgb(6, 87, 157);
     cursor: pointer;
@@ -265,7 +287,6 @@ SPAN.li  {
 
 .search-container{
     margin-top: 100px;
-    padding: 32px;
 }
 
 .select-box {
@@ -345,24 +366,65 @@ SPAN.li  {
 
 @media (max-width:1060px){
     .review-box{
-        width: 45%;
+        width: 75%;
         padding: 10px;
     }
 }
 
-@media (max-width:790px){
-    .review-box{
-        width: 100%;
+@media (max-width:750px){
+    .select{
+        height: 5%;
+    }
+    .search-bar{
+        height: 45px;
+        width: 85%;
+    }
+    .select p{
+        font-size: 12px;
+    }
+
+    .about-text{
+        width:80%;
+    }
+    input,
+    input::-webkit-input-placeholder {
+        font-size: 12px;
+    }
+    .search-btn{
+        float: right;
+        width: 25px;
+        height: 25px;
+    }
+    .rating i {
+        font-size: 14px;
     }
 }
 
-@media (max-width:340px){
+@media (max-width:450px){
     .box-top{
         flex-wrap: wrap;
         margin-bottom: 10px;
     }
     .title{
         margin-top: 10px;
+    }
+    .search-btn{
+        float: right;
+        width: 10px;
+        height: 10px;
+    }
+    .review-box{
+        margin-top: 5%;
+    }
+    
+    .review-box p{
+        font-size: 12px;
+    }
+    .review-box strong{
+        font-size: 14px;
+    }
+    .select ul li {
+        font-size: 12px;
     }
 }
 
