@@ -16,8 +16,8 @@
 .body {
     background-color: #1985fe;
     background-color: navy;
-    background-color: #0049B7;
     background-color: rgb(34, 34, 183);
+    background-color: #0049B7;
 }
 
 ::placeholder {
