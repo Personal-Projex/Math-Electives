@@ -14,10 +14,10 @@
 
 
 .body {
-    background-color: #5cdb95;
-    background-color: orange;
     background-color: #1985fe;
     background-color: navy;
+    background-color: rgb(34, 34, 183);
+    background-color: #0049B7;
 }
 
 ::placeholder {
