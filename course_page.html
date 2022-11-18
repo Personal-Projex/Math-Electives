@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
-    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Math-Electives</title>
     <!--Fav-icon-------------------->
     <link rel="shortcut icon" href="images/sigma_logo_3.png">
@@ -16,7 +16,6 @@
     <div class="header">
         <a href="index.html" class="link">Math-Electives</a>
         <button class="link">Login</button>
-    </div>
     </div>
     <div class="about-container">
         <div class="about-text">
@@ -35,7 +34,7 @@
             <a href="https://www.handbook.unsw.edu.au/undergraduate/courses/2023/MATH2901/?year=2023" rel="noreferrer" target="_blank"><i aria-hidden="true" class="external icon"></i> MATH2901 Handbook Page</a>
         </div>
     </div>
-    <h3>Reviews</h3> 
+    <p class="review-text">Reviews</p>
     <div class="search-bar">
         <div class="select" id="select">
             <p id="selectText">All categories</p>
@@ -60,11 +59,11 @@
                 </div>
                 <div class="review"></div>
                 <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
+                    <i class="fas fa-star one"></i>
+                    <i class="fas fa-star two"></i>
+                    <i class="fas fa-star three"></i>
+                    <i class="fas fa-star four"></i>
+                    <i class="fas fa-star five"></i>
                 </div>
             </div>
             <div class="comment">
@@ -82,11 +81,11 @@
                 </div>
                 <div class="review"></div>
                 <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
+                    <i class="fa-regular fa-star one"></i>
+                    <i class="fa-regular fa-star two"></i>
+                    <i class="fas fa-star three"></i>
+                    <i class="fas fa-star four"></i>
+                    <i class="fas fa-star five"></i>
                 </div>
             </div>
             <div class="comment">
@@ -96,15 +95,48 @@
         <div class="review-box">
             <div class="box-top">
                 <div class="title">
+                    <strong>Challenging but Satisfying Course</strong>
+                </div>
+                <div class="review"></div>
+                <div class="rating">
+                    <i class="fa-regular fa-star one"></i>
+                    <i class="fas fa-star two"></i>
+                    <i class="fas fa-star three"></i>
+                    <i class="fas fa-star four"></i>
+                    <i class="fas fa-star five"></i>
+                </div>
+            </div>
+            <div class="comment">
+                <p class="text">I took this course in 22T1 and really loved the course. It was a nice breath of fresh air during the term compared to the other courses I was taking. I highly recommend that CSE students take this course as an elective as any skills with databases will be useful, and the course can be a nice breather compared to the increasing difficulty of other level 3+ courses.
+
+                    Lectures: Dong Wen was the lecturer this term, and he did a really good job explaining the course content and a clear and concise manner.
+                    
+                    Tutorials: The tutorials are a solid 90 minutes of going over the course content and solving questions as a class with the tutor. 
+                    <span class="dots">  ...</span>
+                    <span class="extraText">
+                    My tutor was really good at explaining the concepts, so I always walked out of the tutorial feeling confident in what I had learned.
+                    
+                    Quizzes: The 6 quizzes that were required during the term took all of 5 minutes to complete. 4 questions each, not too tricky, nice.
+                    
+                    Assignments: The assignments actually felt fairly small and easy to work through. The first was 6 SQL and 4 coding questions, and the second was 4 Python questions. Extremely doable assignments for students of all levels.
+                    
+                    Exam: The final exam was the hardest part of the course, funnily enough. It was still a very doable exam, and the 4 hour time limit was greatly appreciated to be able to attempt all of the questions.
+                    </span></p>
+                    <button class="read-more">Read More</button>
+            </div>
+        </div>
+        <div class="review-box">
+            <div class="box-top">
+                <div class="title">
                     <strong>THE WORKLOAD OMG</strong>
                 </div>
                 <div class="review"></div>
                 <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fa-solid fa-star-half-stroke"></i>
-                    <i class="far fa-star"></i>
+                    <i class="fa-regular fa-star one"></i>
+                    <i class="fa-regular fa-star two"></i>
+                    <i class="fas fa-star three"></i>
+                    <i class="fas fa-star four"></i>
+                    <i class="fas fa-star five"></i>
                 </div>
             </div>
             <div class="comment">
@@ -131,6 +163,17 @@
                 inputfield.placeholder = selectText.innerHTML;
             }
         }
+        const readMore = document.querySelector('.read-more');
+        const text = document.querySelector('.text');
+
+        readMore.addEventListener('click', (e)=> {
+            text.classList.toggle('show-more');
+            if (readMore.innerText === 'Read More') {
+                readMore.innerText = 'Read Less';
+            } else {
+                readMore.innerText = 'Read More';
+            }
+        })
     </script>
 </body>
 </html>
