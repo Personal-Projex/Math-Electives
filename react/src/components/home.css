@@ -1,0 +1,324 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  background-size: cover;
+}
+
+.hr1 {
+  color: black;
+  background-color: black;
+  width: 100%;
+  height: 5px;
+}
+
+
+.body {
+  background-color: #1985fe;
+  background-color: navy;
+  background-color: rgb(34, 34, 183);
+  background-color: #0049B7;
+  background-color: #160053;
+}
+
+
+.header {
+  background-color: #160053;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  gap: 1rem;
+}
+
+.link {
+  background: none;
+  border: none;
+  text-decoration: none;
+  color: #fff;
+  ;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+
+.link:hover {
+  color: #0a59e1;
+}
+
+
+::placeholder {
+  color: black
+}
+
+
+a {
+  text-decoration: none;
+}
+
+/*
+.search-box{
+  margin-bottom: 20px;
+  transform: translate(-50, 50);
+  background: white;
+  color: white;
+  height: 40px;
+  border-radius: 40px;
+}
+*/
+
+/*
+.search-btn{
+  color: orange;
+  float: right;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+*/
+
+/*
+.search-txt {
+  border: black;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: black;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 300px;
+  margin-left: 20px;
+}
+*/
+
+
+.search-bar {
+  background: #fff;
+  width: 90%;
+  max-width: 800px;
+  display: flex;
+  padding: 2px;
+  border-radius: 4px;
+  height: 70px;
+  justify-content: center;
+}
+
+
+.search-btn {
+  color: navy;
+  float: right;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+  margin-right: 12px;
+}
+
+.select {
+  background: white;
+  display: flex;
+  align-items: center;
+  top: -2px;
+  left: -3px;
+  justify-content: space-between;
+  color: #160053;
+  width: 300px;
+  padding: 25px 20px;
+  cursor: pointer;
+  position: relative;
+  border-radius: 4px;
+  height: 70px;
+}
+
+.select fa-caret-down {
+  width: 15px;
+}
+
+.select ul {
+  position: absolute;
+  top: 90%;
+  left: 0%;
+  list-style-type: none;
+  background: #fff;
+  color: #555;
+  width: 100%;
+  border-radius: 4px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+
+.select ul li {
+  padding: 5px 2px;
+  cursor: pointer;
+}
+
+.select ul li:hover {
+  background: rgb(6, 87, 157, 0.2);
+}
+
+.select ul.open {
+  max-height: 300px;
+}
+
+.search-bar input {
+  padding: 10px 25px;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 18px;
+}
+
+
+.lists {
+  margin-top: 7px;
+}
+
+.options {
+  margin-left: 19px;
+}
+
+
+.courses {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+
+.course-heading {
+  letter-spacing: 1px;
+  margin: 30px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+.course-heading h1{
+  font-size: 1.0rem;
+  font-weight: 500;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+*/
+
+.course-heading span {
+  font-size: 3.0rem;
+  color: black;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.course-box-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.course-box {
+  width: 500px;
+  outline: 3px solid black;
+  border-radius: 10px;
+  background-color: white;
+  padding: 20px;
+  margin: 15px;
+  cursor: pointer;
+}
+
+
+.profile-img {
+  width: 50px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+  background-color: white;
+}
+
+.profile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  background-color: white;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+
+.course {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.course strong {
+  color: black;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  background-color: white;
+}
+
+.course span {
+  color: black;
+  font-size: 1.0rem;
+  background-color: white;
+}
+
+.reviews {
+  color: orange;
+  background-color: white;
+}
+
+.box-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.terms-run {
+  margin-left: 55px;
+  display: flex;
+  justify-content: left;
+  background-color: white;
+}
+
+.term {
+  background-color: orange;
+  color: black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 7px;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
