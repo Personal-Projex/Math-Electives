@@ -1,5 +1,4 @@
 import React from 'react';
-import './home.css';
 
 import CourseHeader from './course-heading';
 import Courses from './courses';

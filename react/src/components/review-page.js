@@ -9,8 +9,8 @@ library.add(faSearch);
 export default function ReviewPage() {
     return (
         <body>
-            <div className="about-container">
-                <div className="about-text">
+            <div className="about-container-reviews">
+                <div className="about-text-reviews">
                     <p>MATH2901</p>
                     <p>Higher Theory of Statistics</p>
                     <p>Overview</p>

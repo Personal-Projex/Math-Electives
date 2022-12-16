@@ -13,7 +13,7 @@
 }
 
 
-.body {
+.body-home {
     background-color: #1985fe;
     background-color: navy;
     background-color: rgb(34, 34, 183);
@@ -58,45 +58,45 @@ a {
 }
 
 /*
-.search-box{
-    margin-bottom: 20px;
-    transform: translate(-50, 50);
-    background: white;
-    color: white;
-    height: 40px;
-    border-radius: 40px;
-}
-*/
+  .search-box{
+      margin-bottom: 20px;
+      transform: translate(-50, 50);
+      background: white;
+      color: white;
+      height: 40px;
+      border-radius: 40px;
+  }
+  */
 
 /*
-.search-btn{
-    color: orange;
-    float: right;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-}
-*/
+  .search-btn{
+      color: orange;
+      float: right;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center; 
+  }
+  */
 
 /*
-.search-txt {
-    border: black;
-    background: none;
-    outline: none;
-    float: left;
-    padding: 0;
-    color: black;
-    font-size: 16px;
-    transition: 0.4s;
-    line-height: 40px;
-    width: 300px;
-    margin-left: 20px;
-}
-*/
+  .search-txt {
+      border: black;
+      background: none;
+      outline: none;
+      float: left;
+      padding: 0;
+      color: black;
+      font-size: 16px;
+      transition: 0.4s;
+      line-height: 40px;
+      width: 300px;
+      margin-left: 20px;
+  }
+  */
 
 
 .search-bar {
@@ -126,22 +126,20 @@ a {
 }
 
 .select {
-    background: #160053;
+    background: white;
     display: flex;
     align-items: center;
     top: -2px;
     left: -3px;
     justify-content: space-between;
-    color: #fff;
+    color: #160053;
     width: 300px;
     padding: 25px 20px;
     cursor: pointer;
     position: relative;
     border-radius: 4px;
     height: 70px;
-    z-index: 1;
 }
-
 
 .select fa-caret-down {
     width: 15px;
@@ -149,11 +147,9 @@ a {
 
 .select ul {
     position: absolute;
-    top: 78%;
+    top: 90%;
     left: 0%;
-    box-shadow: 2px 20px 30px rgba(0, 0, 0, 0.3);
-    list-style: none;
-    padding-left: 0;
+    list-style-type: none;
     background: #fff;
     color: #555;
     width: 100%;
@@ -161,7 +157,6 @@ a {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s;
-    text-align: center;
 }
 
 .select ul li {
@@ -215,15 +210,15 @@ a {
 }
 
 /*
-.course-heading h1{
-    font-size: 1.0rem;
-    font-weight: 500;
-    background-color: black;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 10px;
-}
-*/
+  .course-heading h1{
+      font-size: 1.0rem;
+      font-weight: 500;
+      background-color: black;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+  }
+  */
 
 .course-heading span {
     font-size: 3.0rem;

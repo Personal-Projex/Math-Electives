@@ -5,15 +5,8 @@
     box-sizing: border-box;
 }
 
-.header {
-    background-color: #160053;
-    display: flex;
-    align-items: center;
-    padding: 0.5rem;
-    gap: 1rem;
-}
 
-.review-body {
+.body-course {
     background-color: #f6f5f5;
     margin: 0px;
     padding: 0px;
@@ -22,6 +15,14 @@
 SPAN.li {
     display: list-item;
     margin-left: 2em
+}
+
+.header {
+    background-color: #160053;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    gap: 1rem;
 }
 
 .link {
@@ -41,7 +42,7 @@ SPAN.li {
     color: #0a59e1;
 }
 
-.about-container-reviews {
+.about-container {
     width: 85%;
     background: #ffffff;
     border-radius: 20px;
@@ -53,24 +54,25 @@ SPAN.li {
     align-items: center;
 }
 
-.about-container-reviews img {
+.about-container img {
     height: 250px;
 }
 
-.about-text-reviews {
+.about-text {
     width: 60%;
     background: white;
     margin-bottom: 1rem;
 }
 
-.about-text-reviews p:nth-child(1) {
+.about-text p:nth-child(1) {
     color: #000000;
     font-weight: bold;
     font-size: 28px;
+    line-height: 0px;
     text-align: center;
 }
 
-.about-text-reviews p:nth-child(2) {
+.about-text p:nth-child(2) {
     color: #000000;
     font-size: 18px;
     font-weight: bold;
@@ -79,30 +81,30 @@ SPAN.li {
     white-space: normal;
 }
 
-.about-text-reviews p:nth-child(3),
-.about-text-reviews p:nth-child(7) {
+.about-text p:nth-child(3),
+.about-text p:nth-child(7) {
     color: #000000;
     font-size: 17px;
 }
 
-.about-text-reviews p:nth-child(5) {
+.about-text p:nth-child(5) {
     color: #000000;
     font-size: 14.5px;
 }
 
-.about-text-reviews p:nth-child(4),
-.about-text-reviews p:nth-child(6) {
+.about-text p:nth-child(4),
+.about-text p:nth-child(6) {
     color: #000000;
     font-size: 13px;
 }
 
-.about-text-reviews p:nth-child(4),
-.about-text-reviews p:nth-child(8) {
+.about-text p:nth-child(4),
+.about-text p:nth-child(8) {
     color: #000000;
     font-size: 13px;
 }
 
-.about-text-reviews a {
+.about-text a {
     background: url(data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAxoQ0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABERAAAAAAABEREQAAAAABEQAREAAAAAEQAAERAAAAARAAAAAAAAABEQAAEREAAAAREAERERAAAAERARABEQAAABEQARAREAAAAREREAERAAAAEREAABEQAAAAAAAAARAAAAAREAABEAAAAAERABEQAAAAABEREQAAAAAAAREQDD/wAAgf8AABj/AAA8fwAAP/8AAB4fAACMDwAAxMcAAOMjAADwMQAA+HgAAP/8AAD+PAAA/xgAAP+BAAD/wwAA) no-repeat left center;
     padding-left: 19px;
     color: rgb(6, 87, 157);
@@ -110,7 +112,7 @@ SPAN.li {
     text-transform: uppercase;
 }
 
-.about-text-reviews a:hover {
+.about-text a:hover {
     cursor: pointer;
 }
 
@@ -433,7 +435,7 @@ SPAN.li {
         font-size: 12px;
     }
 
-    .about-text-reviews {
+    .about-text {
         width: 80%;
     }
 
