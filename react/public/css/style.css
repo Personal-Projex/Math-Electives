@@ -59,42 +59,42 @@ a {
 
 /*
   .search-box{
-      margin-bottom: 20px;
-      transform: translate(-50, 50);
-      background: white;
-      color: white;
-      height: 40px;
-      border-radius: 40px;
+    margin-bottom: 20px;
+    transform: translate(-50, 50);
+    background: white;
+    color: white;
+    height: 40px;
+    border-radius: 40px;
   }
   */
 
 /*
   .search-btn{
-      color: orange;
-      float: right;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: white;
-      display: flex;
-      justify-content: center;
-      align-items: center; 
+    color: orange;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
   }
   */
 
 /*
   .search-txt {
-      border: black;
-      background: none;
-      outline: none;
-      float: left;
-      padding: 0;
-      color: black;
-      font-size: 16px;
-      transition: 0.4s;
-      line-height: 40px;
-      width: 300px;
-      margin-left: 20px;
+    border: black;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: black;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 300px;
+    margin-left: 20px;
   }
   */
 
@@ -211,12 +211,12 @@ a {
 
 /*
   .course-heading h1{
-      font-size: 1.0rem;
-      font-weight: 500;
-      background-color: black;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 10px;
+    font-size: 1.0rem;
+    font-weight: 500;
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
   }
   */
 

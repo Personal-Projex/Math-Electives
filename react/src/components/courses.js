@@ -69,7 +69,7 @@ export default function Courses() {
                     <div className="box-top">
                         <div className="profile">
                             <div className="profile-img">
-                                <img src="images/sigma_logo_1.png" />
+                                <img alt="" src="images/sigma_logo_1.png" />
                             </div>
                             <div className="course">
                                 <strong>MATH2901</strong>

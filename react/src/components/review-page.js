@@ -1,14 +1,13 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import NavBar from './navbar';
 import './review.css';
-
-library.add(faSearch);
 
 export default function ReviewPage() {
     return (
-        <body>
+        <body className='body-reviews'>
+            <NavBar />
             <div className="about-container-reviews">
                 <div className="about-text-reviews">
                     <p>MATH2901</p>
@@ -33,7 +32,7 @@ export default function ReviewPage() {
             </div>
             <p className="review-text">Reviews</p>
             <div className="search-bar">
-                <div className="select" id="select">
+                <div className="r-select" id="r-select">
                     <p id="selectText">All categories</p>
                     <i className="fa-solid fa-caret-down"></i>
                     <ul id="list">
@@ -44,7 +43,9 @@ export default function ReviewPage() {
                     </ul>
                 </div>
                 <input type="text" id="inputfield" placeholder="Search Key Words" />
-                <FontAwesomeIcon href="#/" icon={faSearch} size="xl"></FontAwesomeIcon>
+                <a className="search-btn" href="#/">
+                    <FontAwesomeIcon href="#/" icon={faMagnifyingGlass} size="xl"></FontAwesomeIcon>
+                </a>
             </div>
             <div className="review-box-container">
                 <div className="review-box">
@@ -54,11 +55,11 @@ export default function ReviewPage() {
                         </div>
                         <div className="review"></div>
                         <div className="rating">
-                            <i className="fas fa-star one"></i>
-                            <i className="fas fa-star two"></i>
-                            <i className="fas fa-star three"></i>
-                            <i className="fas fa-star four"></i>
-                            <i className="fas fa-star five"></i>
+                            <i className="fas fa-star review-star one"></i>
+                            <i className="fas fa-star review-star two"></i>
+                            <i className="fas fa-star review-star three"></i>
+                            <i className="fas fa-star review-star four"></i>
+                            <i className="fas fa-star review-star five"></i>
                         </div>
                     </div>
                     <div className="comment">
