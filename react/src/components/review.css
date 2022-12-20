@@ -228,7 +228,7 @@ span.li {
 .four:hover,
 .four:hover~.five,
 .five:hover {
-    color: #042358;
+    color: rgb(79, 55, 11);
     cursor: pointer;
 }
 
@@ -318,9 +318,8 @@ span.li {
     display: none;
 }
 
-.fa-star review-star {
-    color: rgb(6, 87, 157);
-
+.fa-star-review {
+    color: orange;
 }
 
 .fa-star-half-stroke {
