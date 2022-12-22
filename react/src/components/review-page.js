@@ -7,11 +7,11 @@ import './review.css';
 
 export default function ReviewPage() {
     return (
-        <body className='body-reviews'>
+        <div className='body-reviews'>
             <NavBar />
             <AboutInfo />
             <SearchReviews />
             <ReviewBox />
-        </body>
+        </div>
     )
 }

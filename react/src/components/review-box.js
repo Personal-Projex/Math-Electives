@@ -7,17 +7,56 @@ export default function ReviewBox() {
     return (
         <div className="review-box-container">
             <div className="review-box">
+                <div className="title">
+                    <strong>Hard course, but managable with a good group</strong>
+                </div>
                 <div className="box-top">
-                    <div className="title">
-                        <strong>Hard course, but managable with a good group</strong>
+                    <div className='overall-rating'>
+                        <span>Overall: </span>
+                        <div className="rating">
+                            <FontAwesomeIcon className='fa-star-review one' href="#/" icon={faStar}></FontAwesomeIcon>
+                            <FontAwesomeIcon className='fa-star-review two' href="#/" icon={faStar}></FontAwesomeIcon>
+                            <FontAwesomeIcon className='fa-star-review three' href="#/" icon={faStar}></FontAwesomeIcon>
+                            <FontAwesomeIcon className='fa-star-review four' href="#/" icon={faStar}></FontAwesomeIcon>
+                            <FontAwesomeIcon className='fa-star-review five' href="#/" icon={faStar}></FontAwesomeIcon>
+                        </div>
+                        <div>Term taken: 22T2</div>
                     </div>
-                    <div className="review"></div>
-                    <div className="rating">
-                        <FontAwesomeIcon className='fa-star-review one' href="#/" icon={faStar}></FontAwesomeIcon>
-                        <FontAwesomeIcon className='fa-star-review two' href="#/" icon={faStar}></FontAwesomeIcon>
-                        <FontAwesomeIcon className='fa-star-review three' href="#/" icon={faStar}></FontAwesomeIcon>
-                        <FontAwesomeIcon className='fa-star-review four' href="#/" icon={faStar}></FontAwesomeIcon>
-                        <FontAwesomeIcon className='fa-star-review five' href="#/" icon={faStar}></FontAwesomeIcon>
+                    <div className="user-data">
+                        <div className="review-date">10/12/2022</div>
+                        <div className="review-user">Anonymous</div>
+                    </div>
+                </div>
+                <div className='specific-ratings'>
+                    <div className='enjoy-rating'>
+                        <div>Enjoyment</div>
+                        <div className="rating">
+                            <FontAwesomeIcon className='fa-star-review one' href="#/" icon={faStar}></FontAwesomeIcon>
+                            <FontAwesomeIcon className='fa-star-review two' href="#/" icon={faStar}></FontAwesomeIcon>
+                            <FontAwesomeIcon className='fa-star-review three' href="#/" icon={faStar}></FontAwesomeIcon>
+                            <FontAwesomeIcon className='fa-star-review four' href="#/" icon={faStar}></FontAwesomeIcon>
+                            <FontAwesomeIcon className='fa-star-review five' href="#/" icon={faStar}></FontAwesomeIcon>
+                        </div>
+                    </div>
+                    <div className='useful-rating'>
+                        <div>Usefulness</div>
+                        <div className="rating">
+                            <FontAwesomeIcon className='fa-star-review one' href="#/" icon={faStar}></FontAwesomeIcon>
+                            <FontAwesomeIcon className='fa-star-review two' href="#/" icon={faStar}></FontAwesomeIcon>
+                            <FontAwesomeIcon className='fa-star-review three' href="#/" icon={faStar}></FontAwesomeIcon>
+                            <FontAwesomeIcon className='fa-star-review four' href="#/" icon={faStar}></FontAwesomeIcon>
+                            <FontAwesomeIcon className='fa-star-review five' href="#/" icon={faStar}></FontAwesomeIcon>
+                        </div>
+                    </div>
+                    <div className='manage-rating'>
+                        <div>Manageability</div>
+                        <div className="rating">
+                            <FontAwesomeIcon className='fa-star-review one' href="#/" icon={faStar}></FontAwesomeIcon>
+                            <FontAwesomeIcon className='fa-star-review two' href="#/" icon={faStar}></FontAwesomeIcon>
+                            <FontAwesomeIcon className='fa-star-review three' href="#/" icon={faStar}></FontAwesomeIcon>
+                            <FontAwesomeIcon className='fa-star-review four' href="#/" icon={faStar}></FontAwesomeIcon>
+                            <FontAwesomeIcon className='fa-star-review five' href="#/" icon={faStar}></FontAwesomeIcon>
+                        </div>
                     </div>
                 </div>
                 <div className="comment">
