@@ -92,7 +92,6 @@ span.li {
     overflow: hidden;
     margin: 10px 0;
     position: relative;
-    left: 8%;
 }
 
 .stats-bar-enjoy::after {
@@ -124,7 +123,6 @@ span.li {
     overflow: hidden;
     margin: 10px 0;
     position: relative;
-    left: 8.5%;
 }
 
 .stats-bar-useful::after {
@@ -156,7 +154,6 @@ span.li {
     overflow: hidden;
     margin: 10px 0;
     position: relative;
-    left: 15%;
 }
 
 .stats-bar-manage::after {
@@ -190,12 +187,15 @@ span.li {
 .category-stats {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-content: center;
 }
 
 .stats-category {
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    align-items: center;
 }
 
 .link:hover {
@@ -421,10 +421,9 @@ span.li {
 .specific-ratings {
     font-size: 0.95rem;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-around;
     margin-bottom: 10px;
-    margin-left: 10vw;
-    margin-right: 10vw;
 }
 
 .user-data {
@@ -435,7 +434,7 @@ span.li {
 
 .review-user {
     font-size: 0.8rem;
-    color: rgba(0, 0, 0, .4)
+    color: rgba(0, 0, 0, .65)
 }
 
 .title {
@@ -456,7 +455,6 @@ span.li {
 }
 
 .comment {
-    font-size: 0.9rem;
     color: #4b4b4b;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -600,51 +598,12 @@ span.li {
     display: none;
 }
 
-
-@media (max-width:1060px) {
-    .review-box {
-        width: 75%;
-        padding: 15px;
-    }
+.comment p {
+    font-size: calc(9px + 0.390625vw);
+    color: #4b4b4b;
 }
 
-@media (max-width:750px) {
-    .search-bar {
-        height: 45px;
-        width: 85%;
-    }
-
-    .comment {
-        font-size: 0.4rem;
-        color: #4b4b4b;
-        margin-bottom: 10px;
-    }
-
-    .r-select p {
-        font-size: 12px;
-    }
-
-    .about-text-reviews {
-        width: 80%;
-    }
-
-    input,
-    input::-webkit-input-placeholder {
-        font-size: 12px;
-    }
-
-    .search-btn {
-        float: right;
-        width: 25px;
-        height: 25px;
-    }
-
-    .rating i {
-        font-size: 14px;
-    }
-}
-
-@media (max-width:450px) {
+@media (max-width:580px) {
     .box-top {
         flex-wrap: wrap;
         margin-bottom: 10px;
@@ -654,16 +613,15 @@ span.li {
         margin-top: 10px;
     }
 
-    .comment {
-        font-size: 0.2rem;
-        color: #4b4b4b;
-        margin-bottom: 10px;
-    }
-
     .search-btn {
         float: right;
         width: 10px;
         height: 10px;
+    }
+
+    .comment p {
+        font-size: calc(6px + 0.390625vw);
+        color: #4b4b4b;
     }
 
     .review-box {
@@ -681,5 +639,48 @@ span.li {
 
     .r-select ul li {
         font-size: 12px;
+    }
+}
+
+@media (max-width:750px) {
+    .search-bar {
+        height: 45px;
+        width: 85%;
+    }
+
+    .r-select p {
+        font-size: 12px;
+    }
+
+    .about-text-reviews {
+        width: 80%;
+    }
+
+    input,
+    input::-webkit-input-placeholder {
+        font-size: 12px;
+    }
+
+
+    .search-btn {
+        float: right;
+        width: 25px;
+        height: 25px;
+    }
+
+    .rating i {
+        font-size: 14px;
+    }
+}
+
+@media (max-width:1060px) {
+    .review-box {
+        width: 75%;
+        padding: 15px;
+    }
+
+    .comment p {
+        font-size: calc(12px + 0.390625vw);
+        color: #4b4b4b;
     }
 }

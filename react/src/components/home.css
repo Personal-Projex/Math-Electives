@@ -14,11 +14,11 @@
 
 
 .body-home {
-  background-color: #1985fe;
-  background-color: navy;
-  background-color: rgb(34, 34, 183);
-  background-color: #0049B7;
   background-color: #160053;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 
@@ -188,7 +188,6 @@ a {
 
 .options {
   margin-left: 19px;
-  color: black;
 }
 
 
