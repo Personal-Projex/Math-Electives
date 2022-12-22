@@ -1,0 +1,457 @@
+[
+  [
+    "DATA1001",
+    "Introduction to Data Science",
+    "",
+    "Term 2",
+    ""
+  ],
+  [
+    "MATH1011",
+    "Fundamentals of Mathematics B",
+    "Term 1",
+    "",
+    "Term 3"
+  ],
+  [
+    "MATH1031",
+    "Mathematics for Life Sciences",
+    "Term 1",
+    "",
+    "Term 3"
+  ],
+  [
+    "MATH1041",
+    "Statistics for Life and Social Sciences",
+    "Term 1",
+    "Term 2",
+    "Term 3"
+  ],
+  [
+    "MATH1081",
+    "Discrete Mathematics",
+    "Term 1",
+    "Term 2",
+    "Term 3"
+  ],
+  [
+    "MATH1131",
+    "Mathematics 1A",
+    "Term 1",
+    "Term 2",
+    "Term 3"
+  ],
+  [
+    "MATH1141",
+    "Higher Mathematics 1A",
+    "Term 1",
+    "",
+    "Term 3"
+  ],
+  [
+    "MATH1151",
+    "Mathematics for Actuarial Studies and Finance 1A",
+    "Term 1",
+    "",
+    ""
+  ],
+  [
+    "MATH1231",
+    "Mathematics 1B",
+    "Term 1",
+    "Term 2",
+    "Term 3"
+  ],
+  [
+    "MATH1241",
+    "Higher Mathematics 1B",
+    "Term 1",
+    "Term 2",
+    ""
+  ],
+  [
+    "MATH1251",
+    "Mathematics for Actuarial Studies and Finance 1B",
+    "",
+    "Term 2",
+    ""
+  ],
+  [
+    "MATH2011",
+    "Several Variable Calculus",
+    "Term 1",
+    "",
+    ""
+  ],
+  [
+    "MATH2018",
+    "Engineering Mathematics 2D",
+    "Term 1",
+    "Term 2",
+    "Term 3"
+  ],
+  [
+    "MATH2019",
+    "Engineering Mathematics 2E",
+    "Term 1",
+    "",
+    ""
+  ],
+  [
+    "MATH2069",
+    "Mathematics 2A",
+    "",
+    "",
+    "Term 3"
+  ],
+  [
+    "MATH2089",
+    "Numerical Methods & Statistics",
+    "Term 1",
+    "",
+    "Term 3"
+  ],
+  [
+    "MATH2099",
+    "Mathematics 2B",
+    "",
+    "Term 2",
+    ""
+  ],
+  [
+    "MATH2111",
+    "Higher Several Variable Calculus",
+    "Term 1",
+    "",
+    ""
+  ],
+  [
+    "MATH2121",
+    "Differential Equations",
+    "",
+    "Term 2",
+    ""
+  ],
+  [
+    "MATH2221",
+    "Higher Differential Equations",
+    "",
+    "Term 2",
+    ""
+  ],
+  [
+    "MATH2241",
+    "Intro to Atmosphere & Ocean Dynamics",
+    "Term 1",
+    "",
+    ""
+  ],
+  [
+    "MATH2301",
+    "Mathematical Computing",
+    "Term 1",
+    "",
+    ""
+  ],
+  [
+    "MATH2400",
+    "Finite Mathematics",
+    "",
+    "Term 2",
+    ""
+  ],
+  [
+    "MATH2501",
+    "Linear Algebra",
+    "",
+    "Term 2",
+    ""
+  ],
+  [
+    "MATH2521",
+    "Complex Analysis",
+    "",
+    "",
+    "Term 3"
+  ],
+  [
+    "MATH2601",
+    "Higher Linear Algebra",
+    "",
+    "Term 2",
+    ""
+  ],
+  [
+    "MATH2621",
+    "Higher Complex Analysis",
+    "",
+    "",
+    "Term 3"
+  ],
+  [
+    "MATH2701",
+    "Algebra and Analysis",
+    "",
+    "",
+    "Term 3"
+  ],
+  [
+    "MATH2801",
+    "Theory of Statistics",
+    "",
+    "Term 2",
+    ""
+  ],
+  [
+    "MATH2831",
+    "Linear Models",
+    "",
+    "",
+    "Term 3"
+  ],
+  [
+    "MATH2859",
+    "Probability, Statistics and Information",
+    "",
+    "Term 2",
+    ""
+  ],
+  [
+    "MATH2871",
+    "Data Management for Statistical Analysis",
+    "Term 1",
+    "",
+    ""
+  ],
+  [
+    "MATH2901",
+    "Higher Theory of Statistics",
+    "",
+    "Term 2",
+    ""
+  ],
+  [
+    "MATH2931",
+    "Higher Linear Models",
+    "",
+    "",
+    "Term 3"
+  ],
+  [
+    "DATA3001",
+    "Data Science and Decisions",
+    "",
+    "",
+    "Term 3"
+  ],
+  [
+    "MATH3041",
+    "Mathematical Modelling",
+    "",
+    "Term 2",
+    ""
+  ],
+  [
+    "MATH3051",
+    "Applied Real and Functional Analysis",
+    "",
+    "",
+    "Term 3"
+  ],
+  [
+    "MATH3101**",
+    "Computational Mathematics for Science and Engineering**",
+    "",
+    "",
+    "Term 3"
+  ],
+  [
+    "MATH3121",
+    "Mathematical Methods",
+    "Term 1",
+    "",
+    ""
+  ],
+  [
+    "MATH3161",
+    "Optimization",
+    "Term 1",
+    "",
+    ""
+  ],
+  [
+    "MATH3171***",
+    "Linear and Discrete Optimization Modelling***",
+    "",
+    "",
+    "Term 3"
+  ],
+  [
+    "MATH3201",
+    "Dynamical Systems and Chaos",
+    "",
+    "",
+    "Term 3"
+  ],
+  [
+    "MATH3261",
+    "Fluids, Oceans and Climate",
+    "",
+    "",
+    "Term 3"
+  ],
+  [
+    "MATH3311",
+    "Mathematical Computing for Finance",
+    "",
+    "Term 2",
+    ""
+  ],
+  [
+    "MATH3361**",
+    "Stochastic Differential Equations** - TBA",
+    "",
+    "",
+    ""
+  ],
+  [
+    "MATH3371",
+    "Numerical Linear Algebra",
+    "Term 1",
+    "",
+    ""
+  ],
+  [
+    "MATH3411",
+    "Information, Codes and Ciphers",
+    "",
+    "",
+    "Term 3"
+  ],
+  [
+    "MATH3431",
+    "Number Theory",
+    "Term 1",
+    "",
+    ""
+  ],
+  [
+    "MATH3531",
+    "Topology and Differential Geometry",
+    "",
+    "",
+    "Term 3"
+  ],
+  [
+    "MATH3560",
+    "History of Mathematics",
+    "Term 1",
+    "",
+    ""
+  ],
+  [
+    "MATH3570",
+    "Foundations of Calculus",
+    "Term 1",
+    "",
+    ""
+  ],
+  [
+    "MATH3611",
+    "Higher Analysis",
+    "",
+    "Term 2",
+    ""
+  ],
+  [
+    "MATH3701",
+    "Higher Topology and Differential Geometry",
+    "",
+    "",
+    "Term 3"
+  ],
+  [
+    "MATH3711",
+    "Higher Algebra",
+    "Term 1",
+    "",
+    ""
+  ],
+  [
+    "MATH3801",
+    "Probability and Stochastic Processes",
+    "Term 1",
+    "",
+    ""
+  ],
+  [
+    "MATH3811",
+    "Statistical Inference",
+    "Term 1",
+    "",
+    ""
+  ],
+  [
+    "MATH3821",
+    "Statistical Modelling and Computing",
+    "",
+    "Term 2",
+    ""
+  ],
+  [
+    "MATH3831",
+    "Statistical Methods in Social and Market Research",
+    "",
+    "Term 2",
+    ""
+  ],
+  [
+    "MATH3841",
+    "Statistical Analysis of Dependent Data",
+    "",
+    "Term 2",
+    ""
+  ],
+  [
+    "MATH3851",
+    "Experimental Design and Categorical Data",
+    "",
+    "",
+    "Term 3"
+  ],
+  [
+    "MATH3856",
+    "Introduction to Data and Machine Learning",
+    "",
+    "",
+    "Term 3"
+  ],
+  [
+    "MATH3871",
+    "Bayesian Inference and Computation",
+    "",
+    "",
+    "Term 3"
+  ],
+  [
+    "MATH3901",
+    "Higher Probability and Stochastic Processes",
+    "Term 1",
+    "",
+    ""
+  ],
+  [
+    "MATH3911",
+    "Higher Statistical Inference",
+    "Term 1",
+    "",
+    ""
+  ],
+  [
+    "MATH6781",
+    "Biomathematics",
+    "",
+    "Term 2",
+    ""
+  ]
+]
