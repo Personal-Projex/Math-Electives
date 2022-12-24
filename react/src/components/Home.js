@@ -7,12 +7,12 @@ import './home.css';
 
 export default function Home() {
     return (
-        <body className='body-home'>
-            <NavBar />
+        <div className='body-home'>
+            < NavBar />
             <section id="courses">
                 <CourseHeader />
                 <Courses />
             </section>
-        </body>
+        </div >
     )
 }

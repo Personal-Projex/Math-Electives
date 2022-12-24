@@ -102,7 +102,7 @@ span.li {
     left: 0%;
     right: 0%;
     background: #160053;
-    animation: barsInEnjoy 1.1s ease-in-out forwards;
+    animation: barsInEnjoy 1.5s ease-in-out forwards;
 }
 
 @keyframes barsInEnjoy {
@@ -133,7 +133,7 @@ span.li {
     left: 0%;
     right: 0%;
     background: #160053;
-    animation: barsInUseful 1.1s ease-in-out forwards;
+    animation: barsInUseful 1.5s ease-in-out forwards;
 }
 
 @keyframes barsInUseful {
@@ -164,7 +164,7 @@ span.li {
     left: 0%;
     right: 0%;
     background: #160053;
-    animation: barsInManage 1.1s ease-in-out forwards;
+    animation: barsInManage 1.5s ease-in-out forwards;
 }
 
 @keyframes barsInManage {

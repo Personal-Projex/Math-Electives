@@ -58,8 +58,13 @@ async function scrape() {
         const term3Raw = cells[4] ? cells[4].textContent : '';
         const term3 = cleanText(term3Raw);
         const term3Txt = term3 ? 'Term 3' : '';
-
-        return [courseCode, courseDesc, term1Txt, term2Txt, term3Txt];
+        return {
+          code: courseCode,
+          name: courseDesc,
+          term1: term1Txt,
+          term2: term2Txt,
+          term3: term3Txt,
+        }
       });
     });
   });
@@ -75,4 +80,6 @@ async function scrape() {
 }
 
 // Scrape the required data
+console.log("Starting!");
 scrape();
+console.log("Done!");
