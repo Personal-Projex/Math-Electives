@@ -1,13 +1,13 @@
-import { React, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import './review.css';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export default function AboutInfo() {
+export default function AboutInfo(props) {
     return (
         <div className="about-container-reviews">
             <div className="about-text-reviews">
-                <p>MATH2901</p>
+                <p>{props.code}</p>
                 <p>Higher Theory of Statistics</p>
                 <p>Overview</p>
                 <p>As for MATH2801 but in greater depth: This course provides an introduction to the theoretical
@@ -23,7 +23,7 @@ export default function AboutInfo() {
                 </p>
                 <p>Conditions for Enrolment</p>
                 <p>Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014</p>
-                <a href="https://www.handbook.unsw.edu.au/undergraduate/courses/2023/MATH2901/?year=2023" rel="noreferrer"
+                <a href="https://www.handbook.unsw.edu.au/undergraduate/courses/2023/MATH2901/?year=2023" rel="noopener noreferrer"
                     target="_blank"><i aria-hidden="true" className="external icon"></i>MATH2901 Handbook Page</a>
                 <div className="terms-run-review">
                     <span className="term-review">
