@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import data from '../courses.json';
 
-export default function Courses() {
+export default function Courses(props) {
     const handleTerms = (arr) => {
         return (
             arr.map((term) => {
@@ -11,10 +11,10 @@ export default function Courses() {
         )
     }
 
-    const courses = data.map((course, pos) => {
+    const courses = data.filter((course) => course.code.toLowerCase().includes(props.search) || course.name.toLowerCase().includes(props.search) || course.term1.toLowerCase().includes(props.search) || course.term2.toLowerCase().includes(props.search) || course.term3.toLowerCase().includes(props.search)).map((course, pos) => {
         return (
             <div className="course-box" key={pos}>
-                <Link to={"/" + course.code} className='link'>
+                <Link to={"/review-" + course.code} className='link'>
                     <div className="box-top">
                         <div className="profile">
                             <div className="profile-img">
