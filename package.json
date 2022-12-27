@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "dependencies": {
     "puppeteer": "^19.4.0"
   }
