@@ -106,7 +106,7 @@
   },
   {
     "code": "MATH2089",
-    "name": "Numerical Methods & Statistics",
+    "name": "Numerical Methods  Statistics",
     "term1": "Term 1",
     "term2": "",
     "term3": "Term 3"
@@ -141,7 +141,7 @@
   },
   {
     "code": "MATH2241",
-    "name": "Intro to Atmosphere & Ocean Dynamics",
+    "name": "Intro to Atmosphere  Ocean Dynamics",
     "term1": "Term 1",
     "term2": "",
     "term3": ""
@@ -211,7 +211,7 @@
   },
   {
     "code": "MATH2859",
-    "name": "Probability, Statistics and Information",
+    "name": "Probability Statistics and Information",
     "term1": "",
     "term2": "Term 2",
     "term3": ""
@@ -259,8 +259,8 @@
     "term3": "Term 3"
   },
   {
-    "code": "MATH3101**",
-    "name": "Computational Mathematics for Science and Engineering**",
+    "code": "MATH3101",
+    "name": "Computational Mathematics for Science and Engineering",
     "term1": "",
     "term2": "",
     "term3": "Term 3"
@@ -280,8 +280,8 @@
     "term3": ""
   },
   {
-    "code": "MATH3171***",
-    "name": "Linear and Discrete Optimization Modelling***",
+    "code": "MATH3171",
+    "name": "Linear and Discrete Optimization Modelling",
     "term1": "",
     "term2": "",
     "term3": "Term 3"
@@ -295,7 +295,7 @@
   },
   {
     "code": "MATH3261",
-    "name": "Fluids, Oceans and Climate",
+    "name": "Fluids Oceans and Climate",
     "term1": "",
     "term2": "",
     "term3": "Term 3"
@@ -308,8 +308,8 @@
     "term3": ""
   },
   {
-    "code": "MATH3361**",
-    "name": "Stochastic Differential Equations** - TBA",
+    "code": "MATH3361",
+    "name": "Stochastic Differential Equations - TBA",
     "term1": "",
     "term2": "",
     "term3": ""
@@ -323,7 +323,7 @@
   },
   {
     "code": "MATH3411",
-    "name": "Information, Codes and Ciphers",
+    "name": "Information Codes and Ciphers",
     "term1": "",
     "term2": "",
     "term3": "Term 3"

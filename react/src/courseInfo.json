@@ -1,0 +1,587 @@
+[
+  {
+    "code": "DATA1001",
+    "name": "Introduction to Data Science and Decisions",
+    "overview": "This course will be taught as a number of distinct, but related, topics covering the fundamentals of data science as it is applied in Mathematics and Statistics, Computer Science, and Economics. The course is a core course for students in the Data Science and Decisions program. The course is also available as a General Education elective. It will form a platform for students wishing to undertake further studies in Data Science. The course will provide an introduction to topics such as data analytics, data mining, Bayesian statistics, statistical software, econometrics, machine learning, business forecasting.",
+    "conditions": null,
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH1011",
+    "name": "Fundamentals of Mathematics B",
+    "overview": "Functions (and their inverses), limits, asymptotes, continuity; differentiation and applications; integration, the definite integral and applications; inverse trigonometric functions; the logarithmic and exponential functions and applications; sequences and series; mathematical induction; the binomial theorem and applications; introduction to probability theory; introduction to 3-dimensional geometry; introduction to linear algebra.",
+    "conditions": "Not enrolled in 3991 Medical Science ",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH1031",
+    "name": "Mathematics for Life Sciences",
+    "overview": "MATH1031 will provide you with a good knowledge of topics in Calculus and Linear Algebra and show applications in interdisciplinary contexts through lectures, videos and exercises. It will enhance your skills in analytical thinking and problem solving through illustrative examples in lectures, problem based tutorials and an assignment. The course will also engage you in independent and reflective learning through your independent mastery of tutorial problems and Maple. The mathematical skills that you will develop are generic problem solving skills, based on logical arguments that can be applied in multidisciplinary work. You will be encouraged to develop your communication skills through active participation in tutorials, and by writing clear and logical arguments in the assignment and when solving tutorial problems.",
+    "conditions": null,
+    "term1": "Term 1",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH1041",
+    "name": "Statistics for Life and Social Sciences",
+    "overview": "Descriptive statistics: numerical and graphical summaries. Study designs and sampling. Probability and independence. Discrete distributions: the binomial distribution. Continuous distributions: the normal, t and chi-square distributions. Random variables: calculating the mean and variance. Confidence intervals and tests of hypotheses: z-test, t-test and Chi-squared test for statistical independence. Linear regression: correlation, residuals, estimation and prediction.This course is not intended for students who propose to study a substantial amount of Statistics beyond first-year level.",
+    "conditions": null,
+    "term1": "Term 1",
+    "term2": "Term 2",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH1081",
+    "name": "Discrete Mathematics",
+    "overview": "Role of proof in mathematics, logical reasoning and implication, different types of proofs. Sets, algebra of sets, operations on sets. Mathematical logic, truth tables, syntax, induction. Graphs and directed graphs, basic graph algorithms. Counting, combinatorial identities, binomial and multinomial theorems. Binary operations and their properties, ordered structures. Recursion relations. Assumed knowledge: HSC Mathematics Extension 1. Students will be expected to have achieved a combined mark of at least 100 in HSC Mathematics Advanced and HSC Mathematics Extension 1.",
+    "conditions": "Corequisite: MATH1131 or DPST1013 or MATH1141 or MATH1151 ",
+    "term1": "Term 1",
+    "term2": "Term 2",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH1131",
+    "name": "Mathematics 1A",
+    "overview": "Complex numbers, vectors and vector geometry, linear equations, matrices and matrix algebra, determinants. Functions, limits, continuity and differentiability, integration, polar coordinates, logarithms and exponentials, hyperbolic functions. Introduction to computing and the Maple symbolic algebra package.   Assumed knowledge: HSC Mathematics Extension 1. Students will be expected to have achieved a combined mark of at least 100 in Mathematics and Mathematics Extension 1.",
+    "conditions": null,
+    "term1": "Term 1",
+    "term2": "Term 2",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH1141",
+    "name": "Higher Mathematics 1A",
+    "overview": "As for MATH1131 but in greater depth. Assumed knowledge:  Students will be expected to have achieved a combined HSC mark in Mathematics Extension 1 and 2 over 175.",
+    "conditions": null,
+    "term1": "Term 1",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH1151",
+    "name": "Mathematics for Actuarial Studies and Finance 1A",
+    "overview": "This course, together with MATH1251, provides the mathematical foundation needed for Actuarial Studies and related disciplines, as well as possible further studies in mathematics and statistics. MATH1151 builds on high school level calculus, focussing first on a more rigorous development of limits and continuous and differentiable functions, and then introduces multivariable calculus with partial derivatives, tangent planes and multivariable chain rules.  The Riemann Integral is linked to differential calculus though the fundamental theorem of calculus and techniques of numerical integration are introduced. Vectors and vector geometry are further developed from high school and matrix algebra introduced.  Linear equations are treated with Gaussian elimination and matrix methods, and these are used for applications such as basic input-output linear models and least squares approximation. Discrete and continuous random variables are studied including the central limit theorem.  Matlab is used throughout MATH1151. ",
+    "conditions": null,
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH1231",
+    "name": "Mathematics 1B",
+    "overview": "Vector spaces, linear transformations, eigenvalues and eigenvectors. Introduction to probability and statistics. Integration techniques, solution of ordinary differential equations, sequences, series, applications of integration.",
+    "conditions": "Prerequisite: MATH1131 or MATH1141 or DPST1013 ",
+    "term1": "Term 1",
+    "term2": "Term 2",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH1241",
+    "name": "Higher Mathematics 1B",
+    "overview": "Vector spaces, linear transformations, eigenvalues and eigenvectors.  Introduction to probability and statistics. Integration techniques,  solution of ordinary differential equations, sequences, series,  applications of integration; as for MATH1231 but in greater depth.",
+    "conditions": "Prerequisite: MATH1131 (CR) or MATH1141 (CR) or DPST1013 (CR) ",
+    "term1": "Term 1",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH1251",
+    "name": "Mathematics for Actuarial Studies and Finance 1B",
+    "overview": "MATH1251 builds on the calculus and linear algebra in MATH1151.  Matlab is used throughout.  In linear algebra, abstract vector spaces and linear transforms are introduced so that the study of vectors and matrices in MATH1151 can be applied to a wide range of applications. The concepts such as spans, linear independence, basis, dimension, kernel, image are studied in both abstract and concrete examples, with links made to data fitting and differential equations.  Eigenvalues and eigenvectors are studied along with their applications to Markov chains and systems of differential equations. In calculus, further techniques of integration and the theory and applications of first and second order ordinary differential equations are studied, including existence and uniqueness results and numerical methods. Double integrals, including change of variables are introduced. Convergence results for sequences and series are developed along with Taylor polynomials in both one and two variables and their applications.  Optimisation techniques, including classification of critical points and Lagrange multipliers are studied. ",
+    "conditions": "Prerequisite: MATH1151. ",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH2011",
+    "name": "Several Variable Calculus",
+    "overview": "Functions of several variables, limits and continuity, differentiability, gradients, surfaces, maxima and minima, Taylor series, Lagrange multipliers, chain rules, inverse function theorem, Jacobian derivatives. Double and triple integrals, iterated integrals, Riemann sums, cylindrical and spherical coordinates, change of variables, centre of mass. Vector calculus, line integrals, parametrised surfaces, surface integrals, del, divergence and curl, Stokes' theorem, Green's theorem in the plane, applications to fluid dynamics and electrodynamics. Fourier Series.",
+    "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014 ",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH2018",
+    "name": "Engineering Mathematics 2D",
+    "overview": "Partial differentiation and applications, vector algebra, double integrals, ordinary differential equations, introduction to vector field theory, extrema of functions of 2 variables, matrices and their applications, Laplace transforms, Fourier series, partial differential equations and their solution for selected physical problems.",
+    "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014 ",
+    "term1": "Term 1",
+    "term2": "Term 2",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH2019",
+    "name": "Engineering Mathematics 2E",
+    "overview": "Partial differentiation and applications, vector algebra, double integrals, ordinary differential equations, introduction to vector field theory, extrema of functions of 2 variables, matrices and their applications, Laplace transforms, Fourier series, partial differential equations and their solution for selected physical problems.",
+    "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014 ",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH2069",
+    "name": "Mathematics 2A",
+    "overview": "Several Variable Calculus:Vectors, differential calculus of curves in R3 and  surfaces, Taylor series for functions of two variables, critical points, local maxima and minima.  Lagrange multipliers, integral calculus for  functions of several variables using various co-ordinate systems, conservative vector fields and line integrals, Green's Theorem in the plane, divergence and curl, surface integrals, Stokes' Theorem, Gauss' divergence Theorem.Complex Analysis:Complex numbers, simple mapping problems, differentiation theory for complex functions, Cauchy Riemann equations, analytic functions, the elementary functions, Integration Theory for complex functions, Cauchy's Theorem and the Cauchy integral formulae, Taylor series and Laurent Series, residues, evaluating real integrals and trigonometric integrals using residues. Note: Available only to students for whom it is specifically required as part of their program",
+    "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014 ",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH2089",
+    "name": "Numerical Methods and Statistics",
+    "overview": "This course gives an introduction to numerical methods and statistics essential in a wide range of engineering disciplines.",
+    "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014 ",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH2099",
+    "name": "Mathematics 2B",
+    "overview": "Linear algebra: Vector spaces, linear transformations, change of basis, inner products, orthogonalization, least squares approximation, QR factorization, determinants, eigenvalues and eigenvectors, diagonalization, Jordan forms, matrix exponentials and applications to systems of differential equations, other applications of linear algebra.Probability and statistics: Sample spaces, probability, random variables and probability distributions, standard discrete and continuous distributions, multivariate distributions, Central Limit Theorem, statistical inference, confidence intervals and hypothesis testing, linear regression, inference in the linear model. Matlab will be used in this course.",
+    "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014 ",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH2111",
+    "name": "Higher Several Variable Calculus",
+    "overview": "Functions of several variables, limits and continuity, differentiability, gradients, surfaces, maxima and minima, Taylor series, Lagrange multipliers, chain rules, inverse function theorem, Jacobian derivatives, double and triple integrals, iterated integrals, Riemann sums, cylindrical and spherical coordinates, change of variables, centre of mass, curves in space, line integrals, parametrised surfaces, surface integrals, del, divergence and curl, Stokes' theorem, Green's theorem in the plane, applications to fluid dynamics and electrodynamics, orthogonal curvilinear coordinates, arc length and volume elements, gradient, divergence and curl in curvilinear coordinates.",
+    "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014 each with a mark of at least 70 ",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH2121",
+    "name": "Theory and Applications of Differential Equations",
+    "overview": "The following topics are treated both theoretically and with illustrative applications in physics, engineering and biology.",
+    "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014 ",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH2221",
+    "name": "Higher Theory and Applications of Differential Equations",
+    "overview": "As for MATH2121, but in greater depth, and with some additional topics.",
+    "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014, each with a mark of 70 or higher. ",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH2241",
+    "name": "Introduction to Atmosphere and Ocean Dynamics",
+    "overview": "An introduction to mathematical models for the circulation of the atmosphere and oceans. The equations of motion are exploited so as to provide simplified models for phenomena including: waves, the effects of the Earth's rotation, the geostrophic wind, upwelling, storm surges. Feedback mechanisms are also modelled: the land/sea breeze, tornadoes, tropical cyclones. Models for large-scale phenomena including El Nino and the East Australian Current will be discussed as well as the role of the atmosphere-ocean system in climate change.",
+    "conditions": "Prerequisite: MATH1231 or DPST1014 or MATH1241 or MATH1251 ",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH2301",
+    "name": "Mathematical Computing",
+    "overview": "An introduction to mathematical computing, programming and visualization using Matlab, with a focus on mathematical modelling and simulation. Introduction to Matlab, floating point arithmetic, difference equations, nonlinear equations, numerical differentiation and integration, initial value problems.",
+    "conditions": "Prerequisite: MATH1031(CR) or MATH1231 or MATH1241 or MATH1251 or DPST1014 ",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH2400",
+    "name": "Finite Mathematics",
+    "overview": "This is an introduction to those areas of Mathematics which underpin parts of computing. The main topics are integer and modulo arithmetic (including tests for primeness of integers), polynomial algebra (including factorization of polynomials and creation of new fields) and an introduction to cryptography and error correcting codes.",
+    "conditions": "Prerequisite: MATH1081 or MATH1231 or DPST1014 or MATH1241 or MATH1251 ",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH2501",
+    "name": "Linear Algebra",
+    "overview": "Linear algebra is a key tool in all of mathematics and its applications. For example, the output of many electrical circuits depends linearly on the input (over moderate ranges of input), and successfully correcting the trajectory of a space probe involves repeatedly solving systems of linear equations in hundreds of variables. Linear methods are vital in ecological population models, and in mathematics itself. You have met systems of linear equations and matrices, vector spaces and linear transformations in first year Mathematics courses, without necessarily understanding all the subtleties involved. In MATH2501, you will review the material from first year, so that vector spaces and linear transformations become familiar friends rather than uneasy acquaintances. You will learn about geometric transformations: projections(which can also be viewed as least squares approximations), rotations and reflections. You will see how to view many linear transformations as being made up of \"stretches\" in various directions, (the diagonalisation process), and the more general Jordan form. This will allow you to calculate functions of matrices (such as the exponential of a matrix) and hence to solve systems of linear differential equations.",
+    "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014 ",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH2521",
+    "name": "Complex Analysis",
+    "overview": "This is a first course in the theory and applications of complex functions. Topics covered include analytic functions, Taylor and Laurent series, integrals, Cauchy's theorem, residues, evaluation of certain real integrals, Laplace transforms, conformal mappings, applications to differential equations.",
+    "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014 ",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH2601",
+    "name": "Higher Linear Algebra",
+    "overview": "The course begins with a revision of vector spaces, linear transformations and change of basis. It also covers inner products over both the real and complex fields, orthogonalization, reflections, QR factorizations unitary, self adjoint and normal transformations. It then turns to the study of eigenvalues and eigenvectors, diagonalization, Jordan forms and functions of matrices. The course also includes applications to linear systems of differential equations, quadratics and rotations. Where content is in common with MATH2501, this course aims to give students a deeper level of understanding. ",
+    "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014, each with a mark of 70 or higher ",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH2621",
+    "name": "Higher Complex Analysis",
+    "overview": "This is a first course in the theory and applications of complex functions, taught at the Higher level. Topics covered include analytic functions, Taylor and Laurent series, integrals, Cauchy's theorem, residues, evaluation of certain real integrals, Laplace transforms, conformal mappings and applications to differential equations.",
+    "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014 each with a mark of at least 70 ",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH2701",
+    "name": "Abstract Algebra and Fundamental Analysis",
+    "overview": "Mathematics went through quite a revolution around the turn of the 20th century. In particular, an axiomatic approach infiltrated the mathematical paradigm, both as a tool to ensure mathematical rigour and to abstract common principles working in a variety of different settings.",
+    "conditions": "Prerequisite: MATH1231 or DPST1014 or MATH1241 or MATH1251 with at least a CR, enrolment in an advanced maths or advanced science program ",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH2801",
+    "name": "Theory of Statistics",
+    "overview": "Probability, random variables, standard distributions, bivariate distributions, transformations, central limit theorem, sampling distributions, point estimation, interval estimation, hypothesis testing.",
+    "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014 ",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH2831",
+    "name": "Linear Models",
+    "overview": "Multiple linear regression models and examples. Graphical methods for regression analysis. Multi-variate normal distribution. Quadratic forms (distributions and independence), Gauss-Markov theorem. Hypothesis testing. Model selection. Analysis of residuals. Influence diagnostics. Analysis of variance.",
+    "conditions": "Prerequisite: MATH2801 or MATH2901. ",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH2859",
+    "name": "Probability, Statistics and Information",
+    "overview": "Sample spaces, probability, random variables and probability distributions; examples of discrete and continuous distributions; Central Limit Theorem; statistical inference, confidence intervals and hypothesis testing; bivariate normal distribution, optimal mean square estimation, introduction to the multivariate normal distribution; linear regression and least squares estimation; inference in the linear model; on-line and off-line estimation; statistical quality control; models, applications and statistical algorithms relevant to the fields of computer, electrical, software and telecommunications engineering. Note: Available only to students for whom it is specifically required as part of their program.",
+    "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014 ",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH2871",
+    "name": "Data Management for Statistical Analysis",
+    "overview": "The course covers the use of database and spreadsheet tools to organise and query statistical data, programming in an advanced statistical package for file management, data manipulation and cleaning; methods for data screening, cleaning, graphical displays and data analysis using a range of statistical procedures; creation of data analysis reports using modern statistical and graphical methods.The course is based around Microsoft Access and Excel as well as the SAS statistical analysis system and programming tools. Knowledge and skills developed will be generic and applicable to a range of modern statistical software tools.",
+    "conditions": "Prerequisite: MATH1041 or ECON1203 or PSY2001 or MATH1231 or MATH1241 or MATH1251 or DPST1014 or equivalent ",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH2901",
+    "name": "Higher Theory of Statistics",
+    "overview": "As for MATH2801 but in greater depth:This course provides an introduction to the theoretical underpinning of statistics; it covers fundamental results from probability and distribution theory and shows how to apply the theory to the analysis of data.  Topics include:  Random variables, univariate and bivariate distributions. Transformations of random variables.  Convergence of random variables, the sampling distribution and the Central Limit Theorem.  Estimation and inference including moment and likelihood estimation, interval estimation, and hypothesis testing.",
+    "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014 ",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH2931",
+    "name": "Higher Linear Models",
+    "overview": "This course covers multiple linear regression models and examples and graphical methods for regression analysis. It also covers multi-variate normal distribution, quadratic forms (distributions and independence), Gauss-Markov theorem, hypothesis testing, model selection, analysis of residuals, influence diagnostics and analysis of variance.",
+    "conditions": "Prerequisite: MATH2901 or MATH2801(DN) ",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "DATA3001",
+    "name": "Data Science and Decisions in Practice",
+    "overview": "This is the capstone course for the Data Science and Decisions program. The course will bring students in the three streams together to share their knowledge, expertise and training in a way that is typical of industry. Students will attend seminars by industry representatives from Data Science industries, and students will work on group projects related to real world industry problems. Typical groups will be composed of students across the three different streams of the Data Science and Decisions program. The course will expose students to Data Science as it is practiced in industry.",
+    "conditions": "Prerequisite: Enrolment in 3959 Data Science program ",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH3041",
+    "name": "Mathematical Modelling for Real World Systems",
+    "overview": "Why are no two snowfakes alike? When will the next major stock market collapse occur? Which is the greatest sporting nation on earth? Addressing real world problems involves the steps of formulating a mathematical description of the problem, solving the mathematical model, interpreting the mathematical solution and critically evaluating the model. Motivated by real world problems, the course will survey mathematical techniques for: achieving the best possible outcomes, predicting future events and dealing with uncertainties. The course will provide introductions to popular mathematical resources for algebraic manipulation, numerical simulation and presentation. As part of the course requirements, students will be expected to work in groups on mathematical modelling projects and they will be expected to prepare a group report, both written and oral, describing the project. The course aims to equip students with the modelling skills and presentation skills for dealing with real world problems.",
+    "conditions": "Prerequisite: 12 units of credit in Level 2 Maths courses. ",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH3051",
+    "name": "Applied Real and Functional Analysis",
+    "overview": "The aim of this course is to provide students in Applied Mathematics with basic knowledge of Real Analysis and Functional Analysis, particularly topics that are useful for the study of many other Applied Mathematics courses. In any area of applied research, methods should not be learnt as a black box. Understanding the theory behind the methods requires some abstract mathematics, and this forms the contents of this course.",
+    "conditions": "Prerequisite: 12UOC of second year mathematics courses, including MATH2011 or MATH2111 or MATH2069(DN). ",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH3101",
+    "name": "Computational Mathematics for Science and Engineering",
+    "overview": "Partial differential equations (PDEs) provide a natural mathematical description for many phenomena of interest in science and engineering. Such equations are often difficult or impossible to solve using purely analytical (pencil and paper) methods, especially for realistic industrial problems. This course introduces finite difference and finite element methods for elliptic and parabolic PDEs, and discusses key concepts such as stability, convergence and computational cost. Relevant techniques in numerical linear algebra are also discussed.",
+    "conditions": "Prerequisite: 12 units of credit in Level 2 Math courses including (MATH2011 or MATH2111) and (MATH2121 or MATH2221) or (both MATH2019(DN) and MATH2089) or (both MATH2069(CR) and MATH2099) ",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH3121",
+    "name": "Mathematical Methods and Partial Differential Equations",
+    "overview": "This course builds on MATH2120 Mathematical Methods for Differential Equations in that it is concerned with ways of solving the (usually partial) differential equations that arise mainly in physical, biological and engineering applications.",
+    "conditions": "Prerequisite: 12 units of credit in Level 2 Mathematics courses including (MATH2011 or MATH2111) and (MATH2121 or MATH2221) or (both MATH2019 (DN) and MATH2089) or both (MATH2069 (DN) and MATH2099) ",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH3161",
+    "name": "Optimization",
+    "overview": "Optimization problems, in which one wants to find the values of variables to maximize or minimize an objective function subject to constraints on which variables are allowed, are common throughout the physical and biological sciences, economics, finance and engineering. This course looks at the formulation of optimization problems as mathematical problems, characterizing solutions using necessary and/or sufficient optimality conditions and modern numerical methods and software for solving the problems. Both finite dimensional problems which involve a vector of variables, including linear and nonlinear programming, and infinite dimensional problems where the variables are functions, including optimal control problems, are covered.",
+    "conditions": "Prerequisite: 12 units of credit in Level 2 Mathematics courses including MATH2011 or MATH2111 or MATH2510, and MATH2501 or MATH2601, or both MATH2019(DN) and MATH2089, or both MATH2069(CR) and MATH2099. ",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH3171",
+    "name": "Linear and Discrete Optimization Modelling",
+    "overview": "Optimization is the mathematical problem of finding a decision to achieve the best possible outcome while satisfying certain restrictions. Linear programs, conic linear programs and discrete optimization problems arise in a myriad of applications: electricity markets, airlines, logistics, public transport, international shipping, mining, finance, engineering, and data science. This course will provide an introduction to the basic mathematical theory, modelling techniques, computational methods and selected applications of linear, conic and discrete optimization.",
+    "conditions": "(1) [MATH2011 or MATH2111] and [MATH2501 or MATH2601]; or (2) both MATH2069 (CR) and MATH2099 ; or (3) both [MATH2018 or MATH2019] (DN) and MATH2089 . ",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH3201",
+    "name": "Dynamical Systems and Chaos",
+    "overview": "A dynamical system is any system whose state changes as a function of time.  This course studies the regular and irregular behaviour of nonlinear dynamical systems, concentrating on ordinary differential equations (ODEs) and their solutions. Topics from the theory of ODEs include: existence and uniqueness theorems;  linear ODEs with constant and periodic coefficients and Floquet theory; linearization and stability analysis; perturbation methods; bifurcation theory; phase plane analysis for autonomous systems. The theory is illustrated with applications to physical, biological and ecological systems. In addition, a selection from the dynamical concepts: Hamiltonian dynamics, resonant oscillations, chaotic systems, Lyapunov exponents, Poincare maps, homoclinic tangles.",
+    "conditions": "Prerequisite: (MATH2501 or MATH2601 or MATH2089 or MATH2099) and (MATH2011 or MATH2111 or MATH2018 (DN) or MATH2019 (DN) or MATH2069 (CR) or MATH2121 or MATH2221) ",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH3261",
+    "name": "Fluids Oceans and Climate",
+    "overview": null,
+    "conditions": null,
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH3311",
+    "name": "Computational Mathematics for Finance",
+    "overview": "In the end, finance is concerned with making definite numerical recommendations which frequently can only be made by analysing sophisticated models using high-speed computers. This course studies the design, implementation and use of computer programs to solve practical mathematical problems of relevance to finance, insurance and risk management. A review of MATLAB, floating point numbers, rounding error and computational complexity. A selection of topics from: approximation and parameter estimation, Fourier series and the FFT, finite difference approximations, partial differential equations (heat equation), sparse linear systems, non-linear algebraic equations, trees, Monte Carlo methods and simulation, random numbers and variance reduction, numerical integration. Computing environments for mathematical finance. Practical examples and programming assignments using MATLAB.",
+    "conditions": "Prerequisite:  (MATH2121 or MATH2221 or MATH2111) and (MATH2501 or MATH2601) and (MATH2801 or MATH2901 or MATH2871) ",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH3361",
+    "name": "Stochastic Differential Equations: Theory, Applications, and Numerical Methods",
+    "overview": "Stochastic differential equation models play a prominent role in a range of application areas, including biology, chemistry, epidemiology, mechanics, microelectronics, economics, and finance. This course studies the theory and applications of stochastic differential equations, the design and implementation on computers of numerical methods for solving these practical mathematical equations. The course will start with a background knowledge of random variables, Brownian motion, Ornstein-Uhlenbeck process. Other topics studied include: stochastic integrals, the Euler-Maruyama method, Milstein's higher order method, stability and convergence.",
+    "conditions": "Prerequisite: MATH2011 or MATH2111 or MATH2018 (DN) or MATH2019(DN) or MATH2069(DN) and MATH2801 or MATH2901 or MATH2089(DN) or MATH2099(DN) ",
+    "term1": "",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH3371",
+    "name": "Numerical Linear Algebra",
+    "overview": "Algorithms from numerical linear algebra are ubiquitous in scientific and statistical software. The theoretical component of the course aims to impart an understanding of how these algorithms work as well as an appreciation of their potential limitations. Familiar pencil-and-paper methods suitable for solving small problems by hand calculation must typically be modified or replaced by different approaches when faced with large problems whose solution is feasible only with the help of a computer. To illustrate the applications of numerical linear algebra, a variety of examples from statistics, data science and applied mathematics are described. The course includes a substantial computing component providing practical experience with widely used software libraries.",
+    "conditions": "Prerequisite: MATH2501 or MATH2601 or MATH2019(DN) or MATH2099 (CR). ",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH3411",
+    "name": "Information, Codes and Ciphers",
+    "overview": "Discrete communication channels: information theory, compresssion and error control coding, cryptography.",
+    "conditions": "Prerequisites: MATH1081 or MATH1231(CR) or DPST1014 (CR) or MATH1241(CR) or MATH1251(CR) or MATH2099. ",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH3431",
+    "name": "Number Theory",
+    "overview": "The course will cover some basic notions and techniques of number theory. The focus will be on such topics as divisibility, prime numbers, the arithmetic of residues rings, additive properties of integers and their powers and Diophantine approximations. Some applications of number theory to cryptography will be discussed as well. Students taking this course will develop an appreciation of the basic problems of number theory and will learn the interplay between number-theoretic problems and other areas of mathematics.",
+    "conditions": "Prerequisites: 12 units of credit in Level II Math courses ",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH3531",
+    "name": "Topology and Differential Geometry",
+    "overview": "This major theme of this course is the study of properties of curves and surfaces that are preserved under changes: differentiable changes in differential geometry and continuous changes intopology. The differential geometry is treated as a continuation of vector calculus studied in earlier courses.",
+    "conditions": "Prerequisite: 12 units of credit in Level 2 Math courses including MATH2011 or MATH2111 or MATH2069. ",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH3560",
+    "name": "History of Mathematics",
+    "overview": "The development of mathematical ideas has often been very slow and at times tortuous, but nearly always interesting. The finished product which is presented at secondary school and in University courses often hides much of the story which led to the development of the subject. This course looks at how mathematics was used and understood in ages past, and the long and storied history of how familiar mathematical concepts grew into their present form. This course will deepen your understanding of mathematics by comparing original sources such as ancient Mesopotamia, Greece, India or China with more modern mathematics of the last 150-200 years.",
+    "conditions": "Prerequisite: 6 units of credit in Level 2 Math courses. ",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH3570",
+    "name": "Foundations of Calculus",
+    "overview": "What does it mean for a limit to exist? What does it mean for a function to be continuous or differentiable? There are functions which are continuous everywhere but differentiable nowhere! Are there functions whose integral does not exist? In this course, we look again at the essential concepts of limit, continuity, differentiability and integrability and try to place them on a sure footing. The syllabus includes material on sequences and series of real numbers and also of real valued functions. Although of general interest to those studying mathematics for its own sake, this course is of special relevance to those planning a career in secondary teaching.",
+    "conditions": "Prerequisite: 12 units of credit in Level 2 Math courses. ",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH3611",
+    "name": "Higher Analysis",
+    "overview": "Limits and continuity are the central concepts of calculus in one and several variables. These concepts can be extended to quite general situations. The simplest of these is when there is some way of measuring the distance between two objects. Some of the most important examples of these `metric spaces' occur as sets of functions, so this course looks at ways in which one might say that a sequence of functions converges. Taking these ideas one step further, we look at convergence which does not come from a generalised distance function. These are the ideas of point set topology. The course includes topics such as countability, continuity, uniform convergence and compactness, as well as an introduction to the core areas of function analysis. ",
+    "conditions": "Prerequisite: 12 units of credit of Level 2 Mathematics courses with an average mark of at least 70 or higher, including MATH2111 or MATH2011 (Credit), or permission from Head of Department. ",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH3701",
+    "name": "Higher Topology and Differential Geometry",
+    "overview": "Topology and differential geometry both deal with the study of shape: topology from a continuous and differential geometry from a differentiable viewpoint.This course begins with a study of curves in the plane and in space focussing on how they bend. We then consider surfaces, studying the first and second fundamental forms introduced by Gauss, the various measures of curvature and what they mean for the external and internal appearance and properties of surfaces. We prove the important Gauss-Bonnet theorem and use it to examine topological properties of surfaces, such as the Euler Characteristic.",
+    "conditions": "Prerequisite: 12 UOC of Level 2 Mathematics with an average mark of at least 70, including MATH2111 or MATH2011 (CR) or MATH2510 (CR) and MATH2601 or MATH2501 (CR), or permission from Head of Department. ",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH3711",
+    "name": "Higher Algebra",
+    "overview": "In Higher Algebra we examine some of the basic notions of modern algebra that arose in the late 19th and early 20th century. The most fundamental notion is that of a group, which is how mathematicians study symmetry. In this course groups are studied in detail both from an abstract point of view and also to study symmetry in geometry. The other important concept studied is that of a ring. The algebra of adding and multiplying matrices has many similarities with the algebra of numbers. The notion of rings generalises both these two examples. The course examines factorisation theory for certain rings.",
+    "conditions": "Prerequisite: 12 UOC of Level 2 Mathematics with an average mark of at least 70, including MATH2601 or MATH2501 (CR), or permission from the Head of Department. ",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH3801",
+    "name": "Probability and Stochastic Processes",
+    "overview": "Introduction to stochastic processes, that is, processes that evolve over time such as price fluctuations of a stock. The course emphasises theory and applications, and covers discrete- and continuous-time Markov chains, Poisson processes and Brownian motion.",
+    "conditions": "Prerequisite: (MATH2501 or MATH2601) and (MATH2011 or MATH2111) and (MATH2801 or MATH2901) ",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH3811",
+    "name": "Statistical Inference",
+    "overview": "Coverage of the main parametric and non-parametric and techniques used in statistics. Uniformly minimum variance estimation. Cramer-Rao inequality, Lehmann-Scheffe theorem. Monotone likelihood ratio distributions and uniformly most powerful unbiased tests. Generalised likelihood ratio tests, exact tests and large sample tests. Bayesian point estimation, interval estimation and hypothesis testing. Robustness and bootstrap resampling. Order statistics, goodness of fit, contingency tables. Statistical inference based on ranks. One sample, two sample and k-sample problems, blocked data, independence and association.",
+    "conditions": "Prerequisite: MATH2831 or MATH2931. ",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH3821",
+    "name": "Statistical Modelling and Computing",
+    "overview": "Introduction to flexible and modern approaches to statistical modelling and statistical computing.  Theory, applications and computation for linear models, generalised linear models, the Bayesian linear model, nonparametric regression using kernel smoothers and smoothing splines, nonparametric density estimation and bandwidth selection.  Applications of simulation in statistical inference including Monte Carlo simulation, bootstrap methods, and Markov chain Monte Carlo.  Statistical packages include R or Splus.",
+    "conditions": "Prerequisite: MATH2831 or MATH2931 ",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH3831",
+    "name": "Statistical Methods in Social and Market Research",
+    "overview": "In this course you will develop skills important for the design and analysis of research in the social sciences and in market research. The specific focus will be on issues related to survey sampling, and questionnaire design and analysis. By the end of this course, you will be able to identify an appropriate survey design for a particular situation, estimate the required sample sizes to achieve a given level of precision, estimate key quantities of interest (typically expressed as averages, totals or ratios), and make inferences about key quantities using their sample estimates. In addition, you will be able to design a questionnaire suitable for answering a key research question, and analyse responses to a questionnaire using a range of modern techniques.",
+    "conditions": "Prerequisite: MATH2801 or MATH2901. ",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH3841",
+    "name": "Statistical Analysis of Dependent Data",
+    "overview": "This course extends statistical modelling from independently distributed data to modelling dependence in observed data, and develops an understanding of basic distributions and models useful in practical situations. It continues with the development of statistical methods for analysis of dependent data arising in multivariate observations, time series and spatial processes, and also covers multivariate normal distribution, Hotelling's T-squared, Wishart distribution. It concludes with a study of time series models, stationary time series, ARMA and forecasting ARMA, spatial processes, sample semivariograms and Kriging.",
+    "conditions": "Prerequisite: MATH3811 or MATH3911. ",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH3851",
+    "name": "Experimental Design and Categorical Data",
+    "overview": "This course focuses on the principles of good experimental design and the statistical tools appropriate for discrete valued data. Topics include factorial designs and their analysis, response surface designs for product and process optimization, random effects models and components of variance, exploratory and graphical analysis of data using modern statistical packages, data visualization, analysis of cross-tabulated data, logistic and Poisson regression for analysis of binary and count data and log-linear models for contingency tables.",
+    "conditions": "Prerequisite: MATH2801 OR MATH2901 AND MATH2831 OR MATH2931. ",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH3856",
+    "name": "Introduction to Data and Machine Learning ",
+    "overview": "The need to analyse enormous data and find useful information has been a challenge. A wide range of statistical methods and computational tools have been developed in the past few decades to gather information from data. These are widely known as data mining, data analytics, statistical learning, deep learning, and machine learning methods. This course introduces the key methods in these areas covering theoretical background and applications. The course focuses on methods such as linear and logistic regression, neural networks, Bayesian neural networks, clustering and dimensionality reduction, trees and forests, ensemble learning, and emerging deep learning methods. ",
+    "conditions": "Prerequisite: MATH2801 or MATH2901 ",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH3871",
+    "name": "Bayesian Inference and Computation",
+    "overview": "After describing the fundamentals of Bayesian inference, this course will examine the specification of prior and posterior distributions, Bayesian decision theoretic concepts, the ideas behind Bayesian hypothesis tests, model choice and model averaging, and evaluate the  capabilities of several common model types, such as hierarchical and mixture models. An important part of Bayesian inference is the requirement to numerically evaluate complex integrals on a routine basis. Accordingly this course will also introduce the ideas behind Monte Carlo integration, importance sampling, rejection sampling, Markov chain Monte Carlo samplers such as the Gibbs sampler and the Metropolis-Hastings algorithm, and use of the WinBuGS posterior simulation software.",
+    "conditions": "Prerequisite: MATH2801 or MATH2901 ",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH3901",
+    "name": "Higher Probability and Stochastic Processes",
+    "overview": "As for MATH3801 but in greater depth:Introduction to stochastic processes, that is, processes that evolve over time such as price fluctuations of a stock.   The course emphasises theory and applications, and covers discrete- and continuous-time Markov chains, Poisson processes and Brownian motion.",
+    "conditions": "Prerequisite: MATH2901 or MATH2801(DN) and MATH2501 or MATH2601 and MATH2011 or MATH2111 ",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH3911",
+    "name": "Higher Statistical Inference",
+    "overview": "As for MATH3811 but in greater depth.",
+    "conditions": "Prerequisite: MATH2931 or MATH2831(DN). ",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH6781",
+    "name": "Biomathematics",
+    "overview": "Introduction to mathematical modelling and data analysis for biological and biomedical systems. Examples include: the formation of animal coat patterns, the spread of diseases through the community, the interaction between pathogens and the immune system of the body, the growth of tumours, nerve cell signalling, population dynamics, pharmacokinetics and bacterial growth. The emphasis in this course is on the development of the governing model equations and on computer simulations of the model equations rather than on mathematical methods for solving the model equations.",
+    "conditions": "Prerequisite: 12 units of credit in Level 2 Mathematics courses including: MATH2121 or MATH2221 or both MATH2019 and MATH2089 or both MATH2069 and MATH2099 ",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  }
+]

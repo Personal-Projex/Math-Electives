@@ -20,7 +20,7 @@ async function scrape() {
     // A helper function that uses regex to remove all non ascii characters and newlines
     // from the string passed into it
     function cleanText(string) {
-      const noAscii = string.replace(/[^\x00-\x7F]/g, "");
+      const noAscii = string.replace(/[^a-z0-9 -]/gi, '');
       return noAscii.replace(/[\r\n]/gm, '');
     }
 
