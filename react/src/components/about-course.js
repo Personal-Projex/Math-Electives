@@ -32,6 +32,7 @@ export default function AboutInfo(props) {
 
         }
     }
+
     const course = courseDeets(props.code);
     return (
         <div className="about-container-reviews">
@@ -39,7 +40,7 @@ export default function AboutInfo(props) {
                 <p>{course.code !== null ? course.code : ''}</p>
                 <p>{course.name !== null ? course.name : ''}</p>
                 <p>{course.overview !== null ? 'Overview' : ''}</p>
-                <p>{course.overview !== null ? course.overview : ''}</p>
+                <p className='overview'>{course.overview !== null ? course.overview : ''}</p>
                 {/* <p>As for MATH2801 but in greater depth: This course provides an introduction to the theoretical
                     underpinning of statistics; it covers fundamental results from probability and distribution theory and
                     shows how to apply the theory to the analysis of data. </p>
@@ -52,7 +53,7 @@ export default function AboutInfo(props) {
                         and hypothesis testing</span>
                 </p> */}
                 <p>{course.conditions !== null ? 'Conditions for Enrolment' : ''}</p>
-                <p>{course.conditions !== null ? course.conditions : ''}</p>
+                <p className='conditions'>{course.conditions !== null ? course.conditions : ''}</p>
                 <a href={`https://www.handbook.unsw.edu.au/undergraduate/courses/2023/${course.code}/?year=2023`} rel="noopener noreferrer"
                     target="_blank"><i aria-hidden="true" className="external icon"></i>{`${course.code} Handbook Page`}</a>
                 <div className="terms-run-review">

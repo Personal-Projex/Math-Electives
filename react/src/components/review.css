@@ -243,28 +243,16 @@ span.li {
     margin-bottom: 10px;
 }
 
-.about-text-reviews p:nth-child(3),
-.about-text-reviews p:nth-child(7) {
+.conditions {
     color: #000000;
-    font-size: 18px;
+    font-size: 13.5px;
+    line-height: 25px;
 }
 
-.about-text-reviews p:nth-child(5) {
+.overview {
     color: #000000;
-    font-size: 15px;
-    line-height: 35px;
-}
-
-.about-text-reviews p:nth-child(4),
-.about-text-reviews p:nth-child(6) {
-    color: #000000;
-    font-size: 13px;
-}
-
-.about-text-reviews p:nth-child(4),
-.about-text-reviews p:nth-child(8) {
-    color: #000000;
-    font-size: 14px;
+    font-size: 12px;
+    line-height: 25px;
 }
 
 .about-text-reviews a {
