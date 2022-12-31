@@ -7,13 +7,14 @@ export default function SearchReviews() {
     const [currSearch, setCurrSearch] = useState("");
     const [clicked, setClicked] = useState(false);
 
-    const dropDown = () => {
-        let select = document.getElementById("r-select");
-        let list = document.getElementById("list");
-        let selectText = document.getElementById("selectText");
-        let options = document.getElementsByClassName("options");
-        let inputfield = document.getElementById("inputfield");
+    let select = document.getElementById("select");
+    let list = document.getElementById("list");
+    let selectText = document.getElementById("selectText");
+    let options = document.getElementsByClassName("options");
+    let inputfield = document.getElementById("inputfield");
 
+
+    const dropDown = () => {
         select.onclick = function () {
             list.classList.toggle("open");
             setClicked(!clicked);
@@ -21,11 +22,15 @@ export default function SearchReviews() {
 
         for (const option of options) {
             option.onclick = function () {
-                selectText.innerHTML = this.innerHTML;
-                inputfield.placeholder = selectText.innerHTML;
+                if (this.innerHTML !== "All Categories") {
+                    selectText.innerHTML = this.innerHTML;
+                    inputfield.placeholder = selectText.innerHTML;
+                    setCurrSearch(this.innerHTML);
+                }
             }
         }
     }
+
     return (
         <>
             <p className="review-text">Reviews</p>
@@ -40,7 +45,7 @@ export default function SearchReviews() {
                         <li className="options">Lowest Rating to Highest</li>
                     </ul>
                 </div>
-                <input type="text" id="inputfield" placeholder="Search Key Words" onChange={e => setCurrSearch(e.target.value)} />
+                <input type="text" id="inputfield" placeholder="Search Key Words" onChange={e => { setCurrSearch(e.target.value); selectText.innerHTML = "All Categories" }} />
                 <a className="search-btn" href="#/" onClick={e => setCurrSearch(e.target.value)}>
                     <FontAwesomeIcon href="#/" icon={faMagnifyingGlass} size="xl"></FontAwesomeIcon>
                 </a>
