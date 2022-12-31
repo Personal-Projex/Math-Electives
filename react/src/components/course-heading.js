@@ -24,10 +24,13 @@ export default function CourseHeader() {
 
         for (const option of options) {
             option.onclick = function () {
+                selectText.innerHTML = this.innerHTML;
                 if (this.innerHTML !== "All Categories") {
-                    selectText.innerHTML = this.innerHTML;
                     inputfield.placeholder = selectText.innerHTML;
                     setCurrSearch(this.innerHTML);
+                } else {
+                    inputfield.placeholder = "Search Key Words";
+                    setCurrSearch("");
                 }
             }
         }
