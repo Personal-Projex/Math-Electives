@@ -8,9 +8,8 @@ library.add(faMagnifyingGlass, faCaretDown, faCaretUp);
 
 export default function CourseHeader() {
     const [currSearch, setCurrSearch] = useState("");
-    console.log(currSearch);
+    const [clicked, setClicked] = useState(false);
 
-    let clicked = false;
     const dropDown = () => {
         let select = document.getElementById("select");
         let list = document.getElementById("list");
@@ -19,7 +18,9 @@ export default function CourseHeader() {
         let inputfield = document.getElementById("inputfield");
 
         select.onclick = function () {
+            console.log(clicked);
             list.classList.toggle("open");
+            setClicked(!clicked);
         }
 
         for (const option of options) {
@@ -28,7 +29,6 @@ export default function CourseHeader() {
                 inputfield.placeholder = selectText.innerHTML;
             }
         }
-        clicked = true;
     }
 
 

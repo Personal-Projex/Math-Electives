@@ -35,7 +35,7 @@ export default function AboutInfo(props) {
 
     const course = courseDeets(props.code);
     return (
-        <div className="about-container-reviews">
+        <div className="about-container-reviews" key={parseInt(props.code)}>
             <div className="about-text-reviews">
                 <p>{course.code !== null ? course.code : ''}</p>
                 <p>{course.name !== null ? course.name : ''}</p>
