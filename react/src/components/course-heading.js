@@ -18,7 +18,6 @@ export default function CourseHeader() {
         let inputfield = document.getElementById("inputfield");
 
         select.onclick = function () {
-            console.log(clicked);
             list.classList.toggle("open");
             setClicked(!clicked);
         }
@@ -27,6 +26,7 @@ export default function CourseHeader() {
             option.onclick = function () {
                 selectText.innerHTML = this.innerHTML;
                 inputfield.placeholder = selectText.innerHTML;
+                setCurrSearch(this.innerHTML);
             }
         }
     }

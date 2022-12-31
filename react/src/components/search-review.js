@@ -15,7 +15,6 @@ export default function SearchReviews() {
         let inputfield = document.getElementById("inputfield");
 
         select.onclick = function () {
-            console.log(clicked);
             list.classList.toggle("open");
             setClicked(!clicked);
         }
