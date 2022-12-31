@@ -4,20 +4,19 @@ import { faMagnifyingGlass, faCaretDown, faCaretUp } from '@fortawesome/free-sol
 import './review.css';
 
 export default function SearchReviews() {
-    const [currSearch, setCurrSearch] = useState("");
-    const [clicked, setClicked] = useState(false);
-
-    let select = document.getElementById("select");
-    let list = document.getElementById("list");
-    let selectText = document.getElementById("selectText");
-    let options = document.getElementsByClassName("options");
-    let inputfield = document.getElementById("inputfield");
-
+    const [currSearchReview, setCurrSearchReview] = useState("");
+    const [clickedReview, setClickedReview] = useState(false);
 
     const dropDown = () => {
+        let select = document.getElementById("r-select");
+        let list = document.getElementById("list");
+        let selectText = document.getElementById("selectText");
+        let options = document.getElementsByClassName("options");
+        let inputfield = document.getElementById("inputfield");
+
         select.onclick = function () {
             list.classList.toggle("open");
-            setClicked(!clicked);
+            setClickedReview(!clickedReview);
         }
 
         for (const option of options) {
@@ -25,7 +24,7 @@ export default function SearchReviews() {
                 if (this.innerHTML !== "All Categories") {
                     selectText.innerHTML = this.innerHTML;
                     inputfield.placeholder = selectText.innerHTML;
-                    setCurrSearch(this.innerHTML);
+                    setCurrSearchReview(this.innerHTML);
                 }
             }
         }
@@ -37,7 +36,7 @@ export default function SearchReviews() {
             <div className="search-bar">
                 <div onClick={dropDown} className="r-select" id="r-select">
                     <p id="selectText">All categories</p>
-                    <FontAwesomeIcon href="#/" icon={clicked ? faCaretUp : faCaretDown}></FontAwesomeIcon>
+                    <FontAwesomeIcon href="#/" icon={clickedReview ? faCaretUp : faCaretDown}></FontAwesomeIcon>
                     <ul id="list">
                         <li className="options">All Categories</li>
                         <li className="options">Most Recent</li>
@@ -45,8 +44,8 @@ export default function SearchReviews() {
                         <li className="options">Lowest Rating to Highest</li>
                     </ul>
                 </div>
-                <input type="text" id="inputfield" placeholder="Search Key Words" onChange={e => { setCurrSearch(e.target.value); selectText.innerHTML = "All Categories" }} />
-                <a className="search-btn" href="#/" onClick={e => setCurrSearch(e.target.value)}>
+                <input type="text" id="inputfield" placeholder="Search Key Words" onChange={e => { setCurrSearchReview(e.target.value); document.getElementById("selectText").innerHTML = "All Categories" }} />
+                <a className="search-btn" href="#/" onClick={e => setCurrSearchReview(e.target.value)}>
                     <FontAwesomeIcon href="#/" icon={faMagnifyingGlass} size="xl"></FontAwesomeIcon>
                 </a>
             </div>

@@ -10,14 +10,13 @@ export default function CourseHeader() {
     const [currSearch, setCurrSearch] = useState("");
     const [clicked, setClicked] = useState(false);
 
-    let select = document.getElementById("select");
-    let list = document.getElementById("list");
-    let selectText = document.getElementById("selectText");
-    let options = document.getElementsByClassName("options");
-    let inputfield = document.getElementById("inputfield");
-
-
     const dropDown = () => {
+        let select = document.getElementById("select");
+        let list = document.getElementById("list");
+        let selectText = document.getElementById("selectText");
+        let options = document.getElementsByClassName("options");
+        let inputfield = document.getElementById("inputfield");
+
         select.onclick = function () {
             list.classList.toggle("open");
             setClicked(!clicked);
@@ -34,7 +33,6 @@ export default function CourseHeader() {
         }
     }
 
-
     return (
         <>
             <div className="course-heading">
@@ -44,7 +42,7 @@ export default function CourseHeader() {
                 <div className="search-bar">
                     <div onClick={dropDown} className="select" id="select">
                         <p id="selectText">All categories</p>
-                        <FontAwesomeIcon href="#/" icon={clicked ? faCaretUp : faCaretDown}></FontAwesomeIcon>
+                        <FontAwesomeIcon href="#/" icon={!clicked ? faCaretDown : faCaretUp}></FontAwesomeIcon>
                         <ul id="list" className="lists">
                             <li className="options">All Categories</li>
                             <li className="options">Applied Mathematics</li>
@@ -53,7 +51,7 @@ export default function CourseHeader() {
                             <li className="options">Actuarial Studies</li>
                         </ul>
                     </div>
-                    <input type="text" id="inputfield" placeholder="Search Key Words" onChange={e => { setCurrSearch(e.target.value); selectText.innerHTML = "All Categories" }} />
+                    <input type="text" id="inputfield" placeholder="Search Key Words" onChange={e => { setCurrSearch(e.target.value); document.getElementById("selectText").innerHTML = "All Categories" }} />
                     <a className="search-btn" href="#/" onClick={e => setCurrSearch(e.target.value)}>
                         <FontAwesomeIcon href="#/" icon={faMagnifyingGlass} size="xl"></FontAwesomeIcon>
                     </a>
