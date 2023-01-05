@@ -243,28 +243,16 @@ span.li {
     margin-bottom: 10px;
 }
 
-.about-text-reviews p:nth-child(3),
-.about-text-reviews p:nth-child(7) {
+.conditions {
     color: #000000;
-    font-size: 18px;
+    font-size: 13.5px;
+    line-height: 25px;
 }
 
-.about-text-reviews p:nth-child(5) {
+.overview {
     color: #000000;
-    font-size: 15px;
-    line-height: 35px;
-}
-
-.about-text-reviews p:nth-child(4),
-.about-text-reviews p:nth-child(6) {
-    color: #000000;
-    font-size: 13px;
-}
-
-.about-text-reviews p:nth-child(4),
-.about-text-reviews p:nth-child(8) {
-    color: #000000;
-    font-size: 14px;
+    font-size: 12px;
+    line-height: 25px;
 }
 
 .about-text-reviews a {
@@ -330,7 +318,7 @@ span.li {
 
 .r-select ul {
     position: absolute;
-    top: 78%;
+    top: 100%;
     left: 0%;
     box-shadow: 2px 20px 30px rgba(0, 0, 0, 0.3);
     list-style-type: none;
@@ -533,7 +521,6 @@ span.li {
     background: #2f3640;
     color: #f5f6fa;
     max-height: 0;
-    ;
     width: 100%;
     opacity: 0;
     transition: all 0.4s;

@@ -2,6 +2,7 @@ import puppeteer from 'puppeteer';
 import data from './data/courses.json' assert { type: "json" };
 import courseData from './data/courseInfo.json' assert {type: "json"};
 import fs from 'fs';
+import { isGeneratorFunction } from 'util/types';
 
 const courseInfo = courseData;
 
@@ -42,10 +43,17 @@ async function scrapeCourse(course) {
     if (el2 == undefined) {
         [el2] = await page.$x('//*[@id="Overview"]/div[2]/div/div');
     }
+
+    if (el2 == undefined) {
+        [el2] = await page.$x('//*[@id="Overview"]/div[2]/div[1]/div[2]/text()');
+    }
     const text2 = await el2.getProperty('textContent');
     const overview = await text2.jsonValue();
 
     const [el3] = await page.$x('//*[@id="ConditionsforEnrolment"]/div[2]/div');
+    if (el3 == undefined) {
+        [el3] = await page.$x('//*[@id="ConditionsforEnrolment"]/div[2]/div/text()');
+    }
     let conditions = null;
     if (el3 !== undefined) {
         const text3 = await el3.getProperty('textContent');
@@ -66,7 +74,6 @@ async function scrapeCourse(course) {
     console.log(courseObj);
     fs.writeFileSync('data/courseInfo.json', JSON.stringify(courseInfo, null, 2));
     await browser.close();
-
 }
 
 // loops through all course names and gathers course data in data/courseInfo.json
@@ -75,6 +82,6 @@ for (const course of data) {
 }
 
 // Use the below for checking a single course
-// scrapeCourse('MATH1131');
+// scrapeCourse({ "code": "MATH3261" });
 
 

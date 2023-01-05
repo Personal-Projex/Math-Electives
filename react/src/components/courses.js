@@ -11,7 +11,7 @@ export default function Courses(props) {
         )
     }
 
-    const courses = data.filter((course) => course.code.toLowerCase().includes(props.search) || course.name.toLowerCase().includes(props.search) || course.term1.toLowerCase().includes(props.search) || course.term2.toLowerCase().includes(props.search) || course.term3.toLowerCase().includes(props.search)).map((course, pos) => {
+    const courses = data.filter((course) => course.code.toLowerCase().includes(props.search.toLowerCase()) || course.name.toLowerCase().includes(props.search.toLowerCase()) || course.term1.toLowerCase().includes(props.search.toLowerCase()) || course.term2.toLowerCase().includes(props.search.toLowerCase()) || course.term3.toLowerCase().includes(props.search.toLowerCase())).map((course, pos) => {
         return (
             <div className="course-box" key={pos}>
                 <Link to={"/review/" + course.code} className='link'>

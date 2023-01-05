@@ -8,9 +8,8 @@ library.add(faMagnifyingGlass, faCaretDown, faCaretUp);
 
 export default function CourseHeader() {
     const [currSearch, setCurrSearch] = useState("");
-    console.log(currSearch);
+    const [clicked, setClicked] = useState(false);
 
-    let clicked = false;
     const dropDown = () => {
         let select = document.getElementById("select");
         let list = document.getElementById("list");
@@ -20,17 +19,22 @@ export default function CourseHeader() {
 
         select.onclick = function () {
             list.classList.toggle("open");
+            setClicked(!clicked);
         }
 
         for (const option of options) {
             option.onclick = function () {
                 selectText.innerHTML = this.innerHTML;
-                inputfield.placeholder = selectText.innerHTML;
+                if (this.innerHTML !== "All Categories") {
+                    inputfield.placeholder = selectText.innerHTML;
+                    setCurrSearch(this.innerHTML);
+                } else {
+                    inputfield.placeholder = "Search Key Words";
+                    setCurrSearch("");
+                }
             }
         }
-        clicked = true;
     }
-
 
     return (
         <>
@@ -41,7 +45,7 @@ export default function CourseHeader() {
                 <div className="search-bar">
                     <div onClick={dropDown} className="select" id="select">
                         <p id="selectText">All categories</p>
-                        <FontAwesomeIcon href="#/" icon={clicked ? faCaretUp : faCaretDown}></FontAwesomeIcon>
+                        <FontAwesomeIcon href="#/" icon={!clicked ? faCaretDown : faCaretUp}></FontAwesomeIcon>
                         <ul id="list" className="lists">
                             <li className="options">All Categories</li>
                             <li className="options">Applied Mathematics</li>
@@ -50,9 +54,9 @@ export default function CourseHeader() {
                             <li className="options">Actuarial Studies</li>
                         </ul>
                     </div>
-                    <input type="text" id="inputfield" placeholder="Search Key Words" onChange={e => setCurrSearch(e.target.value)} />
-                    <a className="search-btn" href="#/" onClick={e => setCurrSearch(e.target.value)}>
-                        <FontAwesomeIcon href="#/" icon={faMagnifyingGlass} size="xl"></FontAwesomeIcon>
+                    <input type="text" id="inputfield" placeholder="Search Key Words" onChange={e => { setCurrSearch(e.target.value); document.getElementById("selectText").innerHTML = "All Categories" }} />
+                    <a className="search-btn" href="/" onClick={e => setCurrSearch(e.target.value)}>
+                        <FontAwesomeIcon icon={faMagnifyingGlass} size="xl"></FontAwesomeIcon>
                     </a>
                 </div>
             </div>
