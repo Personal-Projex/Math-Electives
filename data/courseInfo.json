@@ -380,8 +380,8 @@
   {
     "code": "MATH3261",
     "name": "Fluids Oceans and Climate",
-    "overview": null,
-    "conditions": null,
+    "overview": "The mathematical modelling and theory of problems arising in the flow of fluids, the oceans and the global climate; Cartesian tensors, kinematics, mass conservation, vorticity, Navier-Stokes equation; topics from inviscid and viscous fluid flow, gas dynamics, sound waves, water waves.The dynamics underlying the circulation of the atmosphere and oceans are detailed using key concepts such as geostrophy, the deformation radius and the conservation of potential vorticity. The role of Rossby waves, shelf waves, turbulent boundary layers and stratification is discussed. The atmosphere-ocean system as a global heat engine for climate variablity is examined using models for buoyant forcing, quasi-geostrophy and baroclinic instability.",
+    "conditions": "Prerequisite: 12 units of credit in Level 2 Math courses including (MATH2011 or MATH2111) or (MATH2121 or MATH2221) or (both MATH2019 (DN) and MATH2089) or (both MATH2069 (DN) and MATH2099) ",
     "term1": "",
     "term2": "",
     "term3": "Term 3"
@@ -583,5 +583,9 @@
     "term1": "",
     "term2": "Term 2",
     "term3": ""
+  },
+  {
+    "overview": null,
+    "conditions": null
   }
 ]

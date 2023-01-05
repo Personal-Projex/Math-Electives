@@ -55,8 +55,8 @@ export default function CourseHeader() {
                         </ul>
                     </div>
                     <input type="text" id="inputfield" placeholder="Search Key Words" onChange={e => { setCurrSearch(e.target.value); document.getElementById("selectText").innerHTML = "All Categories" }} />
-                    <a className="search-btn" href="#/" onClick={e => setCurrSearch(e.target.value)}>
-                        <FontAwesomeIcon href="#/" icon={faMagnifyingGlass} size="xl"></FontAwesomeIcon>
+                    <a className="search-btn" href="/" onClick={e => setCurrSearch(e.target.value)}>
+                        <FontAwesomeIcon icon={faMagnifyingGlass} size="xl"></FontAwesomeIcon>
                     </a>
                 </div>
             </div>

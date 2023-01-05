@@ -2,7 +2,6 @@ import React from 'react';
 import NavBar from './navbar';
 import AboutInfo from './about-course';
 import SearchReviews from './search-review';
-import ReviewBox from './review-box';
 import './review.css';
 import { useParams } from 'react-router-dom';
 
@@ -20,7 +19,6 @@ export default function ReviewPage() {
             <NavBar />
             <AboutInfo code={id} />
             <SearchReviews />
-            <ReviewBox />
         </div>
     )
 }

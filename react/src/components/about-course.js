@@ -29,7 +29,6 @@ export default function AboutInfo(props) {
             term1: null,
             term2: null,
             term3: null,
-
         }
     }
 

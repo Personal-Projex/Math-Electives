@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
+import ReviewBox from './review-box';
 import './review.css';
 
 export default function SearchReviews() {
@@ -49,6 +50,7 @@ export default function SearchReviews() {
                     <FontAwesomeIcon href="#/" icon={faMagnifyingGlass} size="xl"></FontAwesomeIcon>
                 </a>
             </div>
+            <ReviewBox search={currSearchReview} />
         </>
         // need to create a seperate component for the reviews so that we can pass the search item above and then in the review component it will sort
     )

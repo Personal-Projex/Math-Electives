@@ -3,7 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import './review.css';
 
-export default function ReviewBox() {
+export default function ReviewBox(props) {
+    // import database review data. Then sort data accordingly.
     return (
         <div className="review-box-container">
             <div className="review-box">
