@@ -1,7 +1,7 @@
 ## Math-Electives
 A website to review MATH electives at UNSW!!
 <br></br>
-![image](https://user-images.githubusercontent.com/109339363/210473858-2b89af79-fae4-4808-84ef-4f455b511471.png)
+![image](https://user-images.githubusercontent.com/109339363/210704176-e50389ce-befd-475d-8424-21ef553e91db.png)
 <br></br>
 ![image](https://user-images.githubusercontent.com/109339363/210473959-87b01fb7-a484-46d9-88d7-92453e0b3ff9.png)
 <br></br>
