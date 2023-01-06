@@ -8,8 +8,8 @@ export default function AboutInfo(props) {
 
     const handleTerms = (arr) => {
         return (
-            arr.map((term) => {
-                return (term !== "" ? <span className="term-review">{term}</span> : null)
+            arr.map((term, i) => {
+                return (term !== "" ? <span key={i} className="term">{term}</span> : null)
             })
         )
     }

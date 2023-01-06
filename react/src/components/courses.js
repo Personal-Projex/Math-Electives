@@ -5,8 +5,8 @@ import data from '../courses.json';
 export default function Courses(props) {
     const handleTerms = (arr) => {
         return (
-            arr.map((term) => {
-                return (term !== "" ? <span className="term">{term}</span> : null)
+            arr.map((term, i) => {
+                return (term !== "" ? <span key={i} className="term">{term}</span> : null)
             })
         )
     }
