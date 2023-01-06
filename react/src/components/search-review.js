@@ -46,8 +46,8 @@ export default function SearchReviews() {
                     </ul>
                 </div>
                 <input type="text" id="inputfield" placeholder="Search Key Words" onChange={e => { setCurrSearchReview(e.target.value); document.getElementById("selectText").innerHTML = "All Categories" }} />
-                <a className="search-btn" href="#/" onClick={e => setCurrSearchReview(e.target.value)}>
-                    <FontAwesomeIcon href="#/" icon={faMagnifyingGlass} size="xl"></FontAwesomeIcon>
+                <a className="search-btn" href="true" onClick={e => e.preventDefault()}>
+                    <FontAwesomeIcon icon={faMagnifyingGlass} size="xl"></FontAwesomeIcon>
                 </a>
             </div>
             <ReviewBox search={currSearchReview} />
