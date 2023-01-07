@@ -1,16 +1,15 @@
 ## Math-Electives
 A website to review MATH electives at UNSW!!
 <br></br>
-![image](https://user-images.githubusercontent.com/109339363/210704176-e50389ce-befd-475d-8424-21ef553e91db.png)
-<br></br>
-![image](https://user-images.githubusercontent.com/109339363/210473959-87b01fb7-a484-46d9-88d7-92453e0b3ff9.png)
-<br></br>
-![image](https://user-images.githubusercontent.com/109339363/210704320-4ecd5a36-9fd8-4cf8-818b-ca0bbd75b89f.png)
+
+
+https://user-images.githubusercontent.com/109339363/211132455-0b4b5525-5975-4e83-b5d2-c80b24ad1468.mp4
+
+
 <br></br>
 
 
 #### FEATURES:
-   
    • Users can request a new course to be added (create a form or smthn)
     <br />
     • Users can delete/ edit reviews (show edit status)
