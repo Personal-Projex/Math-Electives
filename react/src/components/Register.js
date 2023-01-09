@@ -26,7 +26,7 @@ export default function Register() {
 
                 <label>Password</label>
                 <div>
-                    <input type="text" placeholder='Password' className="form-text"/>
+                    <input type="password" placeholder='Password' className="form-text"/>
                 </div>
 
                 <div>
