@@ -1,11 +1,11 @@
 import React from 'react';
-import Register from './Register';
+import RegisterButton from './RegisterButton';
 
 export default function nav() {
     return (
         <div className="header">
             <a href="/" className="link">Math-Electives</a>
-            <Register/>
+            <RegisterButton/>
             <button className="link">Login</button>
         </div>
     )
