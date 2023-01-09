@@ -359,7 +359,7 @@ a {
   margin-bottom: 10px;
 }
 
-input[type="submit"] {
+[type="submit"] {
   width: 95%;
   height: 35px;
   background: #160053;
@@ -376,7 +376,7 @@ input[type="submit"] {
   transition: all 0.3s ease-out;
 }
 
-input[type="submit"]:hover {
+[type="submit"]:hover {
   background: orange;
   border-color: orange;
   color: #160053
