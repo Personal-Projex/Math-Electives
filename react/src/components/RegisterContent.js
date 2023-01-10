@@ -6,6 +6,8 @@ const RegisterContent = props => {
     const [lastName, setLastName] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [flag, setFlag] = useState(false);
+    const [retVal, setRetVal] = useState('');
 
     async function submitHandler(e) {
         e.preventDefault();
@@ -27,13 +29,23 @@ const RegisterContent = props => {
 
         const returnData = await response.json();
         console.log(returnData);
+
+
+        setFlag(flag => true);
+        if (returnData.message == null) {
+            setRetVal(retVal => 'Registered');
+        } else {
+            setRetVal(retVal => returnData.message);
+        }
     } 
 
     return (
         <>
-            <div class="alert-box">
-                <p class="alert">msg</p>
-            </div>
+            { flag &&
+                <div class="alert-box">
+                    <p class="alert">{retVal}</p>
+                </div>
+            }
         
             <div className="register-form">
             <form action="" onSubmit={submitHandler}>
