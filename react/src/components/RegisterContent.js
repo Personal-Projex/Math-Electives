@@ -27,11 +27,15 @@ const RegisterContent = props => {
 
         const returnData = await response.json();
         console.log(returnData);
-
     } 
 
     return (
-        <div className="register-form">
+        <>
+            <div class="alert-box">
+                <p class="alert">msg</p>
+            </div>
+        
+            <div className="register-form">
             <form action="" onSubmit={submitHandler}>
                 <label>First Name</label>
                 <div>
@@ -55,6 +59,8 @@ const RegisterContent = props => {
                 <button type='submit'>Submit</button>
             </form>
         </div>
+
+        </>
     )
 }
 export default RegisterContent;

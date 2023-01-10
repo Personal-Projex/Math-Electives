@@ -27,20 +27,26 @@ const LoginContent = props => {
     } 
 
     return (
-        <div className="register-form">
-            <form action="" onSubmit={submitHandler}>
-                <label>Username</label>
-                <div>
-                    <input type="text" placeholder='Username' className="form-text"  onChange={e=>setUsername(e.target.value)}/>
-                </div>
-                            
-                <label>Password</label>
-                <div>
-                    <input type="password" placeholder='Password' className="form-text"  onChange={e=>setPassword(e.target.value)}/>
-                </div>
-                <button type='submit'>Submit</button>
-            </form>
-        </div>
+        <>
+            <div class="alert-box">
+                <p class="alert">msg</p>
+            </div>
+
+            <div className="login-form">
+                <form action="" onSubmit={submitHandler}>
+                    <label>Username</label>
+                    <div>
+                        <input type="text" placeholder='Username' className="form-text"  onChange={e=>setUsername(e.target.value)}/>
+                    </div>
+                                
+                    <label>Password</label>
+                    <div>
+                        <input type="password" placeholder='Password' className="form-text"  onChange={e=>setPassword(e.target.value)}/>
+                    </div>
+                    <button type='submit'>Submit</button>
+                </form>
+            </div>
+        </>
     )
 }
 export default LoginContent;
