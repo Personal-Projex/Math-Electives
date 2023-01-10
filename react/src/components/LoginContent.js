@@ -4,6 +4,8 @@ const LoginContent = props => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [flag, setFlag] = useState(false);
+    const [retVal, setRetVal] = useState('');
 
     async function submitHandler(e) {
         e.preventDefault();
@@ -24,13 +26,26 @@ const LoginContent = props => {
         const returnData = await response.json();
         console.log(returnData);
 
+        setFlag(flag => true);
+        if (returnData.message == null) {
+            setRetVal(retVal => 'Logged in');
+        } else {
+            setRetVal(retVal => returnData.message);
+        }
+        
+        
+
+
     } 
 
     return (
         <>
-            <div class="alert-box">
-                <p class="alert">msg</p>
-            </div>
+
+            { flag &&
+                <div class="alert-box">
+                    <p class="alert">{retVal}</p>
+                </div>
+            }
 
             <div className="login-form">
                 <form action="" onSubmit={submitHandler}>
