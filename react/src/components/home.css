@@ -296,7 +296,7 @@ a {
 .box {
   position: relative;
   width: 50%;
-  min-height: 350px;
+  min-height: 370px;
   background-color: #fff;
   border: 1px solid #999;
   border-radius: 4px;
@@ -320,18 +320,38 @@ a {
 
 .register-form {
   position: absolute;
-  width: 100px;
-  height: auto;
+  top: 17%;
+  left: 50%;
+  transform: translateX(-50%);;
+  color: #160053;
   text-align: left;
 }
 
 .register-form>form {
-  width: 200px;
+  width: 306px;
   margin: 0 auto;
   background-color: white;
   font-size: 16px;
   padding-left: 10px;
 }
+
+.login-form {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);;
+  color: #160053;
+  text-align: center;
+}
+
+.login-form>form {
+  width: 306px;
+  margin: 0 auto;
+  background-color: white;
+  font-size: 18px;
+  padding-left: 10px;
+}
+
 
 .register-button {
   background: none;
@@ -351,7 +371,7 @@ a {
 }
 
 .form-text {
-  width: 180px;
+  width: 280px;
   height: 30px;
   border: 0px;
   outline: none;
@@ -381,3 +401,25 @@ a {
   border-color: orange;
   color: #160053
 }
+
+.alert-box {
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 153px;
+  max-width: 90%;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  text-transform: capitalize;
+  background: orange;
+  border-top: 7px solid #160053;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: #160053;
+  font-family: 'roborto', sans-serif;
+  text-align: center;
+  transition: 1s;
+}
+
