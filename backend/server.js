@@ -37,13 +37,27 @@ app.post('/register', async (req, res) => {
     });
 
     try {
-        const newUser = await user.save();
-        res.status(200).json(newUser);
+
+        const userTaken = await User.findOne({username: req.body.username});
+        if (user.username.length > 20) {
+            res.status(400).json({message: "Username too long"});
+        } else if (user.username.length < 1) {
+            res.status(400).json({message: "Username too short"});
+        } else if (user.password.length > 20) {
+            res.status(400).json({message: "Password too long"});
+        } else if (user.password.length < 1) {
+            res.status(400).json({message: "Password too short"});
+        } 
+        else if (userTaken) {
+            res.status(404).json({message: "Username taken"});
+        } else {
+            const newUser = await user.save();
+            res.status(200).json(newUser);
+        }
     } catch (err) {
-        res.status(400).json({message: err.message})
+        //res.status(400).json({message: err.message})
     }
     
-
 })
 
 
