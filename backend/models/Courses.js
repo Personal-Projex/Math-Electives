@@ -39,9 +39,12 @@ const CourseSchema = mongoose.Schema(
                 type: String
             },
             termTaken: {
-                type: Number
+                type: String
             },
             username: {
+                type: String
+            },
+            reviewDate: {
                 type: String
             },
             reviewEnjoyment: {

@@ -4,11 +4,14 @@ import User from './models/User.js';
 import cors from 'cors';
 import Course from './models/Courses.js';
 
+import dotenv from 'dotenv';
+dotenv.config();
+
 const app = express();
 const port = 8000;
 
 async function main() {
-    await mongoose.connect("mongodb+srv://Math-Electives:MATH1141@cluster0.9afqhh4.mongodb.net/?retryWrites=true&w=majority");
+    await mongoose.connect(`mongodb+srv://${process.env.DATABASE_USERNAME}:${process.env.DATABASE_PASSWORD}@cluster0.9afqhh4.mongodb.net/?retryWrites=true&w=majority`);
 }
 
 main().catch((err) => {
@@ -97,6 +100,7 @@ app.post('/addReview', async (req, res) => {
             reviewText: req.body.reviewText,
             termTaken: req.body.termTaken,
             username: req.body.username,
+            reviewDate: req.body.reviewDate,
             reviewEnjoyment: req.body.reviewEnjoyment,
             reviewUsefulness: req.body.reviewUsefulness,
             reviewManageability: req.body.reviewManageability,
@@ -119,8 +123,10 @@ app.get('/getReviews', async (req, res) => {
         const courseCode = req.query.courseCode;
 
         const course = await Course.findOne({ 'courseObj.courseCode': courseCode });
-
-        res.status(200).json(course.reviews);
+        if (!course) {
+            res.status(404).json({ message: "Course not found" });
+        }
+        res.status(200).send(course.reviews);
     } catch (err) {
         res.status(400).json({ "message": err.message });
     }
