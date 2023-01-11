@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import User from './models/User.js';
 import cors from 'cors';
 import Review from './models/Review.js';
+import Course from './models/Courses.js';
 
 const app = express();
 const port = 8000;
@@ -107,6 +108,31 @@ app.post('/addReview', async (req, res) => {
         res.status(200).json(newReview);
     } catch (err) {
         res.status(400).json({ "message": err.message });
+    }
+})
+
+app.post('/addCourseData', async (req, res) => {
+    const courses = req.body;
+    for (const course of courses) {
+        const courseDeets = new Course({
+            courseObj: {
+                courseCode: course.code,
+                courseName: course.name,
+                courseOverview: course.overview,
+                courseConditions: course.conditions,
+                term1: course.term1,
+                term2: course.term2,
+                term3: course.term3
+            },
+            overallRating: 0,
+            reviews: []
+        })
+        try {
+            const newCourse = await courseDeets.save();
+            console.log(newCourse);
+        } catch (err) {
+            res.status(400).json({ "message": err.message });
+        }
     }
 })
 
