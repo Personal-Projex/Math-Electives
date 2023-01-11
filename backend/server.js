@@ -91,6 +91,7 @@ app.post('/login', async (req, res) => {
 
 app.post('/addReview', async (req, res) => {
     try {
+        const courseCode = req.body.courseCode;
         const review = {
             reviewTitle: req.body.reviewTitle,
             reviewText: req.body.reviewText,
@@ -102,12 +103,24 @@ app.post('/addReview', async (req, res) => {
             reviewOverall: (5 * (req.body.reviewManageability + req.body.reviewUsefulness + req.body.reviewEnjoyment) / 3)
         }
 
-        await Course.findOneAndUpdate({ 'courseObj.courseCode': req.body.courseCode }, {
+        await Course.findOneAndUpdate({ 'courseObj.courseCode': courseCode }, {
             $push: {
                 reviews: review
             }
         })
         res.sendStatus(200);
+    } catch (err) {
+        res.status(400).json({ "message": err.message });
+    }
+})
+
+app.get('/getReviews', async (req, res) => {
+    try {
+        const courseCode = req.query.courseCode;
+
+        const course = await Course.findOne({ 'courseObj.courseCode': courseCode });
+
+        res.status(200).json(course.reviews);
     } catch (err) {
         res.status(400).json({ "message": err.message });
     }
