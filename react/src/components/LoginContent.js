@@ -32,9 +32,6 @@ const LoginContent = props => {
         } else {
             setRetVal(retVal => returnData.message);
         }
-        
-        
-
 
     } 
 
