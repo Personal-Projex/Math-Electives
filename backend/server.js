@@ -2,7 +2,6 @@ import express from 'express';
 import mongoose from 'mongoose';
 import User from './models/User.js';
 import cors from 'cors';
-import Review from './models/Review.js';
 import Course from './models/Courses.js';
 
 const app = express();
@@ -91,21 +90,24 @@ app.post('/login', async (req, res) => {
 })
 
 app.post('/addReview', async (req, res) => {
-    const review = new Review({
-        courseCode: req.body.courseCode,
-        reviewTitle: req.body.reviewTitle,
-        reviewText: req.body.reviewText,
-        termTaken: req.body.termTaken,
-        username: req.body.username,
-        reviewEnjoyment: req.body.reviewEnjoyment,
-        reviewUsefulness: req.body.reviewUsefulness,
-        reviewManageability: req.body.reviewManageability,
-        reviewOverall: (5 * (req.body.reviewManageability + req.body.reviewUsefulness + req.body.reviewEnjoyment) / 3)
-    })
-
     try {
-        const newReview = await review.save();
-        res.status(200).json(newReview);
+        const review = {
+            reviewTitle: req.body.reviewTitle,
+            reviewText: req.body.reviewText,
+            termTaken: req.body.termTaken,
+            username: req.body.username,
+            reviewEnjoyment: req.body.reviewEnjoyment,
+            reviewUsefulness: req.body.reviewUsefulness,
+            reviewManageability: req.body.reviewManageability,
+            reviewOverall: (5 * (req.body.reviewManageability + req.body.reviewUsefulness + req.body.reviewEnjoyment) / 3)
+        }
+
+        await Course.findOneAndUpdate({ 'courseObj.courseCode': req.body.courseCode }, {
+            $push: {
+                reviews: review
+            }
+        })
+        res.sendStatus(200);
     } catch (err) {
         res.status(400).json({ "message": err.message });
     }

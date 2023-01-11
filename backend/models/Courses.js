@@ -31,7 +31,32 @@ const CourseSchema = mongoose.Schema(
             type: Number,
             required: true
         },
-        reviews: []
+        reviews: [{
+            reviewTitle: {
+                type: String
+            },
+            reviewText: {
+                type: String
+            },
+            termTaken: {
+                type: Number
+            },
+            username: {
+                type: String
+            },
+            reviewEnjoyment: {
+                type: Number
+            },
+            reviewUsefulness: {
+                type: Number
+            },
+            reviewManageability: {
+                type: Number
+            },
+            reviewOverall: {
+                type: Number
+            },
+        }]
     }
 );
 
