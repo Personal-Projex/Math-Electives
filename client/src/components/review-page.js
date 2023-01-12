@@ -18,7 +18,7 @@ export default function ReviewPage() {
         <div className='body-reviews'>
             <NavBar />
             <AboutInfo code={id} />
-            <SearchReviews />
+            <SearchReviews code={id} />
         </div>
     )
 }
