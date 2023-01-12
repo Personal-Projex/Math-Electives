@@ -19,10 +19,8 @@ export default function Courses(props) {
                     method: 'GET',
                     redirect: 'follow'
                 });
-                console.log("search = " + search + " that");
-                const reviews = await result.json();
-                // reviews.map((course) => { console.log(course.courseObj) });
-                const courses = reviews.filter((course) => [course.courseObj.courseCode.toLowerCase(), course.courseObj.courseName.toLowerCase(), course.courseObj.term1.toLowerCase(), course.courseObj.term2.toLowerCase(), course.courseObj.term3.toLowerCase()].find((info) => info.includes(search.toLowerCase()))).map((course, pos) => {
+                const coursesArr = await result.json();
+                const courses = coursesArr.filter((course) => [course.courseObj.courseCode.toLowerCase(), course.courseObj.courseName.toLowerCase(), course.courseObj.term1.toLowerCase(), course.courseObj.term2.toLowerCase(), course.courseObj.term3.toLowerCase()].find((info) => info.includes(search.toLowerCase()))).map((course, pos) => {
                     course = course.courseObj;
                     return (
                         <div className="course-box" key={pos}>
@@ -60,7 +58,6 @@ export default function Courses(props) {
         fetchCourses(props.search);
     }, [props.search])
 
-    console.log(display);
     return (
         <div className="course-box-container">
             {display}
