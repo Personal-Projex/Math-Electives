@@ -157,6 +157,18 @@ app.post('/addCourseData', async (req, res) => {
     }
 })
 
+app.get('/getCourses', async (req, res) => {
+    try {
+        const courses = await Course.find();
+        if (!courses) {
+            res.status(404).json({ message: "Courses not found" });
+        }
+        res.status(200).json(courses);
+    } catch (err) {
+        res.status(400).json({ "message": err.message });
+    }
+})
+
 
 
 app.listen(port, () => {
