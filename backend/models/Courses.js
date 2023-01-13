@@ -27,9 +27,23 @@ const CourseSchema = mongoose.Schema(
                 type: String
             }
         },
-        overallRating: {
-            type: Number,
-            required: true
+        ratings: {
+            overall: {
+                type: Number,
+                required: true
+            },
+            enjoyment: {
+                type: Number,
+                required: true
+            },
+            usefulness: {
+                type: Number,
+                required: true
+            },
+            manageability: {
+                type: Number,
+                required: true
+            },
         },
         reviews: [{
             reviewTitle: {
