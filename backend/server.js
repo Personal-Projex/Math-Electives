@@ -182,6 +182,18 @@ app.get('/getCourses', async (req, res) => {
     }
 })
 
+app.get('/getCourseInfo', async (req, res) => {
+    try {
+        const courseCode = req.query.courseCode;
+        const course = await Course.findOne({ 'courseObj.courseCode': courseCode });
+        if (!course) {
+            res.status(404).json({ message: "Course not found" });
+        }
+        res.status(200).json(course);
+    } catch (err) {
+        res.status(400).json({ "message": err.message });
+    }
+})
 
 
 app.listen(port, () => {
