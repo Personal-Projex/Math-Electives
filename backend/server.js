@@ -95,22 +95,29 @@ app.post('/login', async (req, res) => {
 app.post('/addReview', async (req, res) => {
     try {
         const courseCode = req.body.courseCode;
+        let overallData = (5 * (req.body.reviewManageability + req.body.reviewUsefulness + req.body.reviewEnjoyment) / 3);
         const review = {
             reviewTitle: req.body.reviewTitle,
             reviewText: req.body.reviewText,
             termTaken: req.body.termTaken,
             username: req.body.username,
-            reviewDate: req.body.reviewDate,
+            reviewDate: (new Date()).toLocaleDateString('en-AU'),
             reviewEnjoyment: req.body.reviewEnjoyment,
             reviewUsefulness: req.body.reviewUsefulness,
             reviewManageability: req.body.reviewManageability,
-            reviewOverall: (5 * (req.body.reviewManageability + req.body.reviewUsefulness + req.body.reviewEnjoyment) / 3)
+            reviewOverall: overallData
         }
-
+        const courseObj = await Course.findOne({ 'courseObj.courseCode': courseCode });
+        let reviews = courseObj.reviews;
+        let ratings = courseObj.ratings;
         await Course.findOneAndUpdate({ 'courseObj.courseCode': courseCode }, {
             $push: {
                 reviews: review
-            }
+            },
+            'ratings.overall': ((ratings.overall * reviews.length) + overallData) / (reviews.length + 1),
+            'ratings.enjoyment': ((ratings.enjoyment * reviews.length) + review.reviewEnjoyment) / (reviews.length + 1),
+            'ratings.usefulness': ((ratings.usefulness * reviews.length) + review.reviewUsefulness) / (reviews.length + 1),
+            'ratings.manageability': ((ratings.manageability * reviews.length) + review.reviewManageability) / (reviews.length + 1)
         })
         res.sendStatus(200);
     } catch (err) {
@@ -145,7 +152,12 @@ app.post('/addCourseData', async (req, res) => {
                 term2: course.term2,
                 term3: course.term3
             },
-            overallRating: 0,
+            ratings: {
+                overall: 0,
+                enjoyment: 0,
+                usefulness: 0,
+                manageability: 0,
+            },
             reviews: []
         })
         try {
@@ -155,6 +167,7 @@ app.post('/addCourseData', async (req, res) => {
             res.status(400).json({ "message": err.message });
         }
     }
+    res.sendStatus(200);
 })
 
 app.get('/getCourses', async (req, res) => {
@@ -169,6 +182,18 @@ app.get('/getCourses', async (req, res) => {
     }
 })
 
+app.get('/getCourseInfo', async (req, res) => {
+    try {
+        const courseCode = req.query.courseCode;
+        const course = await Course.findOne({ 'courseObj.courseCode': courseCode });
+        if (!course) {
+            res.status(404).json({ message: "Course not found" });
+        }
+        res.status(200).json(course);
+    } catch (err) {
+        res.status(400).json({ "message": err.message });
+    }
+})
 
 
 app.listen(port, () => {
