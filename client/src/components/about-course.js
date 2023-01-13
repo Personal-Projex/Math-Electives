@@ -1,10 +1,28 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './review.css';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import courses from '../courseInfo.json';
 
 export default function AboutInfo(props) {
+
+    const [numReviews, setNumReviews] = useState(0);
+
+    useEffect(() => {
+        const fetchNumReviews = async (code) => {
+            try {
+                const result = await fetch("http://127.0.0.1:8000/getReviews?courseCode=" + code, {
+                    method: 'GET',
+                    redirect: 'follow'
+                });
+                const reviewArr = await result.json();
+                setNumReviews(reviewArr.length);
+            } catch (err) {
+                console.log(err);
+            }
+        }
+        fetchNumReviews(props.code)
+    }, [props.code]);
 
     const handleTerms = (arr) => {
         return (
@@ -40,17 +58,6 @@ export default function AboutInfo(props) {
                 <p>{course.name !== null ? course.name : ''}</p>
                 <p>{course.overview !== null ? 'Overview' : ''}</p>
                 <p className='overview'>{course.overview !== null ? course.overview : ''}</p>
-                {/* <p>As for MATH2801 but in greater depth: This course provides an introduction to the theoretical
-                    underpinning of statistics; it covers fundamental results from probability and distribution theory and
-                    shows how to apply the theory to the analysis of data. </p>
-                <p>Topics include:</p>
-                <p> <span className="li">Random variables, univariate and bivariate distributions </span>
-                    <span className="li">Transformations of random variables</span>
-                    <span className="li">Convergence of random variables, the sampling distribution and the Central Limit
-                        Theorem</span>
-                    <span className="li">Estimation and inference including moment and likelihood estimation, interval estimation,
-                        and hypothesis testing</span>
-                </p> */}
                 <p>{course.conditions !== null ? 'Conditions for Enrolment' : ''}</p>
                 <p className='conditions'>{course.conditions !== null ? course.conditions : ''}</p>
                 <a href={`https://www.handbook.unsw.edu.au/undergraduate/courses/2023/${course.code}/?year=2023`} rel="noopener noreferrer"
@@ -66,7 +73,7 @@ export default function AboutInfo(props) {
                         <FontAwesomeIcon className='fa-star-review four' href="#/" icon={faStar}></FontAwesomeIcon>
                         <FontAwesomeIcon className='fa-star-review five' href="#/" icon={faStar}></FontAwesomeIcon>
                     </div>
-                    <span className='num-reviews'>30 Reviews</span>
+                    <span className='num-reviews'>{numReviews} Reviews</span>
                 </div>
                 <div className='stats-container'>
                     <span className='lower-stats-text'>Category ratings</span>

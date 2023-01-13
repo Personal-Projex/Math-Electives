@@ -52,6 +52,5 @@ export default function SearchReviews(props) {
             </div>
             <ReviewBox search={currSearchReview} code={props.code} />
         </>
-        // need to create a seperate component for the reviews so that we can pass the search item above and then in the review component it will sort
     )
 }
