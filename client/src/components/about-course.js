@@ -1,22 +1,63 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './review.css';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import courses from '../courseInfo.json';
+import Stars from './generateStars';
 
 export default function AboutInfo(props) {
 
-    const [numReviews, setNumReviews] = useState(0);
+    const [display, setDisplay] = useState();
 
     useEffect(() => {
         const fetchNumReviews = async (code) => {
             try {
-                const result = await fetch("http://127.0.0.1:8000/getReviews?courseCode=" + code, {
+                const result = await fetch("http://127.0.0.1:8000/getCourseInfo?courseCode=" + code, {
                     method: 'GET',
                     redirect: 'follow'
                 });
-                const reviewArr = await result.json();
-                setNumReviews(reviewArr.length);
+                const course = await result.json();
+                const numReviews = course.reviews.length;
+                const courseInfo = course.courseObj;
+
+                const displayComp = (
+                    <div className="about-text-reviews">
+                        <p>{courseInfo.courseCode ? courseInfo.courseCode : ''}</p>
+                        <p>{courseInfo.courseName ? courseInfo.courseName : ''}</p>
+                        <p>{courseInfo.courseOverview ? 'Overview' : ''}</p>
+                        <p className='overview'>{courseInfo.courseOverview ? courseInfo.courseOverview : ''}</p>
+                        <p>{courseInfo.courseConditions ? 'Conditions for Enrolment' : ''}</p>
+                        <p className='conditions'>{courseInfo.courseConditions ? courseInfo.courseConditions : ''}</p>
+                        <a href={`https://www.handbook.unsw.edu.au/undergraduate/courses/2023/${courseInfo.code}/?year=2023`} rel="noopener noreferrer"
+                            target="_blank"><i aria-hidden="true" className="external icon"></i>{`${courseInfo.courseCode} Handbook Page`}</a>
+                        <div className="terms-run-review">
+                            {handleTerms([courseInfo.term1, courseInfo.term2, courseInfo.term3])}
+                        </div>
+                        <div className='total-review-stats'>
+                            <Stars numStars={course.ratings.overall} />
+                            <span className='num-reviews'>{numReviews} Reviews</span>
+                        </div>
+                        <div className='stats-container'>
+                            <span className='lower-stats-text'>Category ratings</span>
+                            <div className='category-stats'>
+                                <div className='stats-category'>
+                                    <span className='stats-percent'>{(course.ratings.enjoyment / 5) * 100}%</span>
+                                    <div className='stats-bar-enjoy' onLoad={document.documentElement.style.setProperty('--percentage1', `${(course.ratings.enjoyment / 5) * 100}%`)}></div>
+                                    <span className='category-text'>Enjoyment</span>
+                                </div>
+                                <div className='stats-category'>
+                                    <span className='stats-percent'>{(course.ratings.usefulness / 5) * 100}%</span>
+                                    <div className='stats-bar-useful' onLoad={document.documentElement.style.setProperty('--percentage2', `${(course.ratings.usefulness / 5) * 100}%`)}></div>
+                                    <span className='category-text'>Usefulness</span>
+                                </div>
+                                <div className='stats-category'>
+                                    <span className='stats-percent'>{(course.ratings.manageability / 5) * 100}%</span>
+                                    <div className='stats-bar-manage' onLoad={document.documentElement.style.setProperty('--percentage3', `${(course.ratings.manageability / 5) * 100}%`)}></div>
+                                    <span className='category-text'>Manageability</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )
+                setDisplay(displayComp);
+
             } catch (err) {
                 console.log(err);
             }
@@ -32,82 +73,9 @@ export default function AboutInfo(props) {
         )
     }
 
-    function courseDeets(code) {
-        for (const course of courses) {
-            if (course.code === code) {
-                return course;
-            }
-        }
-        // if could not find the course then should create 404 page here:
-        return {
-            code: null,
-            name: null,
-            overview: null,
-            conditions: null,
-            term1: null,
-            term2: null,
-            term3: null,
-        }
-    }
-
-    const course = courseDeets(props.code);
     return (
-        <div className="about-container-reviews" key={parseInt(props.code)}>
-            <div className="about-text-reviews">
-                <p>{course.code !== null ? course.code : ''}</p>
-                <p>{course.name !== null ? course.name : ''}</p>
-                <p>{course.overview !== null ? 'Overview' : ''}</p>
-                <p className='overview'>{course.overview !== null ? course.overview : ''}</p>
-                <p>{course.conditions !== null ? 'Conditions for Enrolment' : ''}</p>
-                <p className='conditions'>{course.conditions !== null ? course.conditions : ''}</p>
-                <a href={`https://www.handbook.unsw.edu.au/undergraduate/courses/2023/${course.code}/?year=2023`} rel="noopener noreferrer"
-                    target="_blank"><i aria-hidden="true" className="external icon"></i>{`${course.code} Handbook Page`}</a>
-                <div className="terms-run-review">
-                    {handleTerms([course.term1, course.term2, course.term3])}
-                </div>
-                <div className='total-review-stats'>
-                    <div className="rating">
-                        <FontAwesomeIcon className='fa-star-review one' href="#/" icon={faStar}></FontAwesomeIcon>
-                        <FontAwesomeIcon className='fa-star-review two' href="#/" icon={faStar}></FontAwesomeIcon>
-                        <FontAwesomeIcon className='fa-star-review three' href="#/" icon={faStar}></FontAwesomeIcon>
-                        <FontAwesomeIcon className='fa-star-review four' href="#/" icon={faStar}></FontAwesomeIcon>
-                        <FontAwesomeIcon className='fa-star-review five' href="#/" icon={faStar}></FontAwesomeIcon>
-                    </div>
-                    <span className='num-reviews'>{numReviews} Reviews</span>
-                </div>
-                <div className='stats-container'>
-                    <span className='lower-stats-text'>Category ratings</span>
-                    <div className='category-stats'>
-                        <div className='stats-category'>
-                            <span className='stats-percent'>30%</span>
-                            <div className='stats-bar-enjoy' onLoad={
-                                useEffect(() => {
-                                    document.documentElement.style.setProperty('--percentage1', '30%')
-                                }, [])
-                            }></div>
-                            <span className='category-text'>Enjoyment</span>
-                        </div>
-                        <div className='stats-category'>
-                            <span className='stats-percent'>67%</span>
-                            <div className='stats-bar-useful' onLoad={
-                                useEffect(() => {
-                                    document.documentElement.style.setProperty('--percentage2', '67%')
-                                }, [])
-                            }></div>
-                            <span className='category-text'>Usefulness</span>
-                        </div>
-                        <div className='stats-category'>
-                            <span className='stats-percent'>43%</span>
-                            <div className='stats-bar-manage' onLoad={
-                                useEffect(() => {
-                                    document.documentElement.style.setProperty('--percentage3', '43%')
-                                }, [])
-                            }></div>
-                            <span className='category-text'>Manageability</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div className="about-container-reviews">
+            {display}
         </div >
     )
 }

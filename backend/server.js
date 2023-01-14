@@ -93,9 +93,13 @@ app.post('/login', async (req, res) => {
 })
 
 app.post('/addReview', async (req, res) => {
+    const roundHalf = (num) => {
+        return Math.floor(Math.ceil(num * 2) / 2)
+    }
+
     try {
         const courseCode = req.body.courseCode;
-        let overallData = (5 * (req.body.reviewManageability + req.body.reviewUsefulness + req.body.reviewEnjoyment) / 3);
+        let overallData = roundHalf(((req.body.reviewManageability + req.body.reviewUsefulness + req.body.reviewEnjoyment) / 3));
         const review = {
             reviewTitle: req.body.reviewTitle,
             reviewText: req.body.reviewText,
@@ -114,10 +118,10 @@ app.post('/addReview', async (req, res) => {
             $push: {
                 reviews: review
             },
-            'ratings.overall': ((ratings.overall * reviews.length) + overallData) / (reviews.length + 1),
-            'ratings.enjoyment': ((ratings.enjoyment * reviews.length) + review.reviewEnjoyment) / (reviews.length + 1),
-            'ratings.usefulness': ((ratings.usefulness * reviews.length) + review.reviewUsefulness) / (reviews.length + 1),
-            'ratings.manageability': ((ratings.manageability * reviews.length) + review.reviewManageability) / (reviews.length + 1)
+            'ratings.overall': roundHalf(((ratings.overall * reviews.length) + overallData) / (reviews.length + 1)),
+            'ratings.enjoyment': roundHalf(((ratings.enjoyment * reviews.length) + review.reviewEnjoyment) / (reviews.length + 1)),
+            'ratings.usefulness': roundHalf(((ratings.usefulness * reviews.length) + review.reviewUsefulness) / (reviews.length + 1)),
+            'ratings.manageability': roundHalf(((ratings.manageability * reviews.length) + review.reviewManageability) / (reviews.length + 1))
         })
         res.sendStatus(200);
     } catch (err) {

@@ -15,10 +15,10 @@ export default function RegisterButton() {
             <button className="register-button" onClick={togglePopup}>Register</button>
 
             {isOpen && <Register
-                handleClose = {togglePopup}
+                handleClose={togglePopup}
 
                 content={<div>
-                    <RegisterContent/>
+                    <RegisterContent />
                 </div>}
             />}
 

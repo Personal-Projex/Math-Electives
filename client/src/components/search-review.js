@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import ReviewBox from './review-box';
+import AddReview from './add-review';
 import './review.css';
 
 export default function SearchReviews(props) {
@@ -49,6 +50,7 @@ export default function SearchReviews(props) {
                 <a className="search-btn" href="true" onClick={e => e.preventDefault()}>
                     <FontAwesomeIcon icon={faMagnifyingGlass} size="xl"></FontAwesomeIcon>
                 </a>
+                <AddReview code={props.code} />
             </div>
             <ReviewBox search={currSearchReview} code={props.code} />
         </>
