@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import ReviewBox from './review-box';
+import AddReview from './add-review';
 import './review.css';
 
-export default function SearchReviews() {
+export default function SearchReviews(props) {
     const [currSearchReview, setCurrSearchReview] = useState("");
     const [clickedReview, setClickedReview] = useState(false);
 
@@ -49,9 +50,9 @@ export default function SearchReviews() {
                 <a className="search-btn" href="true" onClick={e => e.preventDefault()}>
                     <FontAwesomeIcon icon={faMagnifyingGlass} size="xl"></FontAwesomeIcon>
                 </a>
+                <AddReview code={props.code} />
             </div>
-            <ReviewBox search={currSearchReview} />
+            <ReviewBox search={currSearchReview} code={props.code} />
         </>
-        // need to create a seperate component for the reviews so that we can pass the search item above and then in the review component it will sort
     )
 }
