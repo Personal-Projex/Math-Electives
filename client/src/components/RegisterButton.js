@@ -18,10 +18,9 @@ export default function RegisterButton() {
                 handleClose={togglePopup}
 
                 content={<div>
-                    <RegisterContent />
+                    <RegisterContent/>
                 </div>}
             />}
-
         </div>
     )
 }

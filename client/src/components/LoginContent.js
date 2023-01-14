@@ -36,7 +36,7 @@ const LoginContent = props => {
         // Make the alert disappear after 3 seconds
         setTimeout(() => {
             setAlert(alert => false);
-        }, 3000);
+        }, 1500);
     } 
 
     return (
