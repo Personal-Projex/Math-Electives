@@ -1,0 +1,457 @@
+[
+  {
+    "code": "DATA1001",
+    "name": "Introduction to Data Science",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH1011",
+    "name": "Fundamentals of Mathematics B",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH1031",
+    "name": "Mathematics for Life Sciences",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH1041",
+    "name": "Statistics for Life and Social Sciences",
+    "term1": "Term 1",
+    "term2": "Term 2",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH1081",
+    "name": "Discrete Mathematics",
+    "term1": "Term 1",
+    "term2": "Term 2",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH1131",
+    "name": "Mathematics 1A",
+    "term1": "Term 1",
+    "term2": "Term 2",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH1141",
+    "name": "Higher Mathematics 1A",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH1151",
+    "name": "Mathematics for Actuarial Studies and Finance 1A",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH1231",
+    "name": "Mathematics 1B",
+    "term1": "Term 1",
+    "term2": "Term 2",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH1241",
+    "name": "Higher Mathematics 1B",
+    "term1": "Term 1",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH1251",
+    "name": "Mathematics for Actuarial Studies and Finance 1B",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH2011",
+    "name": "Several Variable Calculus",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH2018",
+    "name": "Engineering Mathematics 2D",
+    "term1": "Term 1",
+    "term2": "Term 2",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH2019",
+    "name": "Engineering Mathematics 2E",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH2069",
+    "name": "Mathematics 2A",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH2089",
+    "name": "Numerical Methods  Statistics",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH2099",
+    "name": "Mathematics 2B",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH2111",
+    "name": "Higher Several Variable Calculus",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH2121",
+    "name": "Differential Equations",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH2221",
+    "name": "Higher Differential Equations",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH2241",
+    "name": "Intro to Atmosphere  Ocean Dynamics",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH2301",
+    "name": "Mathematical Computing",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH2400",
+    "name": "Finite Mathematics",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH2501",
+    "name": "Linear Algebra",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH2521",
+    "name": "Complex Analysis",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH2601",
+    "name": "Higher Linear Algebra",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH2621",
+    "name": "Higher Complex Analysis",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH2701",
+    "name": "Algebra and Analysis",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH2801",
+    "name": "Theory of Statistics",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH2831",
+    "name": "Linear Models",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH2859",
+    "name": "Probability Statistics and Information",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH2871",
+    "name": "Data Management for Statistical Analysis",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH2901",
+    "name": "Higher Theory of Statistics",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH2931",
+    "name": "Higher Linear Models",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "DATA3001",
+    "name": "Data Science and Decisions",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH3041",
+    "name": "Mathematical Modelling",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH3051",
+    "name": "Applied Real and Functional Analysis",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH3101",
+    "name": "Computational Mathematics for Science and Engineering",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH3121",
+    "name": "Mathematical Methods",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH3161",
+    "name": "Optimization",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH3171",
+    "name": "Linear and Discrete Optimization Modelling",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH3201",
+    "name": "Dynamical Systems and Chaos",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH3261",
+    "name": "Fluids Oceans and Climate",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH3311",
+    "name": "Mathematical Computing for Finance",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH3361",
+    "name": "Stochastic Differential Equations - TBA",
+    "term1": "",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH3371",
+    "name": "Numerical Linear Algebra",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH3411",
+    "name": "Information Codes and Ciphers",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH3431",
+    "name": "Number Theory",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH3531",
+    "name": "Topology and Differential Geometry",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH3560",
+    "name": "History of Mathematics",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH3570",
+    "name": "Foundations of Calculus",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH3611",
+    "name": "Higher Analysis",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH3701",
+    "name": "Higher Topology and Differential Geometry",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH3711",
+    "name": "Higher Algebra",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH3801",
+    "name": "Probability and Stochastic Processes",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH3811",
+    "name": "Statistical Inference",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH3821",
+    "name": "Statistical Modelling and Computing",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH3831",
+    "name": "Statistical Methods in Social and Market Research",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH3841",
+    "name": "Statistical Analysis of Dependent Data",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  },
+  {
+    "code": "MATH3851",
+    "name": "Experimental Design and Categorical Data",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH3856",
+    "name": "Introduction to Data and Machine Learning",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH3871",
+    "name": "Bayesian Inference and Computation",
+    "term1": "",
+    "term2": "",
+    "term3": "Term 3"
+  },
+  {
+    "code": "MATH3901",
+    "name": "Higher Probability and Stochastic Processes",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH3911",
+    "name": "Higher Statistical Inference",
+    "term1": "Term 1",
+    "term2": "",
+    "term3": ""
+  },
+  {
+    "code": "MATH6781",
+    "name": "Biomathematics",
+    "term1": "",
+    "term2": "Term 2",
+    "term3": ""
+  }
+]
