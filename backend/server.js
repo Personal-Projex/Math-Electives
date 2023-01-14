@@ -52,8 +52,16 @@ app.post('/register', async (req, res) => {
     });
 
     try {
+        const userTaken = await User.findOne({username: req.body.username});
 
-        const userTaken = await User.findOne({ username: req.body.username });
+        if (user.firstName.length < 1) {
+            res.status(400).json({message: "Please fill out your first name"});
+        }
+
+        if (user.lastName.length < 1) {
+            res.status(400).json({message: "Please fill out your last name"});
+        }
+
         if (user.username.length > 20) {
             res.status(400).json({ message: "Username too long" });
         } else if (user.username.length < 1) {

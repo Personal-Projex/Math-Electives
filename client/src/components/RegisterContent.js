@@ -6,7 +6,7 @@ const RegisterContent = props => {
     const [lastName, setLastName] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [flag, setFlag] = useState(false);
+    const [alert, setAlert] = useState(false);
     const [retVal, setRetVal] = useState('');
 
     async function submitHandler(e) {
@@ -31,46 +31,54 @@ const RegisterContent = props => {
         console.log(returnData);
 
 
-        setFlag(flag => true);
+        setAlert(alert => true);
         if (returnData.message == null) {
             setRetVal(retVal => 'Registered');
         } else {
             setRetVal(retVal => returnData.message);
         }
-    }
+
+        // Make the alert disappear after 1.5 seconds
+        setTimeout(() => {
+            setAlert(alert => false);
+        }, 1500);
+    } 
 
     return (
         <>
-            {flag &&
-                <div class="alert-box">
-                    <p class="alert">{retVal}</p>
+            { alert &&
+                <div className="alert-box">
+                    <p className="alert">{retVal}</p>
                 </div>
             }
 
-            <div className="register-form">
-                <form action="" onSubmit={submitHandler}>
-                    <label>First Name</label>
-                    <div>
-                        <input type="text" placeholder='First Name' className="form-text" onChange={e => setFirstName(e.target.value)} />
-                    </div>
+            <div className="register-content">
+                <div className="register-container">
+                    <form action="" onSubmit={submitHandler}>
+                        <label>First Name</label>
+                        <div>
+                            <input type="text" placeholder='First Name' onChange={e=>setFirstName(e.target.value)}/>
+                        </div>
+                                    
+                        <label>Last Name</label>
+                        <div>
+                            <input type="text" placeholder='Last Name' onChange={e=>setLastName(e.target.value)}/>
+                        </div>
 
-                    <label>Last Name</label>
-                    <div>
-                        <input type="text" placeholder='Last Name' className="form-text" onChange={e => setLastName(e.target.value)} />
-                    </div>
-
-                    <label>Username</label>
-                    <div>
-                        <input type="text" placeholder='Username' className="form-text" onChange={e => setUsername(e.target.value)} />
-                    </div>
-
-                    <label>Password</label>
-                    <div>
-                        <input type="password" placeholder='Password' className="form-text" onChange={e => setPassword(e.target.value)} />
-                    </div>
-                    <button type='submit'>Submit</button>
-                </form>
+                        <label>Username</label>
+                        <div>
+                            <input type="text" placeholder='Username' onChange={e=>setUsername(e.target.value)}/>
+                        </div>
+                                    
+                        <label>Password</label>
+                        <div>
+                            <input type="text" placeholder='Password' className="password-text" onChange={e=>setPassword(e.target.value)}/>
+                        </div>
+                        <button type='submit'>Submit</button>
+                    </form> 
+                </div>
             </div>
+
 
         </>
     )
