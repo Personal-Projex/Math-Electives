@@ -6,7 +6,7 @@ const RegisterContent = props => {
     const [lastName, setLastName] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [flag, setFlag] = useState(false);
+    const [alert, setAlert] = useState(false);
     const [retVal, setRetVal] = useState('');
 
     async function submitHandler(e) {
@@ -31,17 +31,22 @@ const RegisterContent = props => {
         console.log(returnData);
 
 
-        setFlag(flag => true);
+        setAlert(alert => true);
         if (returnData.message == null) {
             setRetVal(retVal => 'Registered');
         } else {
             setRetVal(retVal => returnData.message);
         }
+        
+        // Make the alert disappear after 3 seconds
+        setTimeout(() => {
+            setAlert(alert => false);
+        }, 3000);
     } 
 
     return (
         <>
-            { flag &&
+            { alert &&
                 <div class="alert-box">
                     <p class="alert">{retVal}</p>
                 </div>
