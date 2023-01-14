@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
+import Stars from './generateStars';
+
 import './review.css';
 
 export default function ReviewBox(props) {
@@ -27,13 +27,9 @@ export default function ReviewBox(props) {
                                 </div>
                                 <div className="box-top">
                                     <div className='overall-rating'>
-                                        <span>Overall: </span>
-                                        <div className="rating">
-                                            <FontAwesomeIcon className='fa-star-review one' href="#/" icon={faStar}></FontAwesomeIcon>
-                                            <FontAwesomeIcon className='fa-star-review two' href="#/" icon={faStar}></FontAwesomeIcon>
-                                            <FontAwesomeIcon className='fa-star-review three' href="#/" icon={faStar}></FontAwesomeIcon>
-                                            <FontAwesomeIcon className='fa-star-review four' href="#/" icon={faStar}></FontAwesomeIcon>
-                                            <FontAwesomeIcon className='fa-star-review five' href="#/" icon={faStar}></FontAwesomeIcon>
+                                        <div className='overall-star-rating'>
+                                            <span className='overall-text'>Overall: </span>
+                                            <Stars numStars={review.reviewOverall} />
                                         </div>
                                         <div>Term taken: {review.termTaken}</div>
                                     </div>
@@ -45,33 +41,15 @@ export default function ReviewBox(props) {
                                 <div className='specific-ratings'>
                                     <div className='enjoy-rating'>
                                         <div>Enjoyment</div>
-                                        <div className="rating">
-                                            <FontAwesomeIcon className='fa-star-review one' href="#/" icon={faStar}></FontAwesomeIcon>
-                                            <FontAwesomeIcon className='fa-star-review two' href="#/" icon={faStar}></FontAwesomeIcon>
-                                            <FontAwesomeIcon className='fa-star-review three' href="#/" icon={faStar}></FontAwesomeIcon>
-                                            <FontAwesomeIcon className='fa-star-review four' href="#/" icon={faStar}></FontAwesomeIcon>
-                                            <FontAwesomeIcon className='fa-star-review five' href="#/" icon={faStar}></FontAwesomeIcon>
-                                        </div>
+                                        <Stars numStars={review.reviewEnjoyment} />
                                     </div>
                                     <div className='useful-rating'>
                                         <div>Usefulness</div>
-                                        <div className="rating">
-                                            <FontAwesomeIcon className='fa-star-review one' href="#/" icon={faStar}></FontAwesomeIcon>
-                                            <FontAwesomeIcon className='fa-star-review two' href="#/" icon={faStar}></FontAwesomeIcon>
-                                            <FontAwesomeIcon className='fa-star-review three' href="#/" icon={faStar}></FontAwesomeIcon>
-                                            <FontAwesomeIcon className='fa-star-review four' href="#/" icon={faStar}></FontAwesomeIcon>
-                                            <FontAwesomeIcon className='fa-star-review five' href="#/" icon={faStar}></FontAwesomeIcon>
-                                        </div>
+                                        <Stars numStars={review.reviewUsefulness} />
                                     </div>
                                     <div className='manage-rating'>
                                         <div>Manageability</div>
-                                        <div className="rating">
-                                            <FontAwesomeIcon className='fa-star-review one' href="#/" icon={faStar}></FontAwesomeIcon>
-                                            <FontAwesomeIcon className='fa-star-review two' href="#/" icon={faStar}></FontAwesomeIcon>
-                                            <FontAwesomeIcon className='fa-star-review three' href="#/" icon={faStar}></FontAwesomeIcon>
-                                            <FontAwesomeIcon className='fa-star-review four' href="#/" icon={faStar}></FontAwesomeIcon>
-                                            <FontAwesomeIcon className='fa-star-review five' href="#/" icon={faStar}></FontAwesomeIcon>
-                                        </div>
+                                        <Stars numStars={review.reviewManageability} />
                                     </div>
                                 </div>
                                 <div className="comment">

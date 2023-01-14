@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
+import Stars from './generateStars';
 
 
 export default function Courses(props) {
@@ -21,6 +22,7 @@ export default function Courses(props) {
                 });
                 const coursesArr = await result.json();
                 const courses = coursesArr.filter((course) => [course.courseObj.courseCode.toLowerCase(), course.courseObj.courseName.toLowerCase(), course.courseObj.term1.toLowerCase(), course.courseObj.term2.toLowerCase(), course.courseObj.term3.toLowerCase()].find((info) => info.includes(search.toLowerCase()))).map((course, pos) => {
+                    let ratings = course.ratings;
                     course = course.courseObj;
                     return (
                         <div className="course-box" key={pos}>
@@ -35,13 +37,7 @@ export default function Courses(props) {
                                             <span>{course.courseName}</span>
                                         </div>
                                     </div>
-                                    <div className="reviews">
-                                        <i className="fas fa-star fa-lg"></i>
-                                        <i className="fas fa-star fa-lg"></i>
-                                        <i className="fas fa-star fa-lg"></i>
-                                        <i className="fas fa-star fa-lg"></i>
-                                        <i className="far fa-star fa-lg"></i>
-                                    </div>
+                                    <Stars numStars={ratings.overall} />
                                 </div>
                                 <div className="terms-run">
                                     {handleTerms([course.term1, course.term2, course.term3])}

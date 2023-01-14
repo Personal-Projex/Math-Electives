@@ -81,7 +81,7 @@ a {
   justify-content: center;
   align-items: center;
   margin-top: 12px;
-  margin-right: 12px;
+  margin-right: 17px;
 }
 
 .select {
@@ -133,7 +133,8 @@ a {
 }
 
 .search-bar input {
-  padding: 10px 25px;
+  display: flex;
+  padding: 28px 16px;
   width: 100%;
   border: none;
   outline: none;
@@ -322,7 +323,8 @@ a {
   position: absolute;
   top: 17%;
   left: 50%;
-  transform: translateX(-50%);;
+  transform: translateX(-50%);
+  ;
   color: #160053;
   text-align: left;
 }
@@ -339,7 +341,8 @@ a {
   position: absolute;
   top: 25%;
   left: 50%;
-  transform: translateX(-50%);;
+  transform: translateX(-50%);
+  ;
   color: #160053;
   text-align: center;
 }
@@ -389,7 +392,8 @@ a {
   outline: none;
   border-bottom: 1px;
   border-radius: 3px;
-  border-color: #160053;;
+  border-color: #160053;
+  ;
   letter-spacing: -0.05em;
   cursor: pointer;
   margin-bottom: 5px;
@@ -422,4 +426,3 @@ a {
   text-align: center;
   transition: 1s;
 }
-
