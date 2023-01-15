@@ -48,7 +48,7 @@ export default function AddReviewBox(props) {
             if (added) {
                 window.location.reload(false);
             }
-        }, 1000);
+        }, 1200);
     }
 
     return (
