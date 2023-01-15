@@ -33,7 +33,7 @@ const LoginContent = props => {
             setRetVal(retVal => returnData.message);
         }
         
-        // Make the alert disappear after 3 seconds
+        // Make the alert disappear after 1.5 seconds
         setTimeout(() => {
             setAlert(alert => false);
         }, 1500);
@@ -48,19 +48,21 @@ const LoginContent = props => {
                 </div>
             }
 
-            <div className="login-form">
-                <form action="" onSubmit={submitHandler}>
-                    <label>Username</label>
-                    <div>
-                        <input type="text" placeholder='Username' className="form-text"  onChange={e=>setUsername(e.target.value)}/>
-                    </div>
-                                
-                    <label>Password</label>
-                    <div>
-                        <input type="password" placeholder='Password' className="form-text"  onChange={e=>setPassword(e.target.value)}/>
-                    </div>
-                    <button type='submit'>Submit</button>
-                </form>
+            <div className="register-content">
+                <div className="register-container">
+                    <form action="" onSubmit={submitHandler}>
+                        <label>Username</label>
+                        <div>
+                            <input type="text" placeholder='Username' className="form-text"  onChange={e=>setUsername(e.target.value)}/>
+                        </div>
+                                    
+                        <label>Password</label>
+                        <div>
+                            <input type="text" placeholder='Password' className="password-text"  onChange={e=>setPassword(e.target.value)}/>
+                        </div>
+                        <button type='submit'>Submit</button>
+                    </form>
+                </div>
             </div>
         </>
     )
