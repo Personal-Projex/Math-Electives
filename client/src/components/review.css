@@ -559,6 +559,11 @@ span.li {
     overflow: hidden;
 }
 
+.add-review-header {
+    margin-top: 28px;
+    font-size: 25px;
+}
+
 form lable {
     text-transform: uppercase;
     font-weight: 500;

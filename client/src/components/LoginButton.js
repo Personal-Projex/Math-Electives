@@ -20,7 +20,6 @@ export default function LoginButton() {
                     <LoginContent/>
                 </div>}
             />}
-
         </div>
     )
 }

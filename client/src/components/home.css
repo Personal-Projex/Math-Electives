@@ -1,3 +1,7 @@
+:root {
+  --timerBarColour: red;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -387,9 +391,50 @@ a {
   color: #160053
 }
 
+
+.timer-bar {
+  width: 500px;
+  min-width: 300px;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: auto;
+  padding: 10px;
+  text-transform: capitalize;
+  background: var(--timerBarColour);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  text-align: center;
+  transition: 1s;
+  overflow: hidden;
+}
+
+.timer-bar::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #160053;
+  padding: 0.5em;
+  animation: timer-slider 2.0s ease-in-out forwards;
+}
+
+@keyframes timer-slider {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
 .alert-box {
   position: absolute;
-  top: -1.5%;
+  top: 1%;
   left: 50%;
   transform: translateX(-50%);
   min-width: 300px;
@@ -399,7 +444,6 @@ a {
   padding: 10px;
   text-transform: capitalize;
   background: orange;
-  border-top: 7px solid #160053;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   color: #160053;
@@ -463,6 +507,7 @@ a {
 
 .register-container {
   margin-top: 10px;
+  margin-bottom: -15px;
   border-radius: 5px;
   background-color: #e7e7e7;
   padding: 20px 0;

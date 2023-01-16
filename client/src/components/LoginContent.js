@@ -29,23 +29,27 @@ const LoginContent = props => {
         setAlert(alert => true);
         if (returnData.message == null) {
             setRetVal(retVal => 'Logged in');
+            document.documentElement.style.setProperty('--timerBarColour', 'lime');
         } else {
             setRetVal(retVal => returnData.message);
+            document.documentElement.style.setProperty('--timerBarColour', 'red');
         }
         
         // Make the alert disappear after 1.5 seconds
         setTimeout(() => {
             setAlert(alert => false);
-        }, 1500);
+        }, 2000);
     } 
 
     return (
         <>
-
             { alert &&
+            <div>
+                <div className="timer-bar"></div>
                 <div class="alert-box">
                     <p class="alert">{retVal}</p>
                 </div>
+            </div>
             }
 
             <div className="register-content">
