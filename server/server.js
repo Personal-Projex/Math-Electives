@@ -52,14 +52,14 @@ app.post('/register', async (req, res) => {
     });
 
     try {
-        const userTaken = await User.findOne({username: req.body.username});
+        const userTaken = await User.findOne({ username: req.body.username });
 
         if (user.firstName.length < 1) {
-            res.status(400).json({message: "Please fill out your first name"});
+            res.status(400).json({ message: "Please fill out your first name" });
         }
 
         if (user.lastName.length < 1) {
-            res.status(400).json({message: "Please fill out your last name"});
+            res.status(400).json({ message: "Please fill out your last name" });
         }
 
         if (user.username.length > 20) {
@@ -101,13 +101,10 @@ app.post('/login', async (req, res) => {
 })
 
 app.post('/addReview', async (req, res) => {
-    const roundHalf = (num) => {
-        return Math.floor(Math.ceil(num * 2) / 2)
-    }
 
     try {
         const courseCode = req.body.courseCode;
-        let overallData = roundHalf(((req.body.reviewManageability + req.body.reviewUsefulness + req.body.reviewEnjoyment) / 3));
+        let overallData = ((req.body.reviewManageability + req.body.reviewUsefulness + req.body.reviewEnjoyment) / 3);
         const review = {
             reviewTitle: req.body.reviewTitle,
             reviewText: req.body.reviewText,
@@ -119,19 +116,33 @@ app.post('/addReview', async (req, res) => {
             reviewManageability: req.body.reviewManageability,
             reviewOverall: overallData
         }
-        const courseObj = await Course.findOne({ 'courseObj.courseCode': courseCode });
-        let reviews = courseObj.reviews;
-        let ratings = courseObj.ratings;
-        await Course.findOneAndUpdate({ 'courseObj.courseCode': courseCode }, {
-            $push: {
-                reviews: review
-            },
-            'ratings.overall': roundHalf(((ratings.overall * reviews.length) + overallData) / (reviews.length + 1)),
-            'ratings.enjoyment': roundHalf(((ratings.enjoyment * reviews.length) + review.reviewEnjoyment) / (reviews.length + 1)),
-            'ratings.usefulness': roundHalf(((ratings.usefulness * reviews.length) + review.reviewUsefulness) / (reviews.length + 1)),
-            'ratings.manageability': roundHalf(((ratings.manageability * reviews.length) + review.reviewManageability) / (reviews.length + 1))
-        })
-        res.sendStatus(200);
+
+        // error checking:
+        if (review.reviewTitle.length < 1) {
+            res.status(400).send({ message: "Please fill out the review title" });
+        } else if (review.reviewTitle.length >= 60) {
+            res.status(400).send({ message: "Title too long. Please use the description" });
+        } else if (review.termTaken.length < 1) {
+            res.status(400).send({ message: "Please fill out term taken" });
+        } else if (!review.termTaken.match(/^([2]{1}[0-3]{1}[Tt]{1}[1-3]{1})/)) {
+            res.status(400).send({ message: "Check term taken format (try to keep it after 20T1)" });
+        } else if (review.reviewEnjoyment === 0 && review.reviewManageability === 0 && review.reviewUsefulness === 0) {
+            res.status(400).send({ message: "Please fill out the star ratings" });
+        } else {
+            const courseObj = await Course.findOne({ 'courseObj.courseCode': courseCode });
+            let reviewsObj = courseObj.reviews;
+            let ratings = courseObj.ratings;
+            await Course.findOneAndUpdate({ 'courseObj.courseCode': courseCode }, {
+                $push: {
+                    reviews: review
+                },
+                'ratings.overall': ((ratings.overall * reviewsObj.length) + overallData) / (reviewsObj.length + 1),
+                'ratings.enjoyment': ((ratings.enjoyment * reviewsObj.length) + review.reviewEnjoyment) / (reviewsObj.length + 1),
+                'ratings.usefulness': ((ratings.usefulness * reviewsObj.length) + review.reviewUsefulness) / (reviewsObj.length + 1),
+                'ratings.manageability': ((ratings.manageability * reviewsObj.length) + review.reviewManageability) / (reviewsObj.length + 1)
+            })
+            res.sendStatus(200);
+        }
     } catch (err) {
         res.status(400).json({ "message": err.message });
     }

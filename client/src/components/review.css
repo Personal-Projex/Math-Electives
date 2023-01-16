@@ -482,7 +482,7 @@ span.li {
     justify-content: space-between;
     color: #fff;
     padding: 25px 20px;
-    width: 165px;
+    width: 172px;
     cursor: pointer;
     position: relative;
     border-radius: 4px;
@@ -497,11 +497,6 @@ span.li {
     right: 0;
     background: rgba(0, 0, 0, 0.8);
     transition: opacity 500ms;
-    visibility: hidden;
-    opacity: 0;
-}
-
-.add-review-overlay:target {
     visibility: visible;
     opacity: 1;
 }
@@ -548,6 +543,10 @@ span.li {
     color: #333;
 }
 
+.add-review-close {
+    cursor: pointer;
+}
+
 .add-review-wrapper .add-review-content {
     max-height: 30%;
     overflow: auto;
@@ -557,6 +556,7 @@ span.li {
     border-radius: 5px;
     background-color: #e7e7e7;
     padding: 20px 0;
+    overflow: hidden;
 }
 
 form lable {

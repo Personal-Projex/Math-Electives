@@ -47,7 +47,7 @@ const RegisterContent = props => {
 
     return (
         <>
-            { alert &&
+            {alert &&
             <div>
              
                 <div className="alert-box">
@@ -62,25 +62,25 @@ const RegisterContent = props => {
                     <form action="" onSubmit={submitHandler}>
                         <label>First Name</label>
                         <div>
-                            <input type="text" placeholder='First Name' onChange={e=>setFirstName(e.target.value)}/>
+                            <input type="text" placeholder='First Name' onChange={e => setFirstName(e.target.value)} />
                         </div>
-                                    
+
                         <label>Last Name</label>
                         <div>
-                            <input type="text" placeholder='Last Name' onChange={e=>setLastName(e.target.value)}/>
+                            <input type="text" placeholder='Last Name' onChange={e => setLastName(e.target.value)} />
                         </div>
 
                         <label>Username</label>
                         <div>
-                            <input type="text" placeholder='Username' onChange={e=>setUsername(e.target.value)}/>
+                            <input type="text" placeholder='Username' onChange={e => setUsername(e.target.value)} />
                         </div>
-                                    
+
                         <label>Password</label>
                         <div>
-                            <input type="text" placeholder='Password' className="password-text" onChange={e=>setPassword(e.target.value)}/>
+                            <input type="text" placeholder='Password' className="password-text" onChange={e => setPassword(e.target.value)} />
                         </div>
                         <button type='submit'>Submit</button>
-                    </form> 
+                    </form>
                 </div>
             </div>
 

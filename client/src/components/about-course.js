@@ -38,17 +38,17 @@ export default function AboutInfo(props) {
                             <span className='lower-stats-text'>Category ratings</span>
                             <div className='category-stats'>
                                 <div className='stats-category'>
-                                    <span className='stats-percent'>{(course.ratings.enjoyment / 5) * 100}%</span>
+                                    <span className='stats-percent'>{Math.round((course.ratings.enjoyment / 5) * 100)}%</span>
                                     <div className='stats-bar-enjoy' onLoad={document.documentElement.style.setProperty('--percentage1', `${(course.ratings.enjoyment / 5) * 100}%`)}></div>
                                     <span className='category-text'>Enjoyment</span>
                                 </div>
                                 <div className='stats-category'>
-                                    <span className='stats-percent'>{(course.ratings.usefulness / 5) * 100}%</span>
+                                    <span className='stats-percent'>{Math.round((course.ratings.usefulness / 5) * 100)}%</span>
                                     <div className='stats-bar-useful' onLoad={document.documentElement.style.setProperty('--percentage2', `${(course.ratings.usefulness / 5) * 100}%`)}></div>
                                     <span className='category-text'>Usefulness</span>
                                 </div>
                                 <div className='stats-category'>
-                                    <span className='stats-percent'>{(course.ratings.manageability / 5) * 100}%</span>
+                                    <span className='stats-percent'>{Math.round((course.ratings.manageability / 5) * 100)}%</span>
                                     <div className='stats-bar-manage' onLoad={document.documentElement.style.setProperty('--percentage3', `${(course.ratings.manageability / 5) * 100}%`)}></div>
                                     <span className='category-text'>Manageability</span>
                                 </div>
