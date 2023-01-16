@@ -12,14 +12,30 @@ export default function ReviewBox(props) {
                     method: 'GET',
                     redirect: 'follow'
                 });
-                const reviewArr = await result.json();
+                let reviewArr = await result.json();
 
                 if (reviewArr.length === 0) {
                     setReviews(<div className="review-box">
                         <span>Be the first to add a review!</span>
                     </div>)
                 } else {
-                    const sortedReviews = reviewArr.filter((review) => [review.reviewTitle.toLowerCase(), review.reviewText.toLowerCase(), review.termTaken.toLowerCase()].find((info) => info.includes(search.toLowerCase()))).map((review, pos) => {
+                    if (props.search === "Lowest Rating to Highest") {
+                        // sort by ratings in ascending order
+                        reviewArr.sort(function (a, b) {
+                            return a.reviewOverall - b.reviewOverall;
+                        });
+                    } else if (props.search === "Highest Rating to Lowest") {
+                        // sort by ratings in descending order
+                        reviewArr.sort(function (a, b) {
+                            return (b.reviewOverall - a.reviewOverall);
+                        });
+                    } else if (props.search === "Most Recent") {
+                        reviewArr.reverse();
+                    } else {
+                        reviewArr = reviewArr.filter((review) => [review.reviewTitle.toLowerCase(), review.reviewText.toLowerCase(), review.termTaken.toLowerCase()].find((info) => info.includes(search.toLowerCase())));
+                    }
+
+                    const sortedReviews = reviewArr.map((review, pos) => {
                         return (
                             <div className="review-box" key={pos}>
                                 <div className="title">
