@@ -628,20 +628,6 @@ input[type="submit"] {
     display: none;
 }
 
-.fa-star-review {
-    color: orange;
-}
-
-.fa-star-half-stroke {
-    color: rgb(6, 87, 157);
-    cursor: pointer;
-}
-
-.fa-star-half-stroke:hover {
-    color: #09347e;
-
-}
-
 .search-container {
     margin-top: 100px;
 }

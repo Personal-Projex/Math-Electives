@@ -387,9 +387,69 @@ a {
   color: #160053
 }
 
-.alert-box {
+
+.timer-bar {
+  width: 500px;
+  min-width: 300px;
   position: absolute;
-  top: -1.5%;
+  top: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: auto;
+  padding: 10px;
+  text-transform: capitalize;
+  background: #3a14a3;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  text-align: center;
+  transition: 1s;
+}
+
+.timer-bar::before {
+  content: '';
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: calc(var(--width, 0) * 1%);
+  min-width: 0rem;
+  max-width: 100%;
+  background-color: red;
+  padding: 0.5em;
+}
+
+.progress-bar {
+  width: 500px;
+  position: relative;
+  height: 3em;
+  background-color: #111;
+  border-radius: 1.5em;
+  color: white;
+}
+
+.progress-bar::before {
+  content: attr(data-label);
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: .5em;
+  top: .5em;
+  bottom: .5em;
+  width: calc(var(--width, 0) * 1%);
+  min-width: 2rem;
+  max-width: calc(100% - 1em);
+  background-color: #069;
+  border-radius: 1em;
+  padding: 1em;
+}
+
+.alert-box-login {
+  position: absolute;
+  top: 1%;
   left: 50%;
   transform: translateX(-50%);
   min-width: 300px;
@@ -399,7 +459,27 @@ a {
   padding: 10px;
   text-transform: capitalize;
   background: orange;
-  border-top: 7px solid #160053;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: #160053;
+  font-family: 'roborto', sans-serif;
+  text-align: center;
+  transition: 1s;
+}
+
+
+.alert-box {
+  position: absolute;
+  top: -14%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 300px;
+  max-width: 90%;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  text-transform: capitalize;
+  background: orange;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   color: #160053;
@@ -462,7 +542,8 @@ a {
 }
 
 .register-container {
-  margin-top: 10px;
+  margin-top: -15px;
+  margin-bottom: -15px;
   border-radius: 5px;
   background-color: #e7e7e7;
   padding: 20px 0;
@@ -479,3 +560,12 @@ form label {
   -webkit-text-security: disc;
 }
 
+
+*, *::before, *::after {
+  box-sizing: border-box
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}

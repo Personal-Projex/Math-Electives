@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import AlertTimerComponent from './AlertProgressBar';
 
 const RegisterContent = props => {
 
@@ -41,15 +42,19 @@ const RegisterContent = props => {
         // Make the alert disappear after 1.5 seconds
         setTimeout(() => {
             setAlert(alert => false);
-        }, 1500);
+        }, 2500);
     } 
 
     return (
         <>
             { alert &&
+            <div>
+             
                 <div className="alert-box">
                     <p className="alert">{retVal}</p>
                 </div>
+                <AlertTimerComponent/>
+            </div>
             }
 
             <div className="register-content">
