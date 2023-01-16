@@ -64,7 +64,7 @@ export default function AddReviewBox(props) {
                     </div>
                 </div>
                 }
-                <h2>Add your review below!</h2>
+                <div className="add-review-header">Add your review below!</div>
                 <span className="add-review-close" onClick={props.handleClose}>&times;</span>
                 <div className='add-review-content'>
                     <div className='add-review-container'>

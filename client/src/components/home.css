@@ -432,29 +432,9 @@ a {
   }
 }
 
-.alert-box-login {
-  position: absolute;
-  top: 1%;
-  left: 50%;
-  transform: translateX(-50%);
-  min-width: 300px;
-  max-width: 90%;
-  width: auto;
-  height: auto;
-  padding: 10px;
-  text-transform: capitalize;
-  background: orange;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  color: #160053;
-  font-family: 'roborto', sans-serif;
-  text-align: center;
-  transition: 1s;
-}
-
 .alert-box {
   position: absolute;
-  top: -14%;
+  top: 1%;
   left: 50%;
   transform: translateX(-50%);
   min-width: 300px;
@@ -526,7 +506,7 @@ a {
 }
 
 .register-container {
-  margin-top: -15px;
+  margin-top: 10px;
   margin-bottom: -15px;
   border-radius: 5px;
   background-color: #e7e7e7;

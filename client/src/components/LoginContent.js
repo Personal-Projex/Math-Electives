@@ -41,15 +41,12 @@ const LoginContent = props => {
         }, 2000);
     } 
 
-//<div className='stats-bar-enjoy' onLoad={document.documentElement.style.setProperty('--percentage1', `${(course.ratings.enjoyment / 5) * 100}%`)}></div>
-
-
     return (
         <>
             { alert &&
             <div>
                 <div className="timer-bar"></div>
-                <div class="alert-box-login">
+                <div class="alert-box">
                     <p class="alert">{retVal}</p>
                 </div>
             </div>

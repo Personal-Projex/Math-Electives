@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import AlertTimerComponent from './AlertProgressBar';
 
 const RegisterContent = props => {
 
@@ -35,8 +34,10 @@ const RegisterContent = props => {
         setAlert(alert => true);
         if (returnData.message == null) {
             setRetVal(retVal => 'Registered');
+            document.documentElement.style.setProperty('--timerBarColour', 'lime');
         } else {
             setRetVal(retVal => returnData.message);
+            document.documentElement.style.setProperty('--timerBarColour', 'red');
         }
 
         // Make the alert disappear after 1.5 seconds
@@ -49,11 +50,10 @@ const RegisterContent = props => {
         <>
             {alert &&
             <div>
-             
+                <div className="timer-bar"></div>
                 <div className="alert-box">
                     <p className="alert">{retVal}</p>
                 </div>
-                <AlertTimerComponent/>
             </div>
             }
 
