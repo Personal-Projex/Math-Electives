@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import AlertTimerComponent from './AlertTimer';
 
 const LoginContent = props => {
 
@@ -30,29 +29,26 @@ const LoginContent = props => {
         setAlert(alert => true);
         if (returnData.message == null) {
             setRetVal(retVal => 'Logged in');
+            document.documentElement.style.setProperty('--timerBarColour', 'lime');
         } else {
             setRetVal(retVal => returnData.message);
+            document.documentElement.style.setProperty('--timerBarColour', 'red');
         }
         
         // Make the alert disappear after 1.5 seconds
         setTimeout(() => {
             setAlert(alert => false);
-        }, 3000);
+        }, 2000);
     } 
 
-    const timerBar = document.getElementsByClassName('timer-bar')[0]
-    setInterval(() => {
-        const computedStyle = getComputedStyle(timerBar);
-        const width = parseFloat(computedStyle.getPropertyValue('--width')) || 0;
-        timerBar.style.setProperty('--width', width + .1)
-    })
+//<div className='stats-bar-enjoy' onLoad={document.documentElement.style.setProperty('--percentage1', `${(course.ratings.enjoyment / 5) * 100}%`)}></div>
 
 
     return (
         <>
             { alert &&
             <div>
-                <AlertTimerComponent/>
+                <div className="timer-bar"></div>
                 <div class="alert-box-login">
                     <p class="alert">{retVal}</p>
                 </div>

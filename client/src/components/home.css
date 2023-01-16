@@ -1,3 +1,7 @@
+:root {
+  --timerBarColour: red;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -399,52 +403,33 @@ a {
   height: auto;
   padding: 10px;
   text-transform: capitalize;
-  background: #3a14a3;
+  background: var(--timerBarColour);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   text-align: center;
   transition: 1s;
+  overflow: hidden;
 }
 
-.timer-bar::before {
+.timer-bar::after {
   content: '';
-  display: flex;
-  align-items: center;
   position: absolute;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
-  width: calc(var(--width, 0) * 1%);
-  min-width: 0rem;
-  max-width: 100%;
-  background-color: red;
+  background-color: #160053;
   padding: 0.5em;
+  animation: timer-slider 2.0s ease-in-out forwards;
 }
 
-.progress-bar {
-  width: 500px;
-  position: relative;
-  height: 3em;
-  background-color: #111;
-  border-radius: 1.5em;
-  color: white;
-}
-
-.progress-bar::before {
-  content: attr(data-label);
-  display: flex;
-  align-items: center;
-  position: absolute;
-  left: .5em;
-  top: .5em;
-  bottom: .5em;
-  width: calc(var(--width, 0) * 1%);
-  min-width: 2rem;
-  max-width: calc(100% - 1em);
-  background-color: #069;
-  border-radius: 1em;
-  padding: 1em;
+@keyframes timer-slider {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
 }
 
 .alert-box-login {
@@ -466,7 +451,6 @@ a {
   text-align: center;
   transition: 1s;
 }
-
 
 .alert-box {
   position: absolute;
