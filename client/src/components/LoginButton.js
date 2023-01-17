@@ -13,7 +13,6 @@ export default function LoginButton() {
     return (
         <div>
             <button className="register-button" onClick={togglePopup}>Login</button>
-
             {isOpen && <Login
                 handleClose = {togglePopup}
 
@@ -21,7 +20,6 @@ export default function LoginButton() {
                     <LoginContent/>
                 </div>}
             />}
-
         </div>
     )
 }

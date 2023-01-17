@@ -37,9 +37,11 @@ export default function AddReviewBox(props) {
         if (response.status === 200) {
             setRetVal('Added review!');
             added = true;
+            document.documentElement.style.setProperty('--timerBarColour', 'green');
         } else {
             let { message } = await response.json();
             setRetVal(message);
+            document.documentElement.style.setProperty('--timerBarColour', 'red');
         }
 
         // Make the alert disappear after 1 seconds
@@ -48,18 +50,21 @@ export default function AddReviewBox(props) {
             if (added) {
                 window.location.reload(false);
             }
-        }, 1000);
+        }, 2000);
     }
 
     return (
         <div className='add-review-overlay'>
             <div className='add-review-wrapper'>
                 {alert &&
+                <div>
+                    <div className="timer-bar"></div>
                     <div className="alert-box">
                         <p className="alert">{retVal}</p>
                     </div>
+                </div>
                 }
-                <h2>Add your review below!</h2>
+                <div className="add-review-header">Add your review below!</div>
                 <span className="add-review-close" onClick={props.handleClose}>&times;</span>
                 <div className='add-review-content'>
                     <div className='add-review-container'>

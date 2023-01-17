@@ -13,7 +13,6 @@ export default function RegisterButton() {
     return (
         <div>
             <button className="register-button" onClick={togglePopup}>Register</button>
-
             {isOpen && <Register
                 handleClose={togglePopup}
 
