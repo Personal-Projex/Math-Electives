@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 
 const LoginContent = props => {
 
@@ -27,29 +27,34 @@ const LoginContent = props => {
         console.log(returnData);
 
         setAlert(alert => true);
+        let added = false;
         if (returnData.message == null) {
             setRetVal(retVal => 'Logged in');
+            added = true;
             document.documentElement.style.setProperty('--timerBarColour', 'lime');
         } else {
             setRetVal(retVal => returnData.message);
             document.documentElement.style.setProperty('--timerBarColour', 'red');
         }
-        
-        // Make the alert disappear after 1.5 seconds
+
+        // Make the alert disappear after 2 seconds
         setTimeout(() => {
             setAlert(alert => false);
+            if (added) {
+                window.location.reload(false);
+            }
         }, 2000);
-    } 
+    }
 
     return (
         <>
-            { alert &&
-            <div>
-                <div className="timer-bar"></div>
-                <div class="alert-box">
-                    <p class="alert">{retVal}</p>
+            {alert &&
+                <div>
+                    <div className="timer-bar"></div>
+                    <div class="alert-box">
+                        <p class="alert">{retVal}</p>
+                    </div>
                 </div>
-            </div>
             }
 
             <div className="register-content">
@@ -57,12 +62,12 @@ const LoginContent = props => {
                     <form action="" onSubmit={submitHandler}>
                         <label>Username</label>
                         <div>
-                            <input type="text" placeholder='Username' className="form-text"  onChange={e=>setUsername(e.target.value)}/>
+                            <input type="text" placeholder='Username' className="form-text" onChange={e => setUsername(e.target.value)} />
                         </div>
-                                    
+
                         <label>Password</label>
                         <div>
-                            <input type="text" placeholder='Password' className="password-text"  onChange={e=>setPassword(e.target.value)}/>
+                            <input type="text" placeholder='Password' className="password-text" onChange={e => setPassword(e.target.value)} />
                         </div>
                         <button type='submit'>Submit</button>
                     </form>

@@ -44,7 +44,7 @@ export default function AddReviewBox(props) {
             document.documentElement.style.setProperty('--timerBarColour', 'red');
         }
 
-        // Make the alert disappear after 1 seconds
+        // Make the alert disappear after 2 seconds
         setTimeout(() => {
             setAlert(alert => !alert);
             if (added) {
@@ -57,12 +57,12 @@ export default function AddReviewBox(props) {
         <div className='add-review-overlay'>
             <div className='add-review-wrapper'>
                 {alert &&
-                <div>
-                    <div className="timer-bar"></div>
-                    <div className="alert-box">
-                        <p className="alert">{retVal}</p>
+                    <div>
+                        <div className="timer-bar"></div>
+                        <div className="alert-box">
+                            <p className="alert">{retVal}</p>
+                        </div>
                     </div>
-                </div>
                 }
                 <div className="add-review-header">Add your review below!</div>
                 <span className="add-review-close" onClick={props.handleClose}>&times;</span>

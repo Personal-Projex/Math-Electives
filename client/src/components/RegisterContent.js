@@ -32,29 +32,34 @@ const RegisterContent = props => {
 
 
         setAlert(alert => true);
+        let added = false;
         if (returnData.message == null) {
             setRetVal(retVal => 'Registered');
+            added = true;
             document.documentElement.style.setProperty('--timerBarColour', 'lime');
         } else {
             setRetVal(retVal => returnData.message);
             document.documentElement.style.setProperty('--timerBarColour', 'red');
         }
 
-        // Make the alert disappear after 1.5 seconds
+        // Make the alert disappear after 2 seconds
         setTimeout(() => {
             setAlert(alert => false);
+            if (added) {
+                window.location.reload(false);
+            }
         }, 2500);
-    } 
+    }
 
     return (
         <>
             {alert &&
-            <div>
-                <div className="timer-bar"></div>
-                <div className="alert-box">
-                    <p className="alert">{retVal}</p>
+                <div>
+                    <div className="timer-bar"></div>
+                    <div className="alert-box">
+                        <p className="alert">{retVal}</p>
+                    </div>
                 </div>
-            </div>
             }
 
             <div className="register-content">
