@@ -21,7 +21,7 @@ export default function Courses(props) {
                     redirect: 'follow'
                 });
                 const coursesArr = await result.json();
-                const courses = coursesArr.filter((course) => [course.courseObj.courseCode.toLowerCase(), course.courseObj.courseName.toLowerCase(), course.courseObj.term1.toLowerCase(), course.courseObj.term2.toLowerCase(), course.courseObj.term3.toLowerCase()].find((info) => info.includes(search.toLowerCase()))).map((course, pos) => {
+                const courses = coursesArr.filter((course) => [course.courseObj.courseCode.toLowerCase(), course.courseObj.courseName.toLowerCase(), course.courseObj.term1.toLowerCase(), course.courseObj.term2.toLowerCase(), course.courseObj.term3.toLowerCase(), course.courseObj.major].find((info) => info.includes(search.toLowerCase()))).map((course, pos) => {
                     let ratings = course.ratings;
                     course = course.courseObj;
                     return (
