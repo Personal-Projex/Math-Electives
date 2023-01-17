@@ -173,7 +173,8 @@ app.post('/addCourseData', async (req, res) => {
                 courseConditions: course.conditions,
                 term1: course.term1,
                 term2: course.term2,
-                term3: course.term3
+                term3: course.term3,
+                major: course.major
             },
             ratings: {
                 overall: 0,

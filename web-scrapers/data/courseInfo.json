@@ -6,7 +6,8 @@
     "conditions": null,
     "term1": "",
     "term2": "Term 2",
-    "term3": ""
+    "term3": "",
+    "major": []
   },
   {
     "code": "MATH1011",
@@ -15,7 +16,8 @@
     "conditions": "Not enrolled in 3991 Medical Science ",
     "term1": "Term 1",
     "term2": "",
-    "term3": "Term 3"
+    "term3": "Term 3",
+    "major": []
   },
   {
     "code": "MATH1031",
@@ -24,7 +26,8 @@
     "conditions": null,
     "term1": "Term 1",
     "term2": "",
-    "term3": "Term 3"
+    "term3": "Term 3",
+    "major": []
   },
   {
     "code": "MATH1041",
@@ -33,7 +36,8 @@
     "conditions": null,
     "term1": "Term 1",
     "term2": "Term 2",
-    "term3": "Term 3"
+    "term3": "Term 3",
+    "major": []
   },
   {
     "code": "MATH1081",
@@ -42,7 +46,12 @@
     "conditions": "Corequisite: MATH1131 or DPST1013 or MATH1141 or MATH1151 ",
     "term1": "Term 1",
     "term2": "Term 2",
-    "term3": "Term 3"
+    "term3": "Term 3",
+    "major": [
+      "pure",
+      "stats",
+      "applied"
+    ]
   },
   {
     "code": "MATH1131",
@@ -51,7 +60,8 @@
     "conditions": null,
     "term1": "Term 1",
     "term2": "Term 2",
-    "term3": "Term 3"
+    "term3": "Term 3",
+    "major": []
   },
   {
     "code": "MATH1141",
@@ -60,7 +70,12 @@
     "conditions": null,
     "term1": "Term 1",
     "term2": "",
-    "term3": "Term 3"
+    "term3": "Term 3",
+    "major": [
+      "pure",
+      "stats",
+      "applied"
+    ]
   },
   {
     "code": "MATH1151",
@@ -69,7 +84,8 @@
     "conditions": null,
     "term1": "Term 1",
     "term2": "",
-    "term3": ""
+    "term3": "",
+    "major": []
   },
   {
     "code": "MATH1231",
@@ -78,7 +94,8 @@
     "conditions": "Prerequisite: MATH1131 or MATH1141 or DPST1013 ",
     "term1": "Term 1",
     "term2": "Term 2",
-    "term3": "Term 3"
+    "term3": "Term 3",
+    "major": []
   },
   {
     "code": "MATH1241",
@@ -87,7 +104,12 @@
     "conditions": "Prerequisite: MATH1131 (CR) or MATH1141 (CR) or DPST1013 (CR) ",
     "term1": "Term 1",
     "term2": "Term 2",
-    "term3": ""
+    "term3": "",
+    "major": [
+      "pure",
+      "stats",
+      "applied"
+    ]
   },
   {
     "code": "MATH1251",
@@ -96,7 +118,8 @@
     "conditions": "Prerequisite: MATH1151. ",
     "term1": "",
     "term2": "Term 2",
-    "term3": ""
+    "term3": "",
+    "major": []
   },
   {
     "code": "MATH2011",
@@ -105,7 +128,8 @@
     "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014 ",
     "term1": "Term 1",
     "term2": "",
-    "term3": ""
+    "term3": "",
+    "major": []
   },
   {
     "code": "MATH2018",
@@ -114,7 +138,8 @@
     "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014 ",
     "term1": "Term 1",
     "term2": "Term 2",
-    "term3": "Term 3"
+    "term3": "Term 3",
+    "major": []
   },
   {
     "code": "MATH2019",
@@ -123,7 +148,8 @@
     "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014 ",
     "term1": "Term 1",
     "term2": "",
-    "term3": ""
+    "term3": "",
+    "major": []
   },
   {
     "code": "MATH2069",
@@ -132,7 +158,8 @@
     "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014 ",
     "term1": "",
     "term2": "",
-    "term3": "Term 3"
+    "term3": "Term 3",
+    "major": []
   },
   {
     "code": "MATH2089",
@@ -141,7 +168,8 @@
     "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014 ",
     "term1": "Term 1",
     "term2": "",
-    "term3": "Term 3"
+    "term3": "Term 3",
+    "major": []
   },
   {
     "code": "MATH2099",
@@ -150,7 +178,8 @@
     "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014 ",
     "term1": "",
     "term2": "Term 2",
-    "term3": ""
+    "term3": "",
+    "major": []
   },
   {
     "code": "MATH2111",
@@ -159,7 +188,12 @@
     "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014 each with a mark of at least 70 ",
     "term1": "Term 1",
     "term2": "",
-    "term3": ""
+    "term3": "",
+    "major": [
+      "pure",
+      "stats",
+      "applied"
+    ]
   },
   {
     "code": "MATH2121",
@@ -168,7 +202,8 @@
     "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014 ",
     "term1": "",
     "term2": "Term 2",
-    "term3": ""
+    "term3": "",
+    "major": []
   },
   {
     "code": "MATH2221",
@@ -177,7 +212,12 @@
     "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014, each with a mark of 70 or higher. ",
     "term1": "",
     "term2": "Term 2",
-    "term3": ""
+    "term3": "",
+    "major": [
+      "pure",
+      "stats",
+      "applied"
+    ]
   },
   {
     "code": "MATH2241",
@@ -186,7 +226,8 @@
     "conditions": "Prerequisite: MATH1231 or DPST1014 or MATH1241 or MATH1251 ",
     "term1": "Term 1",
     "term2": "",
-    "term3": ""
+    "term3": "",
+    "major": []
   },
   {
     "code": "MATH2301",
@@ -195,7 +236,10 @@
     "conditions": "Prerequisite: MATH1031(CR) or MATH1231 or MATH1241 or MATH1251 or DPST1014 ",
     "term1": "Term 1",
     "term2": "",
-    "term3": ""
+    "term3": "",
+    "major": [
+      "applied"
+    ]
   },
   {
     "code": "MATH2400",
@@ -204,7 +248,8 @@
     "conditions": "Prerequisite: MATH1081 or MATH1231 or DPST1014 or MATH1241 or MATH1251 ",
     "term1": "",
     "term2": "Term 2",
-    "term3": ""
+    "term3": "",
+    "major": []
   },
   {
     "code": "MATH2501",
@@ -213,7 +258,8 @@
     "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014 ",
     "term1": "",
     "term2": "Term 2",
-    "term3": ""
+    "term3": "",
+    "major": []
   },
   {
     "code": "MATH2521",
@@ -222,7 +268,8 @@
     "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014 ",
     "term1": "",
     "term2": "",
-    "term3": "Term 3"
+    "term3": "Term 3",
+    "major": []
   },
   {
     "code": "MATH2601",
@@ -231,7 +278,12 @@
     "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014, each with a mark of 70 or higher ",
     "term1": "",
     "term2": "Term 2",
-    "term3": ""
+    "term3": "",
+    "major": [
+      "pure",
+      "stats",
+      "applied"
+    ]
   },
   {
     "code": "MATH2621",
@@ -240,7 +292,12 @@
     "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014 each with a mark of at least 70 ",
     "term1": "",
     "term2": "",
-    "term3": "Term 3"
+    "term3": "Term 3",
+    "major": [
+      "pure",
+      "stats",
+      "applied"
+    ]
   },
   {
     "code": "MATH2701",
@@ -249,7 +306,10 @@
     "conditions": "Prerequisite: MATH1231 or DPST1014 or MATH1241 or MATH1251 with at least a CR, enrolment in an advanced maths or advanced science program ",
     "term1": "",
     "term2": "",
-    "term3": "Term 3"
+    "term3": "Term 3",
+    "major": [
+      "pure"
+    ]
   },
   {
     "code": "MATH2801",
@@ -258,7 +318,8 @@
     "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014 ",
     "term1": "",
     "term2": "Term 2",
-    "term3": ""
+    "term3": "",
+    "major": []
   },
   {
     "code": "MATH2831",
@@ -267,7 +328,8 @@
     "conditions": "Prerequisite: MATH2801 or MATH2901. ",
     "term1": "",
     "term2": "",
-    "term3": "Term 3"
+    "term3": "Term 3",
+    "major": []
   },
   {
     "code": "MATH2859",
@@ -276,7 +338,8 @@
     "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014 ",
     "term1": "",
     "term2": "Term 2",
-    "term3": ""
+    "term3": "",
+    "major": []
   },
   {
     "code": "MATH2871",
@@ -285,7 +348,8 @@
     "conditions": "Prerequisite: MATH1041 or ECON1203 or PSY2001 or MATH1231 or MATH1241 or MATH1251 or DPST1014 or equivalent ",
     "term1": "Term 1",
     "term2": "",
-    "term3": ""
+    "term3": "",
+    "major": []
   },
   {
     "code": "MATH2901",
@@ -294,7 +358,12 @@
     "conditions": "Prerequisite: MATH1231 or MATH1241 or MATH1251 or DPST1014 ",
     "term1": "",
     "term2": "Term 2",
-    "term3": ""
+    "term3": "",
+    "major": [
+      "pure",
+      "stats",
+      "applied"
+    ]
   },
   {
     "code": "MATH2931",
@@ -303,7 +372,10 @@
     "conditions": "Prerequisite: MATH2901 or MATH2801(DN) ",
     "term1": "",
     "term2": "",
-    "term3": "Term 3"
+    "term3": "Term 3",
+    "major": [
+      "stats"
+    ]
   },
   {
     "code": "DATA3001",
@@ -312,7 +384,8 @@
     "conditions": "Prerequisite: Enrolment in 3959 Data Science program ",
     "term1": "",
     "term2": "",
-    "term3": "Term 3"
+    "term3": "Term 3",
+    "major": []
   },
   {
     "code": "MATH3041",
@@ -321,7 +394,10 @@
     "conditions": "Prerequisite: 12 units of credit in Level 2 Maths courses. ",
     "term1": "",
     "term2": "Term 2",
-    "term3": ""
+    "term3": "",
+    "major": [
+      "applied"
+    ]
   },
   {
     "code": "MATH3051",
@@ -330,7 +406,10 @@
     "conditions": "Prerequisite: 12UOC of second year mathematics courses, including MATH2011 or MATH2111 or MATH2069(DN). ",
     "term1": "",
     "term2": "",
-    "term3": "Term 3"
+    "term3": "Term 3",
+    "major": [
+      "applied"
+    ]
   },
   {
     "code": "MATH3101",
@@ -339,7 +418,10 @@
     "conditions": "Prerequisite: 12 units of credit in Level 2 Math courses including (MATH2011 or MATH2111) and (MATH2121 or MATH2221) or (both MATH2019(DN) and MATH2089) or (both MATH2069(CR) and MATH2099) ",
     "term1": "",
     "term2": "",
-    "term3": "Term 3"
+    "term3": "Term 3",
+    "major": [
+      "applied"
+    ]
   },
   {
     "code": "MATH3121",
@@ -348,7 +430,10 @@
     "conditions": "Prerequisite: 12 units of credit in Level 2 Mathematics courses including (MATH2011 or MATH2111) and (MATH2121 or MATH2221) or (both MATH2019 (DN) and MATH2089) or both (MATH2069 (DN) and MATH2099) ",
     "term1": "Term 1",
     "term2": "",
-    "term3": ""
+    "term3": "",
+    "major": [
+      "applied"
+    ]
   },
   {
     "code": "MATH3161",
@@ -357,7 +442,10 @@
     "conditions": "Prerequisite: 12 units of credit in Level 2 Mathematics courses including MATH2011 or MATH2111 or MATH2510, and MATH2501 or MATH2601, or both MATH2019(DN) and MATH2089, or both MATH2069(CR) and MATH2099. ",
     "term1": "Term 1",
     "term2": "",
-    "term3": ""
+    "term3": "",
+    "major": [
+      "applied"
+    ]
   },
   {
     "code": "MATH3171",
@@ -366,7 +454,10 @@
     "conditions": "(1) [MATH2011 or MATH2111] and [MATH2501 or MATH2601]; or (2) both MATH2069 (CR) and MATH2099 ; or (3) both [MATH2018 or MATH2019] (DN) and MATH2089 . ",
     "term1": "",
     "term2": "",
-    "term3": "Term 3"
+    "term3": "Term 3",
+    "major": [
+      "applied"
+    ]
   },
   {
     "code": "MATH3201",
@@ -375,7 +466,10 @@
     "conditions": "Prerequisite: (MATH2501 or MATH2601 or MATH2089 or MATH2099) and (MATH2011 or MATH2111 or MATH2018 (DN) or MATH2019 (DN) or MATH2069 (CR) or MATH2121 or MATH2221) ",
     "term1": "",
     "term2": "",
-    "term3": "Term 3"
+    "term3": "Term 3",
+    "major": [
+      "applied"
+    ]
   },
   {
     "code": "MATH3261",
@@ -384,7 +478,8 @@
     "conditions": "Prerequisite: 12 units of credit in Level 2 Math courses including (MATH2011 or MATH2111) or (MATH2121 or MATH2221) or (both MATH2019 (DN) and MATH2089) or (both MATH2069 (DN) and MATH2099) ",
     "term1": "",
     "term2": "",
-    "term3": "Term 3"
+    "term3": "Term 3",
+    "major": []
   },
   {
     "code": "MATH3311",
@@ -393,7 +488,10 @@
     "conditions": "Prerequisite:  (MATH2121 or MATH2221 or MATH2111) and (MATH2501 or MATH2601) and (MATH2801 or MATH2901 or MATH2871) ",
     "term1": "",
     "term2": "Term 2",
-    "term3": ""
+    "term3": "",
+    "major": [
+      "applied"
+    ]
   },
   {
     "code": "MATH3361",
@@ -402,7 +500,10 @@
     "conditions": "Prerequisite: MATH2011 or MATH2111 or MATH2018 (DN) or MATH2019(DN) or MATH2069(DN) and MATH2801 or MATH2901 or MATH2089(DN) or MATH2099(DN) ",
     "term1": "",
     "term2": "",
-    "term3": ""
+    "term3": "",
+    "major": [
+      "applied"
+    ]
   },
   {
     "code": "MATH3371",
@@ -411,7 +512,10 @@
     "conditions": "Prerequisite: MATH2501 or MATH2601 or MATH2019(DN) or MATH2099 (CR). ",
     "term1": "Term 1",
     "term2": "",
-    "term3": ""
+    "term3": "",
+    "major": [
+      "applied"
+    ]
   },
   {
     "code": "MATH3411",
@@ -420,7 +524,8 @@
     "conditions": "Prerequisites: MATH1081 or MATH1231(CR) or DPST1014 (CR) or MATH1241(CR) or MATH1251(CR) or MATH2099. ",
     "term1": "",
     "term2": "",
-    "term3": "Term 3"
+    "term3": "Term 3",
+    "major": []
   },
   {
     "code": "MATH3431",
@@ -429,7 +534,8 @@
     "conditions": "Prerequisites: 12 units of credit in Level II Math courses ",
     "term1": "Term 1",
     "term2": "",
-    "term3": ""
+    "term3": "",
+    "major": []
   },
   {
     "code": "MATH3531",
@@ -438,7 +544,8 @@
     "conditions": "Prerequisite: 12 units of credit in Level 2 Math courses including MATH2011 or MATH2111 or MATH2069. ",
     "term1": "",
     "term2": "",
-    "term3": "Term 3"
+    "term3": "Term 3",
+    "major": []
   },
   {
     "code": "MATH3560",
@@ -447,7 +554,8 @@
     "conditions": "Prerequisite: 6 units of credit in Level 2 Math courses. ",
     "term1": "Term 1",
     "term2": "",
-    "term3": ""
+    "term3": "",
+    "major": []
   },
   {
     "code": "MATH3570",
@@ -456,7 +564,8 @@
     "conditions": "Prerequisite: 12 units of credit in Level 2 Math courses. ",
     "term1": "Term 1",
     "term2": "",
-    "term3": ""
+    "term3": "",
+    "major": []
   },
   {
     "code": "MATH3611",
@@ -465,7 +574,10 @@
     "conditions": "Prerequisite: 12 units of credit of Level 2 Mathematics courses with an average mark of at least 70 or higher, including MATH2111 or MATH2011 (Credit), or permission from Head of Department. ",
     "term1": "",
     "term2": "Term 2",
-    "term3": ""
+    "term3": "",
+    "major": [
+      "pure"
+    ]
   },
   {
     "code": "MATH3701",
@@ -474,7 +586,10 @@
     "conditions": "Prerequisite: 12 UOC of Level 2 Mathematics with an average mark of at least 70, including MATH2111 or MATH2011 (CR) or MATH2510 (CR) and MATH2601 or MATH2501 (CR), or permission from Head of Department. ",
     "term1": "",
     "term2": "",
-    "term3": "Term 3"
+    "term3": "Term 3",
+    "major": [
+      "pure"
+    ]
   },
   {
     "code": "MATH3711",
@@ -483,7 +598,10 @@
     "conditions": "Prerequisite: 12 UOC of Level 2 Mathematics with an average mark of at least 70, including MATH2601 or MATH2501 (CR), or permission from the Head of Department. ",
     "term1": "Term 1",
     "term2": "",
-    "term3": ""
+    "term3": "",
+    "major": [
+      "pure"
+    ]
   },
   {
     "code": "MATH3801",
@@ -492,7 +610,8 @@
     "conditions": "Prerequisite: (MATH2501 or MATH2601) and (MATH2011 or MATH2111) and (MATH2801 or MATH2901) ",
     "term1": "Term 1",
     "term2": "",
-    "term3": ""
+    "term3": "",
+    "major": []
   },
   {
     "code": "MATH3811",
@@ -501,7 +620,8 @@
     "conditions": "Prerequisite: MATH2831 or MATH2931. ",
     "term1": "Term 1",
     "term2": "",
-    "term3": ""
+    "term3": "",
+    "major": []
   },
   {
     "code": "MATH3821",
@@ -510,7 +630,10 @@
     "conditions": "Prerequisite: MATH2831 or MATH2931 ",
     "term1": "",
     "term2": "Term 2",
-    "term3": ""
+    "term3": "",
+    "major": [
+      "stats"
+    ]
   },
   {
     "code": "MATH3831",
@@ -519,7 +642,10 @@
     "conditions": "Prerequisite: MATH2801 or MATH2901. ",
     "term1": "",
     "term2": "Term 2",
-    "term3": ""
+    "term3": "",
+    "major": [
+      "stats"
+    ]
   },
   {
     "code": "MATH3841",
@@ -528,7 +654,10 @@
     "conditions": "Prerequisite: MATH3811 or MATH3911. ",
     "term1": "",
     "term2": "Term 2",
-    "term3": ""
+    "term3": "",
+    "major": [
+      "stats"
+    ]
   },
   {
     "code": "MATH3851",
@@ -537,7 +666,10 @@
     "conditions": "Prerequisite: MATH2801 OR MATH2901 AND MATH2831 OR MATH2931. ",
     "term1": "",
     "term2": "",
-    "term3": "Term 3"
+    "term3": "Term 3",
+    "major": [
+      "stats"
+    ]
   },
   {
     "code": "MATH3856",
@@ -546,7 +678,10 @@
     "conditions": "Prerequisite: MATH2801 or MATH2901 ",
     "term1": "",
     "term2": "",
-    "term3": "Term 3"
+    "term3": "Term 3",
+    "major": [
+      "stats"
+    ]
   },
   {
     "code": "MATH3871",
@@ -555,7 +690,10 @@
     "conditions": "Prerequisite: MATH2801 or MATH2901 ",
     "term1": "",
     "term2": "",
-    "term3": "Term 3"
+    "term3": "Term 3",
+    "major": [
+      "stats"
+    ]
   },
   {
     "code": "MATH3901",
@@ -564,7 +702,10 @@
     "conditions": "Prerequisite: MATH2901 or MATH2801(DN) and MATH2501 or MATH2601 and MATH2011 or MATH2111 ",
     "term1": "Term 1",
     "term2": "",
-    "term3": ""
+    "term3": "",
+    "major": [
+      "stats"
+    ]
   },
   {
     "code": "MATH3911",
@@ -573,7 +714,10 @@
     "conditions": "Prerequisite: MATH2931 or MATH2831(DN). ",
     "term1": "Term 1",
     "term2": "",
-    "term3": ""
+    "term3": "",
+    "major": [
+      "stats"
+    ]
   },
   {
     "code": "MATH6781",
@@ -582,6 +726,9 @@
     "conditions": "Prerequisite: 12 units of credit in Level 2 Mathematics courses including: MATH2121 or MATH2221 or both MATH2019 and MATH2089 or both MATH2069 and MATH2099 ",
     "term1": "",
     "term2": "Term 2",
-    "term3": ""
+    "term3": "",
+    "major": [
+      "applied"
+    ]
   }
 ]
