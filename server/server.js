@@ -9,6 +9,7 @@ dotenv.config();
 
 const app = express();
 const port = 8000;
+const jwt = require('jsonwebtoken');
 
 async function main() {
     await mongoose.connect(`mongodb+srv://${process.env.DATABASE_USERNAME}:${process.env.DATABASE_PASSWORD}@cluster0.9afqhh4.mongodb.net/?retryWrites=true&w=majority`);
@@ -95,6 +96,9 @@ app.post('/login', async (req, res) => {
             const { password, ...others } = user._doc;
             res.status(200).json(others);
         }
+
+        const username = req.body.username;
+        jwt.sign();
     } catch (err) {
         res.status(400).json({ message: err.message })
     }
