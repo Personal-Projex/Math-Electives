@@ -3,13 +3,13 @@ import mongoose from 'mongoose';
 import User from './models/User.js';
 import cors from 'cors';
 import Course from './models/Courses.js';
-
+import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
 const port = 8000;
-const jwt = require('jsonwebtoken');
+
 
 async function main() {
     await mongoose.connect(`mongodb+srv://${process.env.DATABASE_USERNAME}:${process.env.DATABASE_PASSWORD}@cluster0.9afqhh4.mongodb.net/?retryWrites=true&w=majority`);
@@ -35,6 +35,7 @@ app.use(cors({
 }))
 
 
+
 app.get('/', (req, res) => {
     console.log('Inside GET endpoint');
     res.status(200).json({ msg: "Inside GET request" });
@@ -42,7 +43,6 @@ app.get('/', (req, res) => {
 
 
 app.use(express.json());
-
 
 app.post('/register', async (req, res) => {
     const user = new User({
@@ -84,25 +84,34 @@ app.post('/register', async (req, res) => {
 
 })
 
+// CONVERT TO DATABASE
+let refreshTokens = [];
 
 app.post('/login', async (req, res) => {
     try {
+        // Authenticate user
         const user = await User.findOne({ username: req.body.username });
         if (!user) {
             res.status(404).json({ message: "User not found" });
         } else if (user.password !== req.body.password) {
             res.status(403).json({ message: "Incorrect password" })
         } else {
-            const { password, ...others } = user._doc;
-            res.status(200).json(others);
+
+            // Creating our token
+            const accessToken = jwt.sign({user: user}, process.env.ACCESS_TOKEN_SECRET);
+            const refreshToken = jwt.sign({user: user}, process.env.REFRESH_TOKEN_SECRET);
+            refreshTokens.push(refreshToken);
+            res.status(200).json({ accessToken: accessToken, refreshToken: refreshToken});
+
+            //const { password, ...others } = user._doc;
+            //res.status(200).json(others);
         }
 
-        const username = req.body.username;
-        jwt.sign();
     } catch (err) {
         res.status(400).json({ message: err.message })
     }
 })
+
 
 app.post('/addReview', async (req, res) => {
 
@@ -221,6 +230,80 @@ app.get('/getCourseInfo', async (req, res) => {
         res.status(400).json({ "message": err.message });
     }
 })
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+const posts = [
+    {
+      username: 'Kyle',
+      title: 'Post 1'
+    },
+    {
+      username: 'Jim',
+      title: 'Post 2'
+    }
+  ]
+
+
+app.get('/postsV2', authenticateToken, (req, res) => {
+    res.json(posts.filter(post => post.username === req.user.name))
+  })
+
+function authenticateToken(req, res, next) {
+    const authHeader = req.headers['authorization']
+    const token = authHeader && authHeader.split(' ')[1]
+    if (token == null) return res.sendStatus(401)
+  
+    jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
+      console.log(err)
+      if (err) return res.sendStatus(403)
+      req.user = user
+      next()
+    })
+  }
+
+// authServer.js:
+
+// CONVERT THIS ARRAY TO DATABASE OF REFRESH TOKENS:
+//let refreshTokens = [];
+
+app.delete('/logoutV2', (req, res) => {
+    refreshTokens = refreshTokens.filter(token => token !== req.body.token)
+    res.sendStatus(204)
+})
+
+
+app.post('/loginV2', (req, res) => {
+    // Authenticate User (not done here)
+
+    const username = req.body.username
+    const user = { name: username }
+
+    const accessToken = generateAccessToken(user);
+    const refreshToken = generateRefreshToken(user);
+    // REPLACE LINE BELOW (we want to push it onto our databse)
+    refreshTokens.push(refreshToken);
+    res.json({ accessToken: accessToken, refreshToken: refreshToken});
+})
+
+  function generateAccessToken(user) {
+    return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '30m' })
+  }
+  function generateRefreshToken(user) {
+    return jwt.sign(user, process.env.REFRESH_TOKEN_SECRET);
+  }
+
+  app.post('/token', (req, res) => {
+    const refreshToken = req.body.token
+    if (refreshToken == null) return res.sendStatus(401)
+    if (!refreshTokens.includes(refreshToken)) return res.sendStatus(403)
+    jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, user) => {
+      if (err) return res.sendStatus(403)
+      const accessToken = generateAccessToken({ name: user.name })
+      res.json({ accessToken: accessToken })
+    })
+  })
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 
 app.listen(port, () => {

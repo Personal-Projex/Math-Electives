@@ -15,7 +15,6 @@ export default function LoginButton() {
             <button className="register-button" onClick={togglePopup}>Login</button>
             {isOpen && <Login
                 handleClose = {togglePopup}
-
                 content={<div>
                     <LoginContent/>
                 </div>}

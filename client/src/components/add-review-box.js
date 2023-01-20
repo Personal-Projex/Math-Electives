@@ -10,6 +10,7 @@ export default function AddReviewBox(props) {
     const [termTaken, setTermTaken] = useState('');
     const [alert, setAlert] = useState(false);
     const [retVal, setRetVal] = useState('');
+    const [username, setUsername] = useState('');
 
     async function submitHandler(e) {
         e.preventDefault();

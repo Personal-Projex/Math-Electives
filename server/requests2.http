@@ -1,0 +1,18 @@
+
+POST http://localhost:8000/token
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS3lsZSIsImlhdCI6MTY3NDEyMzYwOX0.sqL5XDgwAOXdUeVC4iRqvo_5RnszyHI_rKpIu52A0iA"
+}
+
+
+###
+
+POST http://localhost:8000/login
+Content-Type: application/json
+
+{
+  "username": "username",
+  "password": "pass"
+}

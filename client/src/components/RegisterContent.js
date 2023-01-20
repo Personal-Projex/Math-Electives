@@ -40,10 +40,10 @@ const RegisterContent = props => {
             document.documentElement.style.setProperty('--timerBarColour', 'red');
         }
 
-        // Make the alert disappear after 1.5 seconds
+        // Make the alert disappear after 2.0 seconds
         setTimeout(() => {
             setAlert(alert => false);
-        }, 2500);
+        }, 2000);
     } 
 
     return (
