@@ -10,16 +10,13 @@ export default function SearchReviews(props) {
     const [clickedReview, setClickedReview] = useState(false);
 
     const dropDown = () => {
-        let select = document.getElementById("r-select");
         let list = document.getElementById("list");
         let selectText = document.getElementById("selectText");
         let options = document.getElementsByClassName("options");
         let inputfield = document.getElementById("inputfield");
 
-        select.onclick = function () {
-            list.classList.toggle("open");
-            setClickedReview(!clickedReview);
-        }
+        list.classList.toggle("open");
+        setClickedReview(!clickedReview);
 
         for (const option of options) {
             option.onclick = function () {
