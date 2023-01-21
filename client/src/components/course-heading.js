@@ -11,16 +11,13 @@ export default function CourseHeader() {
     const [clicked, setClicked] = useState(false);
 
     const dropDown = () => {
-        let select = document.getElementById("select");
         let list = document.getElementById("list");
         let selectText = document.getElementById("selectText");
         let options = document.getElementsByClassName("options");
         let inputfield = document.getElementById("inputfield");
 
-        select.onclick = function () {
-            list.classList.toggle("open");
-            setClicked(!clicked);
-        }
+        list.classList.toggle("open");
+        setClicked(!clicked);
 
         for (const option of options) {
             option.onclick = function () {
