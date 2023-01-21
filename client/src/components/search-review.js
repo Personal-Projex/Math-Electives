@@ -10,21 +10,19 @@ export default function SearchReviews(props) {
     const [clickedReview, setClickedReview] = useState(false);
 
     const dropDown = () => {
-        let select = document.getElementById("r-select");
         let list = document.getElementById("list");
         let selectText = document.getElementById("selectText");
         let options = document.getElementsByClassName("options");
         let inputfield = document.getElementById("inputfield");
 
-        select.onclick = function () {
-            list.classList.toggle("open");
-            setClickedReview(!clickedReview);
-        }
+        list.classList.toggle("open");
+        setClickedReview(!clickedReview);
 
         for (const option of options) {
             option.onclick = function () {
                 selectText.innerHTML = this.innerHTML;
-                if (this.innerHTML !== "Sort By: ") {
+                inputfield.value = "";
+                if (this.innerHTML !== "All reviews") {
                     inputfield.placeholder = selectText.innerHTML;
                     setCurrSearchReview(this.innerHTML);
                 } else {
@@ -40,7 +38,7 @@ export default function SearchReviews(props) {
             <p className="review-text">Reviews</p>
             <div className="search-bar">
                 <div onClick={dropDown} className="r-select" id="r-select">
-                    <p id="selectText">Sort By</p>
+                    <p id="selectText">All reviews</p>
                     <FontAwesomeIcon href="#/" icon={clickedReview ? faCaretUp : faCaretDown}></FontAwesomeIcon>
                     <ul id="list">
                         <li className="options">Most Recent</li>
@@ -48,7 +46,7 @@ export default function SearchReviews(props) {
                         <li className="options">Lowest Rating to Highest</li>
                     </ul>
                 </div>
-                <input type="text" id="inputfield" placeholder="Search Key Words" onChange={e => { setCurrSearchReview(e.target.value); document.getElementById("selectText").innerHTML = "Sort By" }} />
+                <input type="text" id="inputfield" placeholder="Search Key Words" onChange={e => { setCurrSearchReview(e.target.value) }} />
                 <a className="search-btn" href="true" onClick={e => e.preventDefault()}>
                     <FontAwesomeIcon icon={faMagnifyingGlass} size="xl"></FontAwesomeIcon>
                 </a>

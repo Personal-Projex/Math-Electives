@@ -2,7 +2,6 @@ import puppeteer from 'puppeteer';
 import data from './data/courses.json' assert { type: "json" };
 import courseData from './data/courseInfo.json' assert {type: "json"};
 import fs from 'fs';
-import { isGeneratorFunction } from 'util/types';
 
 const courseInfo = courseData;
 

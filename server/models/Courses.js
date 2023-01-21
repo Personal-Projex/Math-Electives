@@ -25,6 +25,9 @@ const CourseSchema = mongoose.Schema(
             },
             term3: {
                 type: String
+            },
+            major: {
+                type: [String]
             }
         },
         ratings: {
