@@ -12,7 +12,6 @@ export default function StarRate({ count, rating, color, onRating }) {
             } else if (!hoverRating && rating >= index) {
                 return color.filled;
             }
-
             return color.unfilled;
         };
         return Array(count)
@@ -38,10 +37,10 @@ StarRate.propTypes = {
     count: PropTypes.number,
     rating: PropTypes.number,
     onChange: PropTypes.func,
-    color: {
+    color: PropTypes.shape({
         filled: PropTypes.string,
         unfilled: PropTypes.string,
-    },
+    }),
 };
 
 StarRate.defaultProps = {
