@@ -5,6 +5,8 @@ import cors from 'cors';
 import Course from './models/Courses.js';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import sessionStorage from 'sessionstorage';
+import localStorage from 'localstorage';
 
 import dotenv from 'dotenv';
 dotenv.config();
@@ -117,6 +119,11 @@ app.post('/login', async (req, res) => {
         } else {
             // User has been authenticated
             const token = jwt.sign({ username: req.body.username}, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "1h"});
+            
+            sessionStorage.setItem('username', req.body.username);
+            sessionStorage.setItem('token', token);
+            // console.log(sessionStorage.getItem('username'))
+
             res.status(200).json({ username: req.body.username, token: token});
 
             //const { password, ...others } = user._doc;
@@ -128,11 +135,16 @@ app.post('/login', async (req, res) => {
     }
 })
 
-app.post('/addReview', auth, async (req, res) => {
+app.post('/addReview', async (req, res) => {
 
     try {
 
-        // Invalid token
+        const username = sessionStorage.getItem('username');
+        const token = sessionStorage.getItem('token');
+
+        console.log(username);
+        console.log(token);
+
         //if (!req.userId) return res.json({ message: 'Unauthenticated' });
 
         const courseCode = req.body.courseCode;
@@ -150,7 +162,12 @@ app.post('/addReview', auth, async (req, res) => {
         }
 
         // error checking:
-        if (review.reviewTitle.length < 1) {
+        
+        // Invalid token
+        if (token == null) {
+            res.status(400).send({ message: "Please login before reviewing" });
+        }
+        else if (review.reviewTitle.length < 1) {
             res.status(400).send({ message: "Please fill out the review title" });
         } else if (review.reviewTitle.length >= 60) {
             res.status(400).send({ message: "Title too long. Please use the description" });
