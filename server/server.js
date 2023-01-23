@@ -6,7 +6,6 @@ import Course from './models/Courses.js';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import sessionStorage from 'sessionstorage';
-import localStorage from 'localstorage';
 
 import dotenv from 'dotenv';
 dotenv.config();
@@ -104,12 +103,8 @@ app.post('/login', async (req, res) => {
             
             sessionStorage.setItem('username', req.body.username);
             sessionStorage.setItem('token', token);
-            // console.log(sessionStorage.getItem('username'))
 
             res.status(200).json({ username: req.body.username, token: token});
-
-            //const { password, ...others } = user._doc;
-            //res.status(200).json(others);
         }
 
     } catch (err) {
@@ -137,10 +132,6 @@ app.post('/addReview', async (req, res) => {
     try {
         const token = sessionStorage.getItem('token');
         const username = sessionStorage.getItem('username');
-        //console.log(token);
-        //console.log(username);
-
-        //if (!req.userId) return res.json({ message: 'Unauthenticated' });
 
         const courseCode = req.body.courseCode;
         let overallData = ((req.body.reviewManageability + req.body.reviewUsefulness + req.body.reviewEnjoyment) / 3);
