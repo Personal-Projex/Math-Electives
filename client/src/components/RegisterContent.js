@@ -34,7 +34,7 @@ const RegisterContent = props => {
         setAlert(alert => true);
         let added = false;
         if (returnData.message == null) {
-            setRetVal(retVal => 'Registered');
+            setRetVal(retVal => 'Registered and logged in');
             added = true;
             document.documentElement.style.setProperty('--timerBarColour', 'lime');
         } else {

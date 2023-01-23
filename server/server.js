@@ -3,6 +3,9 @@ import mongoose from 'mongoose';
 import User from './models/User.js';
 import cors from 'cors';
 import Course from './models/Courses.js';
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+import sessionStorage from 'sessionstorage';
 
 import dotenv from 'dotenv';
 dotenv.config();
@@ -75,7 +78,10 @@ app.post('/register', async (req, res) => {
             res.status(404).json({ message: "Username taken" });
         } else {
             const newUser = await user.save();
-            res.status(200).json(newUser);
+            const token = jwt.sign({ username: req.body.username}, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "1h"});
+            sessionStorage.setItem('username', req.body.username);
+            sessionStorage.setItem('token', token);
+            res.status(200).json({ user: newUser, token: token});
         }
     } catch (err) {
         //res.status(400).json({message: err.message})
@@ -92,24 +98,48 @@ app.post('/login', async (req, res) => {
         } else if (user.password !== req.body.password) {
             res.status(403).json({ message: "Incorrect password" })
         } else {
-            const { password, ...others } = user._doc;
-            res.status(200).json(others);
+            // User has been authenticated
+            const token = jwt.sign({ username: req.body.username}, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "1h"});
+            
+            sessionStorage.setItem('username', req.body.username);
+            sessionStorage.setItem('token', token);
+
+            res.status(200).json({ username: req.body.username, token: token});
         }
+
     } catch (err) {
         res.status(400).json({ message: err.message })
     }
 })
 
+// Auth middleware
+const auth = async(req, res, next) => {
+    try {
+        const token = req.headers.Authorization.split(" ")[1];
+        let decodedData;
+        if (token) {
+            decodedData = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
+            req.userId = decodedData?.id;
+        }
+        next();
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 app.post('/addReview', async (req, res) => {
 
     try {
+        const token = sessionStorage.getItem('token');
+        const username = sessionStorage.getItem('username');
+
         const courseCode = req.body.courseCode;
         let overallData = ((req.body.reviewManageability + req.body.reviewUsefulness + req.body.reviewEnjoyment) / 3);
         const review = {
             reviewTitle: req.body.reviewTitle,
             reviewText: req.body.reviewText,
             termTaken: req.body.termTaken,
-            username: req.body.username,
+            username: username,
             reviewDate: (new Date()).toLocaleDateString('en-AU'),
             reviewEnjoyment: req.body.reviewEnjoyment,
             reviewUsefulness: req.body.reviewUsefulness,
@@ -118,7 +148,10 @@ app.post('/addReview', async (req, res) => {
         }
 
         // error checking:
-        if (review.reviewTitle.length < 1) {
+        if (token == null || !jwt.verify(token, process.env.ACCESS_TOKEN_SECRET)) {
+            res.status(400).send({ message: "Please login before reviewing" });
+        }
+        else if (review.reviewTitle.length < 1) {
             res.status(400).send({ message: "Please fill out the review title" });
         } else if (review.reviewTitle.length >= 60) {
             res.status(400).send({ message: "Title too long. Please use the description" });

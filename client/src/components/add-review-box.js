@@ -37,7 +37,7 @@ export default function AddReviewBox(props) {
         if (response.status === 200) {
             setRetVal('Added review!');
             added = true;
-            document.documentElement.style.setProperty('--timerBarColour', 'green');
+            document.documentElement.style.setProperty('--timerBarColour', 'lime');
         } else {
             let { message } = await response.json();
             setRetVal(message);
