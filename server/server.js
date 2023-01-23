@@ -46,25 +46,6 @@ app.get('/', (req, res) => {
 
 app.use(express.json());
 
-// Auth middleware
-const auth = async(req, res, next) => {
-    try {
-        const token = req.headers.Authorization.split(" ")[1];
-
-        let decodedData;
-
-        if (token) {
-            decodedData = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
-            req.userId = decodedData?.id;
-        }
-
-        next();
-    } catch (error) {
-        console.log(error);
-    }
-}
-
-
 
 app.post('/register', async (req, res) => {
     const user = new User({
@@ -99,8 +80,9 @@ app.post('/register', async (req, res) => {
         } else {
             const newUser = await user.save();
             const token = jwt.sign({ username: req.body.username}, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "1h"});
+            sessionStorage.setItem('username', req.body.username);
+            sessionStorage.setItem('token', token);
             res.status(200).json({ user: newUser, token: token});
-            //res.status(200).json(newUser);
         }
     } catch (err) {
         //res.status(400).json({message: err.message})
@@ -135,15 +117,28 @@ app.post('/login', async (req, res) => {
     }
 })
 
+// Auth middleware
+const auth = async(req, res, next) => {
+    try {
+        const token = req.headers.Authorization.split(" ")[1];
+        let decodedData;
+        if (token) {
+            decodedData = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
+            req.userId = decodedData?.id;
+        }
+        next();
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 app.post('/addReview', async (req, res) => {
 
     try {
-
-        const username = sessionStorage.getItem('username');
         const token = sessionStorage.getItem('token');
-
-        console.log(username);
-        console.log(token);
+        //const username = sessionStorage.getItem('username');
+        //console.log(token);
+        //console.log(username);
 
         //if (!req.userId) return res.json({ message: 'Unauthenticated' });
 
@@ -162,9 +157,7 @@ app.post('/addReview', async (req, res) => {
         }
 
         // error checking:
-        
-        // Invalid token
-        if (token == null) {
+        if (token == null || !jwt.verify(token, process.env.ACCESS_TOKEN_SECRET)) {
             res.status(400).send({ message: "Please login before reviewing" });
         }
         else if (review.reviewTitle.length < 1) {
