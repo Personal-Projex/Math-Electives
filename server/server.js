@@ -44,6 +44,25 @@ app.get('/', (req, res) => {
 
 app.use(express.json());
 
+// Auth middleware
+const auth = async(req, res, next) => {
+    try {
+        const token = req.headers.authorization.split(" ")[1];
+
+        let decodedData;
+
+        if (token) {
+            decodedData = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
+            req.userId = decodedData?.id;
+        }
+
+        next();
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
 
 app.post('/register', async (req, res) => {
     const user = new User({
@@ -109,9 +128,12 @@ app.post('/login', async (req, res) => {
     }
 })
 
-app.post('/addReview', async (req, res) => {
+app.post('/addReview', auth, async (req, res) => {
 
     try {
+        // Invalid token
+        if (!req.userId) return res.json({ message: 'Unauthenticated' });
+
         const courseCode = req.body.courseCode;
         let overallData = ((req.body.reviewManageability + req.body.reviewUsefulness + req.body.reviewEnjoyment) / 3);
         const review = {

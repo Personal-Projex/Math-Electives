@@ -30,7 +30,7 @@ const LoginContent = props => {
         let added = false;
         if (returnData.message == null) {
             setRetVal(retVal => 'Logged in');
-            added = true;
+            added = false;
             document.documentElement.style.setProperty('--timerBarColour', 'lime');
         } else {
             setRetVal(retVal => returnData.message);
