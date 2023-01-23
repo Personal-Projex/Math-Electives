@@ -136,7 +136,7 @@ app.post('/addReview', async (req, res) => {
 
     try {
         const token = sessionStorage.getItem('token');
-        //const username = sessionStorage.getItem('username');
+        const username = sessionStorage.getItem('username');
         //console.log(token);
         //console.log(username);
 
@@ -148,7 +148,7 @@ app.post('/addReview', async (req, res) => {
             reviewTitle: req.body.reviewTitle,
             reviewText: req.body.reviewText,
             termTaken: req.body.termTaken,
-            username: req.body.username,
+            username: username,
             reviewDate: (new Date()).toLocaleDateString('en-AU'),
             reviewEnjoyment: req.body.reviewEnjoyment,
             reviewUsefulness: req.body.reviewUsefulness,
