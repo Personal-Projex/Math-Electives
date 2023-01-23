@@ -77,7 +77,9 @@ app.post('/register', async (req, res) => {
             res.status(404).json({ message: "Username taken" });
         } else {
             const newUser = await user.save();
-            res.status(200).json(newUser);
+            const token = jwt.sign({ username: req.body.username}, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "1h"});
+            res.status(200).json({ user: newUser, token: token});
+            //res.status(200).json(newUser);
         }
     } catch (err) {
         //res.status(400).json({message: err.message})
@@ -94,13 +96,14 @@ app.post('/login', async (req, res) => {
         } else if (user.password !== req.body.password) {
             res.status(403).json({ message: "Incorrect password" })
         } else {
-            const { password, ...others } = user._doc;
-            res.status(200).json(others);
+            // User has been authenticated
+            const token = jwt.sign({ username: req.body.username}, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "1h"});
+            res.status(200).json({ username: req.body.username, token: token});
+
+            //const { password, ...others } = user._doc;
+            //res.status(200).json(others);
         }
 
-        // User has been authenticated
-        const token = jwt.sign({ username: req.body.username}, )
-            
     } catch (err) {
         res.status(400).json({ message: err.message })
     }
