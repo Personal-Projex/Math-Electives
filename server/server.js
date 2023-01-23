@@ -3,6 +3,8 @@ import mongoose from 'mongoose';
 import User from './models/User.js';
 import cors from 'cors';
 import Course from './models/Courses.js';
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
 
 import dotenv from 'dotenv';
 dotenv.config();
@@ -95,6 +97,10 @@ app.post('/login', async (req, res) => {
             const { password, ...others } = user._doc;
             res.status(200).json(others);
         }
+
+        // User has been authenticated
+        const token = jwt.sign({ username: req.body.username}, )
+            
     } catch (err) {
         res.status(400).json({ message: err.message })
     }
