@@ -268,6 +268,20 @@ span.li {
     cursor: pointer;
 }
 
+.checkbox-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.add-name-checkbox {
+    display: flex;
+}
+
+.add-name-checkbox span {
+    font-size: calc(0.5vh + 0.5vw);
+}
+
 .search-bar {
     background: #fff;
     width: 52%;
@@ -280,6 +294,10 @@ span.li {
     margin: auto;
     margin-bottom: 1.8%;
     justify-content: center;
+}
+
+.checkbox {
+    accent-color: #160053;
 }
 
 .search-btn {

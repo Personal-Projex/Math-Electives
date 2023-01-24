@@ -6,6 +6,7 @@ export default function AddReviewBox(props) {
     const [usefulRating, setUsefulRating] = useState(0);
     const [manageRating, setManageRating] = useState(0);
     const [title, setTitle] = useState('');
+    const [addName, setAddName] = useState(true);
     const [description, setDescription] = useState('');
     const [termTaken, setTermTaken] = useState('');
     const [alert, setAlert] = useState(false);
@@ -18,7 +19,7 @@ export default function AddReviewBox(props) {
             reviewTitle: title,
             reviewText: description,
             termTaken: termTaken.toUpperCase(),
-            username: "Anonymous",
+            addName: addName,
             reviewEnjoyment: enjoyRating,
             reviewUsefulness: usefulRating,
             reviewManageability: manageRating
@@ -69,7 +70,13 @@ export default function AddReviewBox(props) {
                 <div className='add-review-content'>
                     <div className='add-review-container'>
                         <form action="" onSubmit={submitHandler}>
-                            <label>Review title</label>
+                            <div className='checkbox-container'>
+                                <label>Review title</label>
+                                <label className='add-name-checkbox'>
+                                    <input className='checkbox' type="checkbox" name='Include name' onChange={e => setAddName(!addName)} />
+                                    <span>Post as anonymous</span>
+                                </label>
+                            </div>
                             <input type="text" placeholder='Your review title' onChange={e => setTitle(e.target.value)} />
                             <label>Review description</label>
                             <input type="text" placeholder='Your review description' onChange={e => setDescription(e.target.value)} />
