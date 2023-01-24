@@ -47,6 +47,7 @@ app.use(express.json());
 
 
 app.post('/register', async (req, res) => {
+
     const user = new User({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -77,6 +78,11 @@ app.post('/register', async (req, res) => {
         else if (userTaken) {
             res.status(404).json({ message: "Username taken" });
         } else {
+            
+            const passSecret = user.password.concat(process.env.PASSWORD_TOKEN_SECRET);
+            const passCrypt = bcrypt.hashSync(passSecret, 10);
+            user.password = passCrypt;
+            
             const newUser = await user.save();
             const token = jwt.sign({ username: req.body.username}, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "1h"});
             sessionStorage.setItem('username', req.body.username);
@@ -84,7 +90,7 @@ app.post('/register', async (req, res) => {
             res.status(200).json({ user: newUser, token: token});
         }
     } catch (err) {
-        //res.status(400).json({message: err.message})
+        res.status(400);
     }
 
 })
@@ -93,9 +99,10 @@ app.post('/register', async (req, res) => {
 app.post('/login', async (req, res) => {
     try {
         const user = await User.findOne({ username: req.body.username });
+
         if (!user) {
             res.status(404).json({ message: "User not found" });
-        } else if (user.password !== req.body.password) {
+        } else if (bcrypt.compareSync(req.body.password.concat(process.env.PASSWORD_TOKEN_SECRET), user.password) !== true) {
             res.status(403).json({ message: "Incorrect password" })
         } else {
             // User has been authenticated
