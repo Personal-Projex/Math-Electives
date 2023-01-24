@@ -25,7 +25,7 @@ export default function AboutInfo(props) {
                         <p className='overview'>{courseInfo.courseOverview ? courseInfo.courseOverview : ''}</p>
                         <p>{courseInfo.courseConditions ? 'Conditions for Enrolment' : ''}</p>
                         <p className='conditions'>{courseInfo.courseConditions ? courseInfo.courseConditions : ''}</p>
-                        <a href={`https://www.handbook.unsw.edu.au/undergraduate/courses/2023/${courseInfo.code}/?year=2023`} rel="noopener noreferrer"
+                        <a href={`https://www.handbook.unsw.edu.au/undergraduate/courses/${new Date().getFullYear()}/${courseInfo.courseCode}`} rel="noopener noreferrer"
                             target="_blank"><i aria-hidden="true" className="external icon"></i>{`${courseInfo.courseCode} Handbook Page`}</a>
                         <div className="terms-run-review">
                             {handleTerms([courseInfo.term1, courseInfo.term2, courseInfo.term3])}

@@ -84,10 +84,10 @@ app.post('/register', async (req, res) => {
             user.password = passCrypt;
             
             const newUser = await user.save();
-            const token = jwt.sign({ username: req.body.username}, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "1h"});
+            const token = jwt.sign({ username: req.body.username }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "1h" });
             sessionStorage.setItem('username', req.body.username);
             sessionStorage.setItem('token', token);
-            res.status(200).json({ user: newUser, token: token});
+            res.status(200).json({ user: newUser, token: token });
         }
     } catch (err) {
         res.status(400);
@@ -106,12 +106,12 @@ app.post('/login', async (req, res) => {
             res.status(403).json({ message: "Incorrect password" })
         } else {
             // User has been authenticated
-            const token = jwt.sign({ username: req.body.username}, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "1h"});
-            
+            const token = jwt.sign({ username: req.body.username }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "1h" });
+
             sessionStorage.setItem('username', req.body.username);
             sessionStorage.setItem('token', token);
 
-            res.status(200).json({ username: req.body.username, token: token});
+            res.status(200).json({ username: req.body.username, token: token });
         }
 
     } catch (err) {
@@ -120,7 +120,7 @@ app.post('/login', async (req, res) => {
 })
 
 // Auth middleware
-const auth = async(req, res, next) => {
+const auth = async (req, res, next) => {
     try {
         const token = req.headers.Authorization.split(" ")[1];
         let decodedData;
@@ -146,7 +146,7 @@ app.post('/addReview', async (req, res) => {
             reviewTitle: req.body.reviewTitle,
             reviewText: req.body.reviewText,
             termTaken: req.body.termTaken,
-            username: username,
+            username: req.body.addName ? username : "Anonymous",
             reviewDate: (new Date()).toLocaleDateString('en-AU'),
             reviewEnjoyment: req.body.reviewEnjoyment,
             reviewUsefulness: req.body.reviewUsefulness,
