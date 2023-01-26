@@ -17,7 +17,7 @@ const RegisterButton = props => {
                 handleClose={togglePopup}
 
                 content={<div>
-                    <RegisterContent handleUsername = {props.handleUsername}/>
+                    <RegisterContent/>
                 </div>}/>}
         </div>
     )

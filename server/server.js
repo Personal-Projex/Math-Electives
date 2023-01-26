@@ -119,20 +119,15 @@ app.post('/login', async (req, res) => {
     }
 })
 
-// Auth middleware
-const auth = async (req, res, next) => {
+
+app.delete('/logout', async (req, res) => {
     try {
-        const token = req.headers.Authorization.split(" ")[1];
-        let decodedData;
-        if (token) {
-            decodedData = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
-            req.userId = decodedData?.id;
-        }
-        next();
-    } catch (error) {
-        console.log(error);
+        sessionStorage.setItem('token', '');
+        res.status(200).json('Token Removed');
+    } catch (err) {
+        res.status(400);
     }
-}
+})
 
 app.post('/addReview', async (req, res) => {
 
@@ -156,9 +151,12 @@ app.post('/addReview', async (req, res) => {
         }
 
         // error checking:
-        if (token == null || !jwt.verify(token, process.env.ACCESS_TOKEN_SECRET)) {
-            res.status(401).send({ message: "Please login before reviewing" });
-        } else if (review.reviewTitle.length < 1) {
+        if (token == null) {
+            res.status(400).send({ message: "Please login before reviewing" });
+        } else if (!jwt.verify(token, process.env.ACCESS_TOKEN_SECRET)) {
+            res.status(400).send({ message: "Please login before reviewing" });
+        }
+        else if (review.reviewTitle.length < 1) {
             res.status(400).send({ message: "Please fill out the review title" });
         } else if (review.reviewTitle.length >= 60) {
             res.status(400).send({ message: "Title too long. Please use the description" });
