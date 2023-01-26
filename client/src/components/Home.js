@@ -2,7 +2,7 @@ import React from 'react';
 
 import CourseHeader from './course-heading';
 // import Courses from './courses';
-import NavBar from './navbar';
+import NavBar from './Navbar';
 import './home.css';
 
 export default function Home() {

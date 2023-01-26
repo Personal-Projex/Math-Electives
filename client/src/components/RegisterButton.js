@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Register from './Register';
 import RegisterContent from './RegisterContent';
 
-export default function RegisterButton() {
+const RegisterButton = props => {
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -17,9 +17,10 @@ export default function RegisterButton() {
                 handleClose={togglePopup}
 
                 content={<div>
-                    <RegisterContent/>
-                </div>}
-            />}
+                    <RegisterContent handleUsername = {props.handleUsername}/>
+                </div>}/>}
         </div>
     )
 }
+
+export default RegisterButton;

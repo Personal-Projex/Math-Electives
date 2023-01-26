@@ -45,6 +45,7 @@
   cursor: pointer;
   padding: 0;
   transition: all 0.3s ease-out;
+  font-size: large;
 }
 
 
@@ -360,11 +361,32 @@ a {
   cursor: pointer;
   padding: 0;
   transition: all 0.3s ease-out;
+  font-size: large;
+
 }
 
 .register-button:hover {
   color: #0a59e1;
 }
+
+.navbar-username {
+  background: none;
+  border: none;
+  text-decoration: none;
+  color: #fff;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease-out;
+  position: absolute;
+  font-size: large;
+  right: 1%;
+}
+.navbar-username:hover {
+  color: orange
+}
+
 
 
 [type="submit"] {
