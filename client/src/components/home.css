@@ -381,9 +381,10 @@ a {
   position: absolute;
   font-size: large;
   right: 1%;
+  color: orange
 }
 .navbar-username:hover {
-  color: orange
+  color: white
 }
 
 
