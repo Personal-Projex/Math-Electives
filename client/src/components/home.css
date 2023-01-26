@@ -31,7 +31,7 @@
   background-color: #160053;
   display: flex;
   align-items: center;
-  padding: 0.5rem;
+  padding: 0.7rem;
   gap: 1rem;
 }
 
@@ -379,9 +379,10 @@ a {
   padding: 0;
   transition: all 0.3s ease-out;
   position: absolute;
-  font-size: large;
+  font-size: 20px;
+  font-weight: 900;
   right: 1%;
-  color: orange
+  color: orange;
 }
 .navbar-username:hover {
   color: white
