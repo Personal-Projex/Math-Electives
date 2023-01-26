@@ -37,6 +37,8 @@ const LoginContent = props => {
             document.documentElement.style.setProperty('--timerBarColour', 'lime');
             props.handleUsername(username);
 
+            // Change Login text to Logout
+            props.handleLogin(false);
         } else {
             setRetVal(retVal => returnData.message);
             document.documentElement.style.setProperty('--timerBarColour', 'red');
