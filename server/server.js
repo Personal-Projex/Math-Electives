@@ -119,20 +119,15 @@ app.post('/login', async (req, res) => {
     }
 })
 
-// Auth middleware
-const auth = async (req, res, next) => {
-    try {
-        const token = req.headers.Authorization.split(" ")[1];
-        let decodedData;
-        if (token) {
-            decodedData = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
-            req.userId = decodedData?.id;
-        }
-        next();
-    } catch (error) {
-        console.log(error);
+
+app.delete('/logout', async (req, res) => {
+    try {   
+        sessionStorage.setItem('token', '');
+        res.status(200).json('Token Removed');
+    } catch (err) {
+        res.status(400);
     }
-}
+})
 
 app.post('/addReview', async (req, res) => {
 
@@ -155,7 +150,9 @@ app.post('/addReview', async (req, res) => {
         }
 
         // error checking:
-        if (token == null || !jwt.verify(token, process.env.ACCESS_TOKEN_SECRET)) {
+        if (token == null) {
+            res.status(400).send({ message: "Please login before reviewing" });
+        } else if (!jwt.verify(token, process.env.ACCESS_TOKEN_SECRET)) {
             res.status(400).send({ message: "Please login before reviewing" });
         }
         else if (review.reviewTitle.length < 1) {
