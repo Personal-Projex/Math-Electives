@@ -268,6 +268,48 @@ span.li {
     cursor: pointer;
 }
 
+.review-header {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.alter-review {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.edit-review {
+    color: orange;
+    margin-right: 10px;
+}
+
+.edit-review:hover {
+    color: #160053;
+}
+
+.delete-review {
+    color: orange;
+}
+
+.delete-review:hover {
+    color: #160053;
+}
+
+.title {
+    margin-top: 10px;
+    display: flex;
+}
+
+.title strong {
+    color: #3d3d3d;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
 .checkbox-container {
     display: flex;
     justify-content: space-between;
@@ -452,17 +494,6 @@ span.li {
 .review-user {
     font-size: 0.8rem;
     color: rgba(0, 0, 0, .65)
-}
-
-.title {
-    margin-top: 10px;
-    display: flex;
-}
-
-.title strong {
-    color: #3d3d3d;
-    font-size: 1.1rem;
-    letter-spacing: 0.5px;
 }
 
 .box-top {

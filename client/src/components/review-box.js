@@ -16,6 +16,16 @@ export default function ReviewBox(props) {
                 });
                 let reviewArr = await result.json();
 
+                let userReview = await fetch("http://127.0.0.1:8000/getReviewByUser?courseCode=" + code + "&username=" + sessionStorage.getItem('name'), {
+                    method: 'GET',
+                    redirect: 'follow'
+                });
+
+                userReview = await userReview.json();
+                if (userReview) {
+                    userReview = userReview._id;
+                }
+
                 if (reviewArr.length === 0) {
                     setReviews(<div className="review-box">
                         <span>Be the first to add a review!</span>
@@ -37,11 +47,28 @@ export default function ReviewBox(props) {
                         reviewArr = reviewArr.filter((review) => [review.reviewTitle.toLowerCase(), review.reviewText.toLowerCase(), review.termTaken.toLowerCase()].find((info) => info.includes(search.toLowerCase())));
                     }
 
+                    const editReview = () => {
+                        // make a put request using the code and the username above which will allow the user to edit the review text. 
+                        // will need to make another popup window which displays the current review text and a textbox to change the review.
+                    }
+
+                    const deleteReview = () => {
+                        // make a delete req using the code and the username above which will allow the user to delete the review. 
+                        // Maybe make a popup for the user to confirm if they want to delete?
+                    }
                     const sortedReviews = reviewArr.map((review, pos) => {
                         return (
                             <div className="review-box" key={pos}>
-                                <div className="title">
-                                    <strong>{review.reviewTitle}</strong>
+                                <div className='review-header'>
+                                    <div className="title">
+                                        <strong>{review.reviewTitle}</strong>
+                                    </div>
+                                    {review._id === userReview ?
+                                        <div className='alter-review'>
+                                            <FontAwesomeIcon className='edit-review' icon={faPenToSquare} onClick={editReview}></FontAwesomeIcon>
+                                            <FontAwesomeIcon className='delete-review' icon={faTrash} onClick={deleteReview}></FontAwesomeIcon>
+                                        </div>
+                                        : null}
                                 </div>
                                 <div className="box-top">
                                     <div className='overall-rating'>

@@ -209,6 +209,25 @@ app.get('/getReviews', async (req, res) => {
     }
 })
 
+app.get('/getReviewByUser', async (req, res) => {
+    try {
+        const courseCode = req.query.courseCode;
+        const username = req.query.username;
+
+        const course = await Course.findOne({ 'courseObj.courseCode': courseCode });
+        if (!course) {
+            res.status(404).json({ message: "Course not found" });
+        }
+
+        let reviewsArr = course.reviews;
+        // error checking to see if the user has already posted a review for this course
+        const userRev = reviewsArr.find(rev => rev.username === username);
+        res.status(200).send(userRev);
+    } catch (err) {
+        res.status(400).json({ "message": err.message });
+    }
+})
+
 app.post('/addCourseData', async (req, res) => {
     const courses = req.body;
     for (const course of courses) {

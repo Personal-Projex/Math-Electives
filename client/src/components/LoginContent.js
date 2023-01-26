@@ -23,8 +23,6 @@ const LoginContent = props => {
             body: JSON.stringify(user)
         })
 
-        console.log(user.username);
-
         const returnData = await response.json();
         console.log(returnData);
 
@@ -42,7 +40,7 @@ const LoginContent = props => {
             document.documentElement.style.setProperty('--timerBarColour', 'red');
         }
 
-        // Make the alert disappear after 2 seconds
+        // Make the alert disappear
         setTimeout(() => {
             setAlert(alert => false);
             if (added) {
