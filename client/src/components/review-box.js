@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Stars from './generateStars';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 import './review.css';
 
@@ -51,7 +53,7 @@ export default function ReviewBox(props) {
                                     </div>
                                     <div className="user-data">
                                         <div className="review-date">{review.reviewDate}</div>
-                                        <div className="review-user">{review.username}</div>
+                                        <div className="review-user">{review.addName ? review.username : 'Anonymous'}</div>
                                     </div>
                                 </div>
                                 <div className='specific-ratings'>

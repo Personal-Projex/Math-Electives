@@ -27,7 +27,7 @@ const LoginContent = props => {
 
         const returnData = await response.json();
         console.log(returnData);
-        
+
 
         setAlert(alert => true);
         let added = false;

@@ -78,11 +78,11 @@ app.post('/register', async (req, res) => {
         else if (userTaken) {
             res.status(404).json({ message: "Username taken" });
         } else {
-            
+
             const passSecret = user.password.concat(process.env.PASSWORD_TOKEN_SECRET);
             const passCrypt = bcrypt.hashSync(passSecret, 10);
             user.password = passCrypt;
-            
+
             const newUser = await user.save();
             const token = jwt.sign({ username: req.body.username }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "1h" });
             sessionStorage.setItem('username', req.body.username);
@@ -146,7 +146,8 @@ app.post('/addReview', async (req, res) => {
             reviewTitle: req.body.reviewTitle,
             reviewText: req.body.reviewText,
             termTaken: req.body.termTaken,
-            username: req.body.addName ? username : "Anonymous",
+            username: username,
+            addName: req.body.addName,
             reviewDate: (new Date()).toLocaleDateString('en-AU'),
             reviewEnjoyment: req.body.reviewEnjoyment,
             reviewUsefulness: req.body.reviewUsefulness,
@@ -156,9 +157,8 @@ app.post('/addReview', async (req, res) => {
 
         // error checking:
         if (token == null || !jwt.verify(token, process.env.ACCESS_TOKEN_SECRET)) {
-            res.status(400).send({ message: "Please login before reviewing" });
-        }
-        else if (review.reviewTitle.length < 1) {
+            res.status(401).send({ message: "Please login before reviewing" });
+        } else if (review.reviewTitle.length < 1) {
             res.status(400).send({ message: "Please fill out the review title" });
         } else if (review.reviewTitle.length >= 60) {
             res.status(400).send({ message: "Title too long. Please use the description" });
@@ -170,18 +170,25 @@ app.post('/addReview', async (req, res) => {
             res.status(400).send({ message: "Please fill out the star ratings" });
         } else {
             const courseObj = await Course.findOne({ 'courseObj.courseCode': courseCode });
-            let reviewsObj = courseObj.reviews;
-            let ratings = courseObj.ratings;
-            await Course.findOneAndUpdate({ 'courseObj.courseCode': courseCode }, {
-                $push: {
-                    reviews: review
-                },
-                'ratings.overall': ((ratings.overall * reviewsObj.length) + overallData) / (reviewsObj.length + 1),
-                'ratings.enjoyment': ((ratings.enjoyment * reviewsObj.length) + review.reviewEnjoyment) / (reviewsObj.length + 1),
-                'ratings.usefulness': ((ratings.usefulness * reviewsObj.length) + review.reviewUsefulness) / (reviewsObj.length + 1),
-                'ratings.manageability': ((ratings.manageability * reviewsObj.length) + review.reviewManageability) / (reviewsObj.length + 1)
-            })
-            res.sendStatus(200);
+            let reviewsArr = courseObj.reviews;
+
+            // error checking to see if the user has already posted a review for this course
+            const userRev = reviewsArr.find(rev => rev.username === username);
+            if (userRev) {
+                res.status(405).send({ message: "Your course review already exists!" });
+            } else {
+                let ratings = courseObj.ratings;
+                await Course.findOneAndUpdate({ 'courseObj.courseCode': courseCode }, {
+                    $push: {
+                        reviews: review
+                    },
+                    'ratings.overall': ((ratings.overall * reviewsArr.length) + overallData) / (reviewsArr.length + 1),
+                    'ratings.enjoyment': ((ratings.enjoyment * reviewsArr.length) + review.reviewEnjoyment) / (reviewsArr.length + 1),
+                    'ratings.usefulness': ((ratings.usefulness * reviewsArr.length) + review.reviewUsefulness) / (reviewsArr.length + 1),
+                    'ratings.manageability': ((ratings.manageability * reviewsArr.length) + review.reviewManageability) / (reviewsArr.length + 1)
+                })
+                res.sendStatus(200);
+            }
         }
     } catch (err) {
         res.status(400).json({ "message": err.message });

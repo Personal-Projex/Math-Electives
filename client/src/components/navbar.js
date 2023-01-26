@@ -11,7 +11,7 @@ export default function Nav() {
         setUsername(username => name);
         sessionStorage.setItem('name', name);
     }
-    
+
     const [username, setUsername] = useState('');
     useEffect(() => {
         setUsername(sessionName);
@@ -21,8 +21,8 @@ export default function Nav() {
 
         <div className="header">
             <a href="/" className="link">Math-Electives</a>
-            <RegisterButton handleUsername = {updateUsername}/>
-            <LoginButton handleUsername = {updateUsername}/>
+            <RegisterButton handleUsername={updateUsername} />
+            <LoginButton handleUsername={updateUsername} />
             <div className='navbar-username'>{username}</div>
 
         </div>
