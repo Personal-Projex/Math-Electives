@@ -37,6 +37,7 @@ const RegisterContent = props => {
             setRetVal(retVal => 'Registered and logged in');
             added = true;
             document.documentElement.style.setProperty('--timerBarColour', 'lime');
+            props.handleUsername(username);
         } else {
             setRetVal(retVal => returnData.message);
             document.documentElement.style.setProperty('--timerBarColour', 'red');

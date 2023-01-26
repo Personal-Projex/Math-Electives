@@ -17,10 +17,8 @@ const LoginButton = props => {
                 handleClose = {togglePopup}
 
                 content={<div>
-                    <LoginContent handleUsername = {props.handleUsername}
-/>
-                </div>}
-/>}
+                    <LoginContent handleUsername = {props.handleUsername}/>
+                </div>}/>}
         </div>
     )
 }

@@ -45,6 +45,7 @@
   cursor: pointer;
   padding: 0;
   transition: all 0.3s ease-out;
+  font-size: large;
 }
 
 
@@ -360,6 +361,8 @@ a {
   cursor: pointer;
   padding: 0;
   transition: all 0.3s ease-out;
+  font-size: large;
+
 }
 
 .register-button:hover {
@@ -376,6 +379,9 @@ a {
   cursor: pointer;
   padding: 0;
   transition: all 0.3s ease-out;
+  position: absolute;
+  font-size: large;
+  right: 1%;
 }
 .navbar-username:hover {
   color: orange
