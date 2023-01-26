@@ -46,7 +46,7 @@ export default function CourseHeader() {
         <>
             <div className="course-heading">
                 <div className="main-logo">
-                    <img alt="" src="images/newLogo4.png" width="800" height="330" />
+                    <img alt="" src="images/oki.png" width="430" height="270" />
                 </div>
                 <div className="search-bar">
                     <div onClick={dropDown} className="select" id="select">
