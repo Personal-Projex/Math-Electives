@@ -9,8 +9,9 @@ const LoginButton = props => {
     const sessionLogin = sessionStorage.getItem('login');
     const [isOpen, setIsOpen] = useState(false);
     const [login, setLogin] = useState('Login');
+    const [alert, setAlert] = useState(false);
 
-    const togglePopup = () => {
+    async function togglePopup () {
         if (login === "Login") {
             setIsOpen(!isOpen);
         } else {
@@ -20,6 +21,26 @@ const LoginButton = props => {
 
             // Remove the user's username from the navbar
             props.handleUsername('');
+
+            // Invalidate the user's token
+            const response = await fetch('http://127.0.0.1:8000/logout', {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
+
+            const returnData = await response.json();
+            console.log(returnData);
+
+            document.documentElement.style.setProperty('--timerBarColour', 'lime');
+            setAlert(alert => true);
+
+            // Make the alert disappear after 2 seconds
+            setTimeout(() => {
+            setAlert(alert => false);
+                window.location.reload(false);
+            }, 2000);
         }
     }
 
@@ -36,6 +57,15 @@ const LoginButton = props => {
     
     return (
         <div>
+            {alert &&
+                <div>
+                    <div className="timer-bar"></div>
+                    <div class="alert-box">
+                        <p class="alert">Successfully Logged out</p>
+                    </div>
+                </div>
+            }
+
             <button className="register-button" onClick={togglePopup}>{login}</button>
             {isOpen && <Login
                 handleClose = {togglePopup}
