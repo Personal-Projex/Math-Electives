@@ -11,23 +11,29 @@ const LoginButton = props => {
     const [login, setLogin] = useState('Login');
 
     const togglePopup = () => {
-        setIsOpen(!isOpen);
+        if (login === "Login") {
+            setIsOpen(!isOpen);
+        } else {
+            // Logging the user out
+            setLogin(login => sessionStorage.getItem('login'));
+            sessionStorage.setItem('login', 'Login');
+
+            // Remove the user's username from the navbar
+            props.handleUsername('');
+        }
     }
 
     useEffect(() => {
         setLogin(login => sessionLogin);
     }, [sessionLogin]);
 
-    const toggleLogin = (loginBool) => {
-        if (login === 'Logout') {
-            setLogin(login => sessionStorage.getItem('login'));
-            sessionStorage.setItem('login', 'Login');
-        } else {
+    const toggleLogin = () => {
+        if (login === 'Login') {
             setLogin(login => 'Logout');
             sessionStorage.setItem('login', 'Logout');
         }
     }
-
+    
     return (
         <div>
             <button className="register-button" onClick={togglePopup}>{login}</button>
