@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from './navbar';
+import NavBar from './Navbar';
 import AboutInfo from './about-course';
 import SearchReviews from './search-review';
 import './review.css';

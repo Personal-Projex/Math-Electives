@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Login from './Login';
 import LoginContent from './LoginContent';
 
-export default function LoginButton() {
+const LoginButton = props => {
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -17,9 +17,12 @@ export default function LoginButton() {
                 handleClose = {togglePopup}
 
                 content={<div>
-                    <LoginContent/>
+                    <LoginContent handleUsername = {props.handleUsername}
+/>
                 </div>}
-            />}
+/>}
         </div>
     )
 }
+
+export default LoginButton;

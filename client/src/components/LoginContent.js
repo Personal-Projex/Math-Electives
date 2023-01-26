@@ -23,8 +23,11 @@ const LoginContent = props => {
             body: JSON.stringify(user)
         })
 
+        console.log(user.username);
+
         const returnData = await response.json();
         console.log(returnData);
+        
 
         setAlert(alert => true);
         let added = false;
@@ -32,6 +35,8 @@ const LoginContent = props => {
             setRetVal(retVal => 'Logged in');
             added = true;
             document.documentElement.style.setProperty('--timerBarColour', 'lime');
+            props.handleUsername(username);
+
         } else {
             setRetVal(retVal => returnData.message);
             document.documentElement.style.setProperty('--timerBarColour', 'red');

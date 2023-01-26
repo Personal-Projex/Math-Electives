@@ -366,6 +366,22 @@ a {
   color: #0a59e1;
 }
 
+.navbar-username {
+  background: none;
+  border: none;
+  text-decoration: none;
+  color: #fff;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease-out;
+}
+.navbar-username:hover {
+  color: orange
+}
+
+
 
 [type="submit"] {
   width: 95%;
