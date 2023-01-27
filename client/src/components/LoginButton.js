@@ -5,6 +5,9 @@ import sessionStorage from 'sessionstorage';
 
 
 const LoginButton = props => {
+    if (!sessionStorage.getItem('login')) {
+        sessionStorage.setItem('login', 'Login');
+    }
 
     const sessionLogin = sessionStorage.getItem('login');
     const [isOpen, setIsOpen] = useState(false);

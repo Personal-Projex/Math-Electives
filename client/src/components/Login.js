@@ -7,7 +7,7 @@ const Login = props => {
                 <div className="register-wrapper">
                     <button className="btn-close" onClick={props.handleClose}>x</button>
                     {props.content}
-                    
+
                 </div>
             </div>
         </>
