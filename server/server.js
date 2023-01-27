@@ -218,9 +218,14 @@ app.get('/getReviewByUser', async (req, res) => {
         }
 
         let reviewsArr = course.reviews;
-        // error checking to see if the user has already posted a review for this course
-        const userRev = reviewsArr.find(rev => rev.username === username);
-        res.status(200).send(userRev);
+        if (username) {
+            // error checking to see if the user has already posted a review for this course
+            const userRev = reviewsArr.find(rev => rev.username === username);
+            res.status(200).send(userRev);
+        } else {
+            // user hasnt logged in yet. Don't need to worry about having to edit their review
+            res.status(200).send(username);
+        }
     } catch (err) {
         res.status(400).json({ "message": err.message });
     }

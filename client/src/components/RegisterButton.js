@@ -17,8 +17,8 @@ const RegisterButton = props => {
                 handleClose={togglePopup}
 
                 content={<div>
-                    <RegisterContent/>
-                </div>}/>}
+                    <RegisterContent />
+                </div>} />}
         </div>
     )
 }

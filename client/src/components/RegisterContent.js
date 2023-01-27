@@ -95,4 +95,3 @@ const RegisterContent = props => {
     )
 }
 export default RegisterContent;
-

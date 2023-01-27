@@ -2,11 +2,15 @@ import React, { useState, useEffect } from 'react';
 import Stars from './generateStars';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
+import EditReview from './edit-review';
 
 import './review.css';
 
 export default function ReviewBox(props) {
     const [reviews, setReviews] = useState();
+    const [editPopup, setEditPopup] = useState(false);
+    const [deletePopup, setDeletePopup] = useState(false);
+
     useEffect(() => {
         const fetchReviews = async (search, code) => {
             try {
@@ -20,8 +24,8 @@ export default function ReviewBox(props) {
                     method: 'GET',
                     redirect: 'follow'
                 });
-
                 userReview = await userReview.json();
+                console.log(userReview);
                 if (userReview) {
                     userReview = userReview._id;
                 }
@@ -47,12 +51,12 @@ export default function ReviewBox(props) {
                         reviewArr = reviewArr.filter((review) => [review.reviewTitle.toLowerCase(), review.reviewText.toLowerCase(), review.termTaken.toLowerCase()].find((info) => info.includes(search.toLowerCase())));
                     }
 
-                    const editReview = () => {
-                        // make a put request using the code and the username above which will allow the user to edit the review text. 
-                        // will need to make another popup window which displays the current review text and a textbox to change the review.
+                    const toggleEditPopup = () => {
+                        setEditPopup(editPopup => !editPopup);
                     }
 
-                    const deleteReview = () => {
+                    const toggleDeletePopup = () => {
+                        setEditPopup(deletePopup => !deletePopup);
                         // make a delete req using the code and the username above which will allow the user to delete the review. 
                         // Maybe make a popup for the user to confirm if they want to delete?
                     }
@@ -65,8 +69,14 @@ export default function ReviewBox(props) {
                                     </div>
                                     {review._id === userReview ?
                                         <div className='alter-review'>
-                                            <FontAwesomeIcon className='edit-review' icon={faPenToSquare} onClick={editReview}></FontAwesomeIcon>
-                                            <FontAwesomeIcon className='delete-review' icon={faTrash} onClick={deleteReview}></FontAwesomeIcon>
+                                            <>
+                                                <FontAwesomeIcon className='edit-review' icon={faPenToSquare} onClick={toggleEditPopup}></FontAwesomeIcon>
+                                                {editPopup && <EditReview handleClose={setEditPopup} code={props.code} reviewObj={review} />}
+                                            </>
+                                            {/* <>
+                                                <FontAwesomeIcon className='delete-review' icon={faTrash} onClick={toggleDeletePopup}></FontAwesomeIcon>
+                                                {deletePopup && <DeleteReview handleClose={setDeletePopup} code={props.code} />}
+                                            </> */}
                                         </div>
                                         : null}
                                 </div>
@@ -110,7 +120,7 @@ export default function ReviewBox(props) {
             }
         }
         fetchReviews(props.search, props.code);
-    }, [props.search, props.code])
+    }, [props.search, props.code, editPopup, setEditPopup])
 
     return (
         <div className="review-box-container">

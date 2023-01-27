@@ -11,7 +11,7 @@ const LoginButton = props => {
     const [login, setLogin] = useState('Login');
     const [alert, setAlert] = useState(false);
 
-    async function togglePopup () {
+    async function togglePopup() {
         if (login === "Login") {
             setIsOpen(!isOpen);
         } else {
@@ -38,7 +38,7 @@ const LoginButton = props => {
 
             // Make the alert disappear after 2 seconds
             setTimeout(() => {
-            setAlert(alert => false);
+                setAlert(alert => false);
                 window.location.reload(false);
             }, 2000);
         }
@@ -54,7 +54,7 @@ const LoginButton = props => {
             sessionStorage.setItem('login', 'Logout');
         }
     }
-    
+
     return (
         <div>
             {alert &&
@@ -68,11 +68,11 @@ const LoginButton = props => {
 
             <button className="register-button" onClick={togglePopup}>{login}</button>
             {isOpen && <Login
-                handleClose = {togglePopup}
+                handleClose={togglePopup}
 
                 content={<div>
-                    <LoginContent handleUsername = {props.handleUsername} handleLogin = {toggleLogin}/>
-                </div>}/>}
+                    <LoginContent handleUsername={props.handleUsername} handleLogin={toggleLogin} />
+                </div>} />}
         </div>
     )
 }
