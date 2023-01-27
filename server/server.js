@@ -150,7 +150,7 @@ app.post('/addReview', async (req, res) => {
         }
 
         // error checking:
-        if (token == null) {
+        if (token === null || token === '') {
             res.status(400).send({ message: "Please login before reviewing" });
         } else if (!jwt.verify(token, process.env.ACCESS_TOKEN_SECRET)) {
             res.status(400).send({ message: "Please login before reviewing" });
