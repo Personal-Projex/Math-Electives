@@ -14,7 +14,7 @@ const ErrorPage = props => {
             </h1>
 
             <p className="pageTxt">We can't find the page you're looking for.</p>
-
+            <a href="/"> Go back home</a>
         </div>
         </>
     )

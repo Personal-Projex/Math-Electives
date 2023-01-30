@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './review.css';
 import Stars from './generateStars';
-import ErrorPage from './ErrorPage';
+//import ErrorPage from './ErrorPage';
+import { Redirect, Link, NavLink, Navigate, useNavigate } from "react-router-dom";
 
 export default function AboutInfo(props) {
 
@@ -61,7 +62,8 @@ export default function AboutInfo(props) {
 
                 if (course.message === 'Course not found') {
                     console.log("COURSE NOT FOUND");
-                    setDisplay(<ErrorPage/>);
+                    //setDisplay(<ErrorPage/>);
+                    <Navigate to="/404-page" />
                 } else {
                     console.log("COURSE FOUND");
                     setDisplay(displayComp);
