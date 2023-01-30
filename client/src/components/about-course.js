@@ -13,7 +13,15 @@ export default function AboutInfo(props) {
                     method: 'GET',
                     redirect: 'follow'
                 });
+                
                 const course = await result.json();
+
+                if (course.message === 'Course not found') {
+                    console.log("COURSE NOT FOUND");
+                } else {
+                    console.log("COURSE FOUND");
+                }
+   
                 const numReviews = course.reviews.length;
                 const courseInfo = course.courseObj;
 

@@ -195,7 +195,7 @@ app.get('/getReviews', async (req, res) => {
         }
         res.status(200).send(course.reviews);
     } catch (err) {
-        res.status(400).json({ "message": err.message });
+        //res.status(400).json({ "message": err.message });
     }
 })
 
@@ -248,11 +248,12 @@ app.get('/getCourseInfo', async (req, res) => {
         const courseCode = req.query.courseCode;
         const course = await Course.findOne({ 'courseObj.courseCode': courseCode });
         if (!course) {
+            // console.log("Course not found");
             res.status(404).json({ message: "Course not found" });
         }
         res.status(200).json(course);
     } catch (err) {
-        res.status(400).json({ "message": err.message });
+        //res.status(400).json({ "message": err.message });
     }
 })
 
