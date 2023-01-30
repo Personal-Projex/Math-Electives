@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './review.css';
 import Stars from './generateStars';
+import ErrorPage from './ErrorPage';
 
 export default function AboutInfo(props) {
 
@@ -15,13 +16,6 @@ export default function AboutInfo(props) {
                 });
                 
                 const course = await result.json();
-
-                if (course.message === 'Course not found') {
-                    console.log("COURSE NOT FOUND");
-                } else {
-                    console.log("COURSE FOUND");
-                }
-   
                 const numReviews = course.reviews.length;
                 const courseInfo = course.courseObj;
 
@@ -64,7 +58,14 @@ export default function AboutInfo(props) {
                         </div>
                     </div>
                 )
-                setDisplay(displayComp);
+
+                if (course.message === 'Course not found') {
+                    console.log("COURSE NOT FOUND");
+                    setDisplay(<ErrorPage/>);
+                } else {
+                    console.log("COURSE FOUND");
+                    setDisplay(displayComp);
+                }
 
             } catch (err) {
                 console.log(err);
