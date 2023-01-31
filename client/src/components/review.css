@@ -752,6 +752,7 @@ span.li {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    margin-top: 2.6rem;
 }
 
 .delete-review-close {
