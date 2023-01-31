@@ -193,7 +193,7 @@ app.post('/addReview', async (req, res) => {
     }
 })
 
-app.put('/editReview', async (req, res) => {
+app.post('/editReview', async (req, res) => {
     try {
         const username = sessionStorage.getItem('username');
         const { reviewId, reviewTitle, reviewText, termTaken, reviewEnjoyment, reviewUsefulness, reviewManageability } = req.body;
@@ -223,6 +223,46 @@ app.put('/editReview', async (req, res) => {
         res.sendStatus(200);
     } catch (err) {
         res.status(400).json({ "message": err.message });
+    }
+})
+
+app.post('/deleteReview', async (req, res) => {
+    try {
+        const { reviewObj } = req.body;
+
+        let reviewId = mongoose.Types.ObjectId((reviewObj._id).trim());
+
+        const courseObj = await Course.findOne({ reviews: { $elemMatch: { _id: reviewId } } });
+        let ratings = courseObj.ratings;
+        let reviewsArr = courseObj.reviews;
+        let overall = 0;
+        let enjoyment = 0
+        let usefulness = 0;
+        let manageability = 0;
+
+        if (reviewsArr.length > 1) {
+            overall = ((ratings.overall * reviewsArr.length) - overallRating) / (reviewsArr.length - 1);
+            enjoyment = ((ratings.enjoyment * reviewsArr.length) - reviewObj.reviewEnjoyment) / (reviewsArr.length - 1);
+            usefulness = ((ratings.usefulness * reviewsArr.length) - reviewObj.reviewUsefulness) / (reviewsArr.length - 1);
+            manageability = ((ratings.manageability * reviewsArr.length) - reviewObj.reviewManageability) / (reviewsArr.length - 1);
+        }
+
+        let overallRating = ((reviewObj.reviewManageability + reviewObj.reviewUsefulness + reviewObj.reviewEnjoyment) / 3);
+
+        await Course.findOneAndUpdate({ reviews: { $elemMatch: { _id: reviewId } } }, {
+            $pull: {
+                reviews: { _id: reviewId }
+            },
+            'ratings.overall': overall,
+            'ratings.enjoyment': enjoyment,
+            'ratings.usefulness': usefulness,
+            'ratings.manageability': manageability
+        })
+
+        res.sendStatus(200);
+    } catch (err) {
+        console.log(err);
+        res.status(400).json({ "message": "Could not delete review" });
     }
 })
 
@@ -259,7 +299,7 @@ app.get('/getReviewByUser', async (req, res) => {
             });
         } else {
             // user hasnt logged in yet. Don't need to worry about having to edit their review
-            res.status(200).send(username);
+            res.status(200).send({ "message": "Not logged in" });
         }
     } catch (err) {
         res.status(400).json({ "message": err.message });

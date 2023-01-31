@@ -25,10 +25,9 @@ export default function EditReview(props) {
             reviewUsefulness: usefulRating,
             reviewManageability: manageRating
         }
-        console.log(editedData);
 
         const response = await fetch('http://127.0.0.1:8000/editReview', {
-            method: 'PUT',
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },

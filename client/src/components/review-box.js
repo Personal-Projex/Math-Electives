@@ -3,6 +3,7 @@ import Stars from './generateStars';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
 import EditReview from './edit-review';
+import DeleteReview from './delete-review';
 
 import './review.css';
 
@@ -59,8 +60,6 @@ export default function ReviewBox(props) {
 
                     const toggleDeletePopup = () => {
                         setDeletePopup(deletePopup => !deletePopup);
-                        // make a delete req using the code and the username above which will allow the user to delete the review. 
-                        // Maybe make a popup for the user to confirm if they want to delete?
                     }
                     const sortedReviews = reviewArr.map((review, pos) => {
                         return (
@@ -73,12 +72,12 @@ export default function ReviewBox(props) {
                                         <div className='alter-review'>
                                             <>
                                                 <FontAwesomeIcon className='edit-review' icon={faPenToSquare} onClick={toggleEditPopup}></FontAwesomeIcon>
-                                                {editPopup && <EditReview handleClose={toggleEditPopup} code={props.code} reviewObj={review} />}
+                                                {editPopup && <EditReview handleClose={toggleEditPopup} reviewObj={review} />}
                                             </>
-                                            {/* <>
+                                            <>
                                                 <FontAwesomeIcon className='delete-review' icon={faTrash} onClick={toggleDeletePopup}></FontAwesomeIcon>
-                                                {deletePopup && <DeleteReview handleClose={setDeletePopup} code={props.code} />}
-                                            </> */}
+                                                {deletePopup && <DeleteReview handleClose={toggleDeletePopup} reviewObj={review} />}
+                                            </>
                                         </div>
                                         : null}
                                 </div>
@@ -122,7 +121,7 @@ export default function ReviewBox(props) {
             }
         }
         fetchReviews(props.search, props.code);
-    }, [props.search, props.code, editPopup, setEditPopup])
+    }, [props.search, props.code, editPopup, setEditPopup, deletePopup, setDeletePopup])
 
     return (
         <div className="review-box-container">
