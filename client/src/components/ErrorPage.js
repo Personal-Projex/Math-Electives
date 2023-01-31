@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './ErrorPage.css'
 
 const ErrorPage = props => {
+      
     return (
         <>
         <div className="container">
@@ -9,7 +10,7 @@ const ErrorPage = props => {
 
             <h1>
                 <span className="num">4 </span>
-                <i className="fas fa-cog"></i>
+                <span className="fas fa-cog"></span>
                 <span className="num"> 4</span>
             </h1>
 
