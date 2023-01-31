@@ -20,7 +20,6 @@ export default function ReviewBox(props) {
                     redirect: 'follow'
                 });
                 let reviewArr = await result.json();
-                console.log(sessionStorage.getItem('name'));
 
                 let userReview = await fetch("http://127.0.0.1:8000/getReviewByUser?courseCode=" + code + "&username=" + sessionStorage.getItem('name'), {
                     method: 'GET',
@@ -61,8 +60,6 @@ export default function ReviewBox(props) {
 
                     const toggleDeletePopup = () => {
                         setDeletePopup(deletePopup => !deletePopup);
-                        // make a delete req using the code and the username above which will allow the user to delete the review. 
-                        // Maybe make a popup for the user to confirm if they want to delete?
                     }
                     const sortedReviews = reviewArr.map((review, pos) => {
                         return (
@@ -79,7 +76,7 @@ export default function ReviewBox(props) {
                                             </>
                                             <>
                                                 <FontAwesomeIcon className='delete-review' icon={faTrash} onClick={toggleDeletePopup}></FontAwesomeIcon>
-                                                {deletePopup && <DeleteReview handleClose={setDeletePopup} reviewObj={review} />}
+                                                {deletePopup && <DeleteReview handleClose={toggleDeletePopup} reviewObj={review} />}
                                             </>
                                         </div>
                                         : null}
