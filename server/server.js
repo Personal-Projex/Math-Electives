@@ -240,14 +240,14 @@ app.post('/deleteReview', async (req, res) => {
         let usefulness = 0;
         let manageability = 0;
 
+        let overallRating = ((reviewObj.reviewManageability + reviewObj.reviewUsefulness + reviewObj.reviewEnjoyment) / 3);
+
         if (reviewsArr.length > 1) {
             overall = ((ratings.overall * reviewsArr.length) - overallRating) / (reviewsArr.length - 1);
             enjoyment = ((ratings.enjoyment * reviewsArr.length) - reviewObj.reviewEnjoyment) / (reviewsArr.length - 1);
             usefulness = ((ratings.usefulness * reviewsArr.length) - reviewObj.reviewUsefulness) / (reviewsArr.length - 1);
             manageability = ((ratings.manageability * reviewsArr.length) - reviewObj.reviewManageability) / (reviewsArr.length - 1);
         }
-
-        let overallRating = ((reviewObj.reviewManageability + reviewObj.reviewUsefulness + reviewObj.reviewEnjoyment) / 3);
 
         await Course.findOneAndUpdate({ reviews: { $elemMatch: { _id: reviewId } } }, {
             $pull: {

@@ -40,10 +40,11 @@ const LoginButton = props => {
             setAlert(alert => true);
 
             // Make the alert disappear after 2 seconds
+            document.documentElement.style.setProperty('--timerBarLength', '1.3s');
             setTimeout(() => {
-                setAlert(alert => false);
+                setAlert(alert => !alert);
                 window.location.reload(false);
-            }, 2000);
+            }, 1300);
         }
     }
 

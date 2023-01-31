@@ -3,6 +3,7 @@ import NavBar from './navbar';
 import AboutInfo from './about-course';
 import SearchReviews from './search-review';
 import './review.css';
+import './home.css';
 import { useParams } from 'react-router-dom';
 
 function componentDidMount() {
