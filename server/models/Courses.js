@@ -61,6 +61,9 @@ const CourseSchema = mongoose.Schema(
             username: {
                 type: String
             },
+            addName: {
+                type: Boolean
+            },
             reviewDate: {
                 type: String
             },

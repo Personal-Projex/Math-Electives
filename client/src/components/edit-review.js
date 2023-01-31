@@ -1,42 +1,43 @@
 import React, { useState } from 'react';
 import Rate from "./star-ratings";
 
-export default function AddReviewBox(props) {
-    const [enjoyRating, setEnjoyRating] = useState(0);
-    const [usefulRating, setUsefulRating] = useState(0);
-    const [manageRating, setManageRating] = useState(0);
-    const [title, setTitle] = useState('');
-    const [addName, setAddName] = useState(true);
-    const [description, setDescription] = useState('');
-    const [termTaken, setTermTaken] = useState('');
+export default function EditReview(props) {
+
+    const review = props.reviewObj;
+
+    const [enjoyRating, setEnjoyRating] = useState(review.reviewEnjoyment);
+    const [usefulRating, setUsefulRating] = useState(review.reviewUsefulness);
+    const [manageRating, setManageRating] = useState(review.reviewManageability);
+    const [title, setTitle] = useState(review.reviewTitle);
+    const [description, setDescription] = useState(review.reviewText);
+    const [termTaken, setTermTaken] = useState(review.termTaken);
     const [alert, setAlert] = useState(false);
     const [retVal, setRetVal] = useState('');
 
     async function submitHandler(e) {
         e.preventDefault();
-        const review = {
-            courseCode: props.code,
+        const editedData = {
+            reviewId: review._id,
             reviewTitle: title,
             reviewText: description,
             termTaken: termTaken.toUpperCase(),
-            addName: addName,
             reviewEnjoyment: enjoyRating,
             reviewUsefulness: usefulRating,
             reviewManageability: manageRating
         }
 
-        const response = await fetch('http://127.0.0.1:8000/addReview', {
+        const response = await fetch('http://127.0.0.1:8000/editReview', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(review)
+            body: JSON.stringify(editedData)
         })
 
         setAlert(alert => !alert);
         let added = false;
         if (response.status === 200) {
-            setRetVal('Added review!');
+            setRetVal('Edited Review!');
             added = true;
             document.documentElement.style.setProperty('--timerBarColour', 'lime');
         } else {
@@ -60,8 +61,8 @@ export default function AddReviewBox(props) {
     }
 
     return (
-        <div className='add-review-overlay'>
-            <div className='add-review-wrapper'>
+        <div className='edit-review-overlay'>
+            <div className='edit-review-wrapper'>
                 {alert &&
                     <div>
                         <div className="timer-bar"></div>
@@ -70,24 +71,18 @@ export default function AddReviewBox(props) {
                         </div>
                     </div>
                 }
-                <div className="add-review-header">Add your review below!</div>
-                <span className="add-review-close" onClick={props.handleClose}>&times;</span>
-                <div className='add-review-content'>
-                    <div className='add-review-container'>
+                <div className="edit-review-header">Edit your review below!</div>
+                <span className="edit-review-close" onClick={props.handleClose}>&times;</span>
+                <div className='edit-review-content'>
+                    <div className='edit-review-container'>
                         <form action="" onSubmit={submitHandler}>
-                            <div className='checkbox-container'>
-                                <label>Review title</label>
-                                <label className='add-name-checkbox'>
-                                    <input className='checkbox' type="checkbox" name='Include name' onChange={e => setAddName(!addName)} />
-                                    <span>Post as anonymous</span>
-                                </label>
-                            </div>
-                            <input type="text" placeholder='Your review title' onChange={e => setTitle(e.target.value)} />
+                            <label>Review title</label>
+                            <input type="text" placeholder={review.reviewTitle} onChange={e => setTitle(e.target.value)} />
                             <label>Review description</label>
-                            <input type="text" placeholder='Your review description' onChange={e => setDescription(e.target.value)} />
+                            <input type="text" placeholder={review.reviewText} onChange={e => setDescription(e.target.value)} />
                             <label>Term taken</label>
-                            <input type="text" placeholder='e.g. 22T3' onChange={e => setTermTaken(e.target.value)} />
-                            <div className='add-review-ratings'>
+                            <input type="text" placeholder={review.termTaken} onChange={e => setTermTaken(e.target.value)} />
+                            <div className='edit-review-ratings'>
                                 <div className='ratings-box'>
                                     <label>Enjoyment</label>
                                     <Rate rating={enjoyRating} onRating={rate => setEnjoyRating(rate)} />

@@ -1,5 +1,6 @@
 :root {
   --timerBarColour: red;
+  --timerBarLength: 2.0s
 }
 
 * {
@@ -384,6 +385,7 @@ a {
   right: 1%;
   color: orange;
 }
+
 .navbar-username:hover {
   color: white
 }
@@ -443,13 +445,14 @@ a {
   bottom: 0;
   background-color: #160053;
   padding: 0.5em;
-  animation: timer-slider 2.0s ease-in-out forwards;
+  animation: timer-slider var(--timerBarLength) ease-in-out forwards;
 }
 
 @keyframes timer-slider {
   0% {
     left: 0%;
   }
+
   100% {
     left: 100%;
   }
