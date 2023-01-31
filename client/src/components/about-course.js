@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './review.css';
 import Stars from './generateStars';
+import { useNavigate } from 'react-router-dom';
 
 export default function AboutInfo(props) {
-
+    const Navigate = useNavigate();
     const [display, setDisplay] = useState();
 
     useEffect(() => {
@@ -13,6 +14,7 @@ export default function AboutInfo(props) {
                     method: 'GET',
                     redirect: 'follow'
                 });
+                
                 const course = await result.json();
                 const numReviews = course.reviews.length;
                 const courseInfo = course.courseObj;
@@ -58,13 +60,13 @@ export default function AboutInfo(props) {
                     </div>
                 )
                 setDisplay(displayComp);
-
             } catch (err) {
                 console.log(err);
+                Navigate('/404-page');
             }
         }
         fetchNumReviews(props.code)
-    }, [props.code]);
+    }, [props.code, Navigate]);
 
     const handleTerms = (arr) => {
         return (

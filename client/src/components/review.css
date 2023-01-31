@@ -695,7 +695,7 @@ span.li {
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(8, 0, 0, 0.4);
     transition: opacity 500ms;
     visibility: visible;
     opacity: 1;
@@ -752,6 +752,7 @@ span.li {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    margin-top: 2.6rem;
 }
 
 .delete-review-close {
