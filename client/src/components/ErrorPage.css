@@ -17,7 +17,7 @@ body {
 }
 
 .container h1{
-    font-size: 200px;
+    font-size: 220px;
     margin: 0;
     font-weight: 900;
 }
@@ -46,6 +46,7 @@ body {
 }
 
 .container h1 .fa-spin {
+    color: rgb(255, 255, 255);
     animation: animate1 2s linear infinite alternate;
     background-image: url(../../public/images/404txt.jpg);
     -webkit-text-fill-color: transparent;
@@ -53,9 +54,7 @@ body {
 }
 .container h1 .num {
     animation: animate2 2s linear infinite alternate;
-    background-image: url(../../public/images/404txt.jpg);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+    color: rgb(255, 255, 255);
 }
 
 
@@ -64,5 +63,6 @@ body {
     100% {
         opacity: 1;
         transform: rotate(360deg);
+        background-image: url(../../public/images/404txt.jpg);
     }
 }
