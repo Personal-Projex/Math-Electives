@@ -268,6 +268,48 @@ span.li {
     cursor: pointer;
 }
 
+.review-header {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.alter-review {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.edit-review {
+    color: orange;
+    margin-right: 10px;
+}
+
+.edit-review:hover {
+    color: #160053;
+}
+
+.delete-review {
+    color: orange;
+}
+
+.delete-review:hover {
+    color: #160053;
+}
+
+.title {
+    margin-top: 10px;
+    display: flex;
+}
+
+.title strong {
+    color: #3d3d3d;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
 .checkbox-container {
     display: flex;
     justify-content: space-between;
@@ -454,17 +496,6 @@ span.li {
     color: rgba(0, 0, 0, .65)
 }
 
-.title {
-    margin-top: 10px;
-    display: flex;
-}
-
-.title strong {
-    color: #3d3d3d;
-    font-size: 1.1rem;
-    letter-spacing: 0.5px;
-}
-
 .box-top {
     display: flex;
     justify-content: space-between;
@@ -582,6 +613,82 @@ span.li {
     margin-top: 28px;
     font-size: 25px;
 }
+
+.edit-review-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    transition: opacity 500ms;
+    visibility: visible;
+    opacity: 1;
+}
+
+.edit-review-wrapper {
+    width: 55%;
+    margin: 110px auto;
+    padding: 20px;
+    background: #e7e7e7;
+    border-radius: 5px;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
+.edit-review-ratings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.ratings-box {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.edit-review-wrapper h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.edit-review-wrapper .edit-review-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.edit-review-close {
+    cursor: pointer;
+}
+
+.edit-review-wrapper .edit-review-content {
+    max-height: 30%;
+    overflow: auto;
+}
+
+.edit-review-container {
+    border-radius: 5px;
+    background-color: #e7e7e7;
+    padding: 20px 0;
+    overflow: hidden;
+}
+
+.edit-review-header {
+    margin-top: 28px;
+    font-size: 25px;
+}
+
 
 form lable {
     text-transform: uppercase;

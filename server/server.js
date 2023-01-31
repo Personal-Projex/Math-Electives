@@ -78,11 +78,11 @@ app.post('/register', async (req, res) => {
         else if (userTaken) {
             res.status(404).json({ message: "Username taken" });
         } else {
-            
+
             const passSecret = user.password.concat(process.env.PASSWORD_TOKEN_SECRET);
             const passCrypt = bcrypt.hashSync(passSecret, 10);
             user.password = passCrypt;
-            
+
             const newUser = await user.save();
             const token = jwt.sign({ username: req.body.username }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "1h" });
             sessionStorage.setItem('username', req.body.username);
@@ -121,7 +121,7 @@ app.post('/login', async (req, res) => {
 
 
 app.delete('/logout', async (req, res) => {
-    try {   
+    try {
         sessionStorage.setItem('token', '');
         res.status(200).json('Token Removed');
     } catch (err) {
@@ -141,7 +141,8 @@ app.post('/addReview', async (req, res) => {
             reviewTitle: req.body.reviewTitle,
             reviewText: req.body.reviewText,
             termTaken: req.body.termTaken,
-            username: req.body.addName ? username : "Anonymous",
+            username: username,
+            addName: req.body.addName,
             reviewDate: (new Date()).toLocaleDateString('en-AU'),
             reviewEnjoyment: req.body.reviewEnjoyment,
             reviewUsefulness: req.body.reviewUsefulness,
@@ -167,19 +168,59 @@ app.post('/addReview', async (req, res) => {
             res.status(400).send({ message: "Please fill out the star ratings" });
         } else {
             const courseObj = await Course.findOne({ 'courseObj.courseCode': courseCode });
-            let reviewsObj = courseObj.reviews;
-            let ratings = courseObj.ratings;
-            await Course.findOneAndUpdate({ 'courseObj.courseCode': courseCode }, {
-                $push: {
-                    reviews: review
-                },
-                'ratings.overall': ((ratings.overall * reviewsObj.length) + overallData) / (reviewsObj.length + 1),
-                'ratings.enjoyment': ((ratings.enjoyment * reviewsObj.length) + review.reviewEnjoyment) / (reviewsObj.length + 1),
-                'ratings.usefulness': ((ratings.usefulness * reviewsObj.length) + review.reviewUsefulness) / (reviewsObj.length + 1),
-                'ratings.manageability': ((ratings.manageability * reviewsObj.length) + review.reviewManageability) / (reviewsObj.length + 1)
-            })
-            res.sendStatus(200);
+            let reviewsArr = courseObj.reviews;
+
+            // error checking to see if the user has already posted a review for this course
+            const userRev = reviewsArr.find(rev => rev.username === username);
+            if (userRev) {
+                res.status(405).send({ message: "Your course review already exists!" });
+            } else {
+                let ratings = courseObj.ratings;
+                await Course.findOneAndUpdate({ 'courseObj.courseCode': courseCode }, {
+                    $push: {
+                        reviews: review
+                    },
+                    'ratings.overall': ((ratings.overall * reviewsArr.length) + overallData) / (reviewsArr.length + 1),
+                    'ratings.enjoyment': ((ratings.enjoyment * reviewsArr.length) + review.reviewEnjoyment) / (reviewsArr.length + 1),
+                    'ratings.usefulness': ((ratings.usefulness * reviewsArr.length) + review.reviewUsefulness) / (reviewsArr.length + 1),
+                    'ratings.manageability': ((ratings.manageability * reviewsArr.length) + review.reviewManageability) / (reviewsArr.length + 1)
+                })
+                res.sendStatus(200);
+            }
         }
+    } catch (err) {
+        res.status(400).json({ "message": err.message });
+    }
+})
+
+app.put('/editReview', async (req, res) => {
+    try {
+        const username = sessionStorage.getItem('username');
+        const { reviewId, reviewTitle, reviewText, termTaken, reviewEnjoyment, reviewUsefulness, reviewManageability } = req.body;
+        let overallRating = ((reviewManageability + reviewUsefulness + reviewEnjoyment) / 3);
+
+        const courseObj = await Course.findOne({ reviews: { $elemMatch: { _id: reviewId } } });
+        let ratings = courseObj.ratings;
+        let reviewsArr = courseObj.reviews;
+
+        let [userRev] = reviewsArr.filter(review => review.username === username);
+
+        await Course.findOneAndUpdate({ reviews: { $elemMatch: { _id: reviewId } } }, {
+            $set: {
+                'reviews.$.reviewTitle': reviewTitle,
+                'reviews.$.reviewText': reviewText,
+                'reviews.$.termTaken': termTaken,
+                'reviews.$.reviewEnjoyment': reviewEnjoyment,
+                'reviews.$.reviewUsefulness': reviewUsefulness,
+                'reviews.$.reviewManageability': reviewManageability,
+                'reviews.$.reviewDate': (new Date()).toLocaleDateString('en-AU'),
+            },
+            'ratings.overall': ((ratings.overall * reviewsArr.length) - userRev.reviewOverall + overallRating) / (reviewsArr.length),
+            'ratings.enjoyment': ((ratings.enjoyment * reviewsArr.length) - userRev.reviewEnjoyment + reviewEnjoyment) / (reviewsArr.length),
+            'ratings.usefulness': ((ratings.usefulness * reviewsArr.length) - userRev.reviewUsefulness + reviewUsefulness) / (reviewsArr.length),
+            'ratings.manageability': ((ratings.manageability * reviewsArr.length) - userRev.reviewManageability + reviewManageability) / (reviewsArr.length)
+        })
+        res.sendStatus(200);
     } catch (err) {
         res.status(400).json({ "message": err.message });
     }
@@ -194,6 +235,32 @@ app.get('/getReviews', async (req, res) => {
             res.status(404).json({ message: "Course not found" });
         }
         res.status(200).send(course.reviews);
+    } catch (err) {
+        res.status(400).json({ "message": err.message });
+    }
+})
+
+app.get('/getReviewByUser', async (req, res) => {
+    try {
+        const courseCode = req.query.courseCode;
+        const username = req.query.username;
+
+        const course = await Course.findOne({ 'courseObj.courseCode': courseCode });
+        if (!course) {
+            res.status(404).json({ message: "Course not found" });
+        }
+
+        let reviewsArr = course.reviews;
+        if (username) {
+            // error checking to see if the user has already posted a review for this course
+            const userRev = reviewsArr.find(rev => rev.username === username);
+            res.status(200).send({
+                "userReview": userRev
+            });
+        } else {
+            // user hasnt logged in yet. Don't need to worry about having to edit their review
+            res.status(200).send(username);
+        }
     } catch (err) {
         res.status(400).json({ "message": err.message });
     }

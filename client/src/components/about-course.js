@@ -18,6 +18,7 @@ export default function AboutInfo(props) {
                 const courseInfo = course.courseObj;
 
                 const displayComp = (
+                    // or here since we are returning the jsx display object directly from here
                     <div className="about-text-reviews">
                         <p>{courseInfo.courseCode ? courseInfo.courseCode : ''}</p>
                         <p>{courseInfo.courseName ? courseInfo.courseName : ''}</p>
@@ -32,7 +33,7 @@ export default function AboutInfo(props) {
                         </div>
                         <div className='total-review-stats'>
                             <Stars numStars={course.ratings.overall} />
-                            <span className='num-reviews'>{numReviews} Reviews</span>
+                            <span className='num-reviews'>{numReviews} {numReviews !== 1 ? 'Reviews' : 'Review'}</span>
                         </div>
                         <div className='stats-container'>
                             <span className='lower-stats-text'>Category ratings</span>
