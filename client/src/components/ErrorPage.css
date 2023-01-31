@@ -45,13 +45,14 @@ body {
     font-weight: 900;
 }
 
-.container h1 .fas {
+.container h1 .fa-spin {
     animation: animate1 2s linear infinite alternate;
     background-image: url(../../public/images/404txt.jpg);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
 .container h1 .num {
+    animation: animate2 2s linear infinite alternate;
     background-image: url(../../public/images/404txt.jpg);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
