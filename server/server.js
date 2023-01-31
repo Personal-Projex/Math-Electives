@@ -159,11 +159,11 @@ app.post('/addReview', async (req, res) => {
         else if (review.reviewTitle.length < 1) {
             res.status(400).send({ message: "Please fill out the review title" });
         } else if (review.reviewTitle.length >= 60) {
-            res.status(400).send({ message: "Title too long. Please use the description" });
+            res.status(400).send({ message: "Title is too long" });
         } else if (review.termTaken.length < 1) {
             res.status(400).send({ message: "Please fill out term taken" });
-        } else if (!review.termTaken.match(/^([2]{1}[0-3]{1}[Tt]{1}[1-3]{1})/)) {
-            res.status(400).send({ message: "Check term taken format (try to keep it after 20T1)" });
+        } else if (!review.termTaken.match(/^([2]{1}[0-3]{1}[Tt]{1}[1-3]{1}$)/)) {
+            res.status(400).send({ message: "Check term taken format" });
         } else if (review.reviewEnjoyment === 0 && review.reviewManageability === 0 && review.reviewUsefulness === 0) {
             res.status(400).send({ message: "Please fill out the star ratings" });
         } else {
@@ -173,7 +173,7 @@ app.post('/addReview', async (req, res) => {
             // error checking to see if the user has already posted a review for this course
             const userRev = reviewsArr.find(rev => rev.username === username);
             if (userRev) {
-                res.status(405).send({ message: "Your course review already exists!" });
+                res.status(405).send({ message: "Your review already exists!" });
             } else {
                 let ratings = courseObj.ratings;
                 await Course.findOneAndUpdate({ 'courseObj.courseCode': courseCode }, {
@@ -189,12 +189,12 @@ app.post('/addReview', async (req, res) => {
             }
         }
     } catch (err) {
-        res.status(400).json({ "message": err.message });
     }
 })
 
 app.post('/editReview', async (req, res) => {
     try {
+        const token = sessionStorage.getItem('token');
         const username = sessionStorage.getItem('username');
         const { reviewId, reviewTitle, reviewText, termTaken, reviewEnjoyment, reviewUsefulness, reviewManageability } = req.body;
         let overallRating = ((reviewManageability + reviewUsefulness + reviewEnjoyment) / 3);
@@ -202,27 +202,45 @@ app.post('/editReview', async (req, res) => {
         const courseObj = await Course.findOne({ reviews: { $elemMatch: { _id: reviewId } } });
         let ratings = courseObj.ratings;
         let reviewsArr = courseObj.reviews;
+        
 
-        let [userRev] = reviewsArr.filter(review => review.username === username);
+        // error checking:
+        if (token === null || token === '') {
+            res.status(400).send({ message: "Please login before reviewing" });
+        } else if (!jwt.verify(token, process.env.ACCESS_TOKEN_SECRET)) {
+            res.status(400).send({ message: "Please login before reviewing" });
+        }
+        else if (reviewTitle.length < 1) {
+            res.status(400).send({ message: "Please fill out the review title" });
+        } else if (reviewTitle.length >= 60) {
+            res.status(400).send({ message: "Title is too long" });
+        } else if (termTaken.length < 1) {
+            res.status(400).send({ message: "Please fill out term taken" });
+        } else if (!termTaken.match(/^([2]{1}[0-3]{1}[Tt]{1}[1-3]{1}$)/)) {
+            res.status(400).send({ message: "Check term taken format" });
+        } else if (reviewEnjoyment === 0 && reviewManageability === 0 && reviewUsefulness === 0) {
+            res.status(400).send({ message: "Please fill out the star ratings" });
+        } else {
+            let [userRev] = reviewsArr.filter(review => review.username === username);
 
-        await Course.findOneAndUpdate({ reviews: { $elemMatch: { _id: reviewId } } }, {
-            $set: {
-                'reviews.$.reviewTitle': reviewTitle,
-                'reviews.$.reviewText': reviewText,
-                'reviews.$.termTaken': termTaken,
-                'reviews.$.reviewEnjoyment': reviewEnjoyment,
-                'reviews.$.reviewUsefulness': reviewUsefulness,
-                'reviews.$.reviewManageability': reviewManageability,
-                'reviews.$.reviewDate': (new Date()).toLocaleDateString('en-AU'),
-            },
-            'ratings.overall': ((ratings.overall * reviewsArr.length) - userRev.reviewOverall + overallRating) / (reviewsArr.length),
-            'ratings.enjoyment': ((ratings.enjoyment * reviewsArr.length) - userRev.reviewEnjoyment + reviewEnjoyment) / (reviewsArr.length),
-            'ratings.usefulness': ((ratings.usefulness * reviewsArr.length) - userRev.reviewUsefulness + reviewUsefulness) / (reviewsArr.length),
-            'ratings.manageability': ((ratings.manageability * reviewsArr.length) - userRev.reviewManageability + reviewManageability) / (reviewsArr.length)
-        })
+            await Course.findOneAndUpdate({ reviews: { $elemMatch: { _id: reviewId } } }, {
+                $set: {
+                    'reviews.$.reviewTitle': reviewTitle,
+                    'reviews.$.reviewText': reviewText,
+                    'reviews.$.termTaken': termTaken,
+                    'reviews.$.reviewEnjoyment': reviewEnjoyment,
+                    'reviews.$.reviewUsefulness': reviewUsefulness,
+                    'reviews.$.reviewManageability': reviewManageability,
+                    'reviews.$.reviewDate': (new Date()).toLocaleDateString('en-AU'),
+                },
+                'ratings.overall': ((ratings.overall * reviewsArr.length) - userRev.reviewOverall + overallRating) / (reviewsArr.length),
+                'ratings.enjoyment': ((ratings.enjoyment * reviewsArr.length) - userRev.reviewEnjoyment + reviewEnjoyment) / (reviewsArr.length),
+                'ratings.usefulness': ((ratings.usefulness * reviewsArr.length) - userRev.reviewUsefulness + reviewUsefulness) / (reviewsArr.length),
+                'ratings.manageability': ((ratings.manageability * reviewsArr.length) - userRev.reviewManageability + reviewManageability) / (reviewsArr.length)
+            })
+        }
         res.sendStatus(200);
     } catch (err) {
-        res.status(400).json({ "message": err.message });
     }
 })
 
@@ -276,7 +294,6 @@ app.get('/getReviews', async (req, res) => {
         }
         res.status(200).send(course.reviews);
     } catch (err) {
-        //res.status(400).json({ "message": err.message });
     }
 })
 
@@ -302,7 +319,6 @@ app.get('/getReviewByUser', async (req, res) => {
             res.status(200).send({ "message": "Not logged in" });
         }
     } catch (err) {
-        res.status(400).json({ "message": err.message });
     }
 })
 
@@ -355,12 +371,10 @@ app.get('/getCourseInfo', async (req, res) => {
         const courseCode = req.query.courseCode;
         const course = await Course.findOne({ 'courseObj.courseCode': courseCode });
         if (!course) {
-            // console.log("Course not found");
             res.status(404).json({ message: "Course not found" });
         }
         res.status(200).json(course);
     } catch (err) {
-        //res.status(400).json({ "message": err.message });
     }
 })
 
