@@ -25,6 +25,7 @@ export default function EditReview(props) {
             reviewUsefulness: usefulRating,
             reviewManageability: manageRating
         }
+        console.log(editedData);
 
         const response = await fetch('http://127.0.0.1:8000/editReview', {
             method: 'PUT',
@@ -66,7 +67,7 @@ export default function EditReview(props) {
                         </div>
                     </div>
                 }
-                <div className="edit-review-header">Add your review below!</div>
+                <div className="edit-review-header">Edit your review below!</div>
                 <span className="edit-review-close" onClick={props.handleClose}>&times;</span>
                 <div className='edit-review-content'>
                     <div className='edit-review-container'>

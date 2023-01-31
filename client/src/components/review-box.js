@@ -24,9 +24,11 @@ export default function ReviewBox(props) {
                     method: 'GET',
                     redirect: 'follow'
                 });
+
                 userReview = await userReview.json();
-                console.log(userReview);
-                if (userReview) {
+
+                if (userReview.userReview) {
+                    userReview = userReview.userReview;
                     userReview = userReview._id;
                 }
 
@@ -56,7 +58,7 @@ export default function ReviewBox(props) {
                     }
 
                     const toggleDeletePopup = () => {
-                        setEditPopup(deletePopup => !deletePopup);
+                        setDeletePopup(deletePopup => !deletePopup);
                         // make a delete req using the code and the username above which will allow the user to delete the review. 
                         // Maybe make a popup for the user to confirm if they want to delete?
                     }
@@ -71,7 +73,7 @@ export default function ReviewBox(props) {
                                         <div className='alter-review'>
                                             <>
                                                 <FontAwesomeIcon className='edit-review' icon={faPenToSquare} onClick={toggleEditPopup}></FontAwesomeIcon>
-                                                {editPopup && <EditReview handleClose={setEditPopup} code={props.code} reviewObj={review} />}
+                                                {editPopup && <EditReview handleClose={toggleEditPopup} code={props.code} reviewObj={review} />}
                                             </>
                                             {/* <>
                                                 <FontAwesomeIcon className='delete-review' icon={faTrash} onClick={toggleDeletePopup}></FontAwesomeIcon>
