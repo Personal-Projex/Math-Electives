@@ -1,43 +1,31 @@
 import React, { useState } from 'react';
-import Rate from "./star-ratings";
 
-export default function EditReview(props) {
+export default function DeleteReview(props) {
 
     const review = props.reviewObj;
 
-    const [enjoyRating, setEnjoyRating] = useState(review.reviewEnjoyment);
-    const [usefulRating, setUsefulRating] = useState(review.reviewUsefulness);
-    const [manageRating, setManageRating] = useState(review.reviewManageability);
-    const [title, setTitle] = useState(review.reviewTitle);
-    const [description, setDescription] = useState(review.reviewText);
-    const [termTaken, setTermTaken] = useState(review.termTaken);
     const [alert, setAlert] = useState(false);
     const [retVal, setRetVal] = useState('');
 
     async function submitHandler(e) {
         e.preventDefault();
-        const editedData = {
+        const deleteData = {
             reviewId: review._id,
-            reviewTitle: title,
-            reviewText: description,
-            termTaken: termTaken.toUpperCase(),
-            reviewEnjoyment: enjoyRating,
-            reviewUsefulness: usefulRating,
-            reviewManageability: manageRating
         }
+        console.log(deleteData);
 
-        const response = await fetch('http://127.0.0.1:8000/editReview', {
+        const response = await fetch('http://127.0.0.1:8000/deleteReview', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(editedData)
+            body: JSON.stringify(deleteData)
         })
 
         setAlert(alert => !alert);
         let added = false;
         if (response.status === 200) {
-            setRetVal('Edited Review!');
+            setRetVal('Review deleted!');
             added = true;
             document.documentElement.style.setProperty('--timerBarColour', 'lime');
         } else {
@@ -66,9 +54,10 @@ export default function EditReview(props) {
                         </div>
                     </div>
                 }
-                <div className="edit-review-header">Edit your review below!</div>
+                <div className="edit-review-header">Confirm you want to delete this review</div>
                 <span className="edit-review-close" onClick={props.handleClose}>&times;</span>
-                <div className='edit-review-content'>
+                <button onClick={submitHandler}>Delete</button>
+                {/*<div className='edit-review-content'>
                     <div className='edit-review-container'>
                         <form action="" onSubmit={submitHandler}>
                             <label>Review title</label>
@@ -94,7 +83,7 @@ export default function EditReview(props) {
                             <button type="submit">Submit</button>
                         </form>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     )

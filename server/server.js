@@ -193,7 +193,7 @@ app.post('/addReview', async (req, res) => {
     }
 })
 
-app.put('/editReview', async (req, res) => {
+app.post('/editReview', async (req, res) => {
     try {
         const username = sessionStorage.getItem('username');
         const { reviewId, reviewTitle, reviewText, termTaken, reviewEnjoyment, reviewUsefulness, reviewManageability } = req.body;
@@ -223,6 +223,20 @@ app.put('/editReview', async (req, res) => {
         res.sendStatus(200);
     } catch (err) {
         res.status(400).json({ "message": err.message });
+    }
+})
+
+app.post('/deleteReview', async (req, res) => {
+    try {
+        const { reviewId } = req.body;
+        await Course.findOneAndUpdate({}, {
+            $pull: {
+                reviews: { $elemMatch: { _id: reviewId } }
+            },
+        })
+        res.sendStatus(200);
+    } catch (err) {
+        res.status(400).json({ "message": "Could not delete" });
     }
 })
 
@@ -259,7 +273,7 @@ app.get('/getReviewByUser', async (req, res) => {
             });
         } else {
             // user hasnt logged in yet. Don't need to worry about having to edit their review
-            res.status(200).send(username);
+            res.status(200).send({ "message": "Not logged in" });
         }
     } catch (err) {
         res.status(400).json({ "message": err.message });

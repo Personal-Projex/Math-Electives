@@ -3,6 +3,7 @@ import Stars from './generateStars';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
 import EditReview from './edit-review';
+import DeleteReview from './delete-review';
 
 import './review.css';
 
@@ -19,6 +20,7 @@ export default function ReviewBox(props) {
                     redirect: 'follow'
                 });
                 let reviewArr = await result.json();
+                console.log(sessionStorage.getItem('name'));
 
                 let userReview = await fetch("http://127.0.0.1:8000/getReviewByUser?courseCode=" + code + "&username=" + sessionStorage.getItem('name'), {
                     method: 'GET',
@@ -73,12 +75,12 @@ export default function ReviewBox(props) {
                                         <div className='alter-review'>
                                             <>
                                                 <FontAwesomeIcon className='edit-review' icon={faPenToSquare} onClick={toggleEditPopup}></FontAwesomeIcon>
-                                                {editPopup && <EditReview handleClose={toggleEditPopup} code={props.code} reviewObj={review} />}
+                                                {editPopup && <EditReview handleClose={toggleEditPopup} reviewObj={review} />}
                                             </>
-                                            {/* <>
+                                            <>
                                                 <FontAwesomeIcon className='delete-review' icon={faTrash} onClick={toggleDeletePopup}></FontAwesomeIcon>
-                                                {deletePopup && <DeleteReview handleClose={setDeletePopup} code={props.code} />}
-                                            </> */}
+                                                {deletePopup && <DeleteReview handleClose={setDeletePopup} reviewObj={review} />}
+                                            </>
                                         </div>
                                         : null}
                                 </div>
@@ -122,7 +124,7 @@ export default function ReviewBox(props) {
             }
         }
         fetchReviews(props.search, props.code);
-    }, [props.search, props.code, editPopup, setEditPopup])
+    }, [props.search, props.code, editPopup, setEditPopup, deletePopup, setDeletePopup])
 
     return (
         <div className="review-box-container">
