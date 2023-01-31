@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 export default function DeleteReview(props) {
 
 
@@ -42,8 +43,8 @@ export default function DeleteReview(props) {
     }
 
     return (
-        <div className='edit-review-overlay'>
-            <div className='edit-review-wrapper'>
+        <div className='delete-review-overlay'>
+            <div className='delete-review-wrapper'>
                 {alert &&
                     <div>
                         <div className="timer-bar"></div>
@@ -52,9 +53,13 @@ export default function DeleteReview(props) {
                         </div>
                     </div>
                 }
-                <div className="edit-review-header">Confirm you want to delete this review</div>
-                <span className="edit-review-close" onClick={props.handleClose}>&times;</span>
-                <button onClick={submitHandler}>Delete</button>
+                <span className="delete-review-close" onClick={props.handleClose}>&times;</span>
+                <div className='delete-content'>
+                    <FontAwesomeIcon className='delete-icon' icon={faTrash} size='4x'></FontAwesomeIcon>
+                    <div className="delete-review-header">Are you sure?</div>
+                    <p className='delete-review-text'>Do your really want to delete this review?</p>
+                    <button className="delete-review-button" onClick={submitHandler}>Delete</button>
+                </div>
             </div>
         </div>
     )
