@@ -33,13 +33,18 @@ export default function DeleteReview(props) {
             document.documentElement.style.setProperty('--timerBarColour', 'red');
         }
 
-        // Make the alert disappear after 2 seconds
-        setTimeout(() => {
-            setAlert(alert => !alert);
-            if (added) {
+        if (added) {
+            document.documentElement.style.setProperty('--timerBarLength', '1.3s');
+            setTimeout(() => {
+                setAlert(alert => !alert);
                 window.location.reload(false);
-            }
-        }, 2000);
+            }, 1300);
+        } else {
+            // Make the alert disappear after 2 seconds
+            setTimeout(() => {
+                setAlert(alert => !alert);
+            }, 2000);
+        }
     }
 
     return (

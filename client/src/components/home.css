@@ -1,5 +1,6 @@
 :root {
   --timerBarColour: red;
+  --timerBarLength: 2.0s
 }
 
 * {
@@ -444,7 +445,7 @@ a {
   bottom: 0;
   background-color: #160053;
   padding: 0.5em;
-  animation: timer-slider 2.0s ease-in-out forwards;
+  animation: timer-slider var(--timerBarLength) ease-in-out forwards;
 }
 
 @keyframes timer-slider {
