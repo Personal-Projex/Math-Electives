@@ -10,7 +10,7 @@ export default function AboutInfo(props) {
     useEffect(() => {
         const fetchNumReviews = async (code) => {
             try {
-                const result = await fetch("http://127.0.0.1:8000/getCourseInfo?courseCode=" + code, {
+                const result = await fetch("https://math-electives-api.onrender.com/getCourseInfo?courseCode=" + code, {
                     method: 'GET',
                     redirect: 'follow'
                 });
