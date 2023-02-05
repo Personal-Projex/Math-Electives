@@ -34,7 +34,8 @@ db.once('open', () => {
 
 app.use(cors({
     //origin: 'http://localhost:3000'
-    origin: 'https://technotes-ndd9.onrender.com/'
+    //origin: 'https://technotes-ndd9.onrender.com/'
+    origin: 'https://Math-Electives-API.onrender.com'
 }))
 
 
