@@ -15,13 +15,13 @@ export default function ReviewBox(props) {
     useEffect(() => {
         const fetchReviews = async (search, code) => {
             try {
-                const result = await fetch("http://127.0.0.1:8000/getReviews?courseCode=" + code, {
+                const result = await fetch('https://Math-Electives-API.onrender.com/getReviews?courseCode=' + code, {
                     method: 'GET',
                     redirect: 'follow'
                 });
                 let reviewArr = await result.json();
 
-                let userReview = await fetch("http://127.0.0.1:8000/getReviewByUser?courseCode=" + code + "&username=" + sessionStorage.getItem('name'), {
+                let userReview = await fetch('https://Math-Electives-API.onrender.com/getReviewByUser?courseCode' + code + "&username=" + sessionStorage.getItem('name'), {
                     method: 'GET',
                     redirect: 'follow'
                 });

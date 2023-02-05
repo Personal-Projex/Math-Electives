@@ -26,7 +26,7 @@ const LoginButton = props => {
             props.handleUsername('');
 
             // Invalidate the user's token
-            const response = await fetch('http://127.0.0.1:8000/logout', {
+            const response = await fetch('https://Math-Electives-API.onrender.com/logout', {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'

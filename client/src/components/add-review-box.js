@@ -25,7 +25,7 @@ export default function AddReviewBox(props) {
             reviewManageability: manageRating
         }
 
-        const response = await fetch('http://127.0.0.1:8000/addReview', {
+        const response = await fetch('https://Math-Electives-API.onrender.com/addReview', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
