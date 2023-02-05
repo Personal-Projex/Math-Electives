@@ -26,7 +26,7 @@ export default function EditReview(props) {
             reviewManageability: manageRating
         }
 
-        const response = await fetch('https://Math-Electives-API.onrender.com/editReview', {
+        const response = await fetch('https://math-electives-api.onrender.com/editReview', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

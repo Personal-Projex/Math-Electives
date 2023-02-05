@@ -19,7 +19,7 @@ const RegisterContent = props => {
             password: password,
         }
 
-        const response = await fetch('https://Math-Electives-API.onrender.com/register', {
+        const response = await fetch('https://math-electives-api.onrender.com/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

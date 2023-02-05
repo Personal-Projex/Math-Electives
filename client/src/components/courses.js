@@ -16,7 +16,7 @@ export default function Courses(props) {
     useEffect(() => {
         const fetchCourses = async (search) => {
             try {
-                const result = await fetch('https://Math-Electives-API.onrender.com/getCourses', {
+                const result = await fetch('https://math-electives-api.onrender.com/getCourses', {
                     method: 'GET',
                     redirect: 'follow'
                 });
