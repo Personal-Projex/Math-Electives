@@ -13,7 +13,7 @@ export default function DeleteReview(props) {
             reviewObj: props.reviewObj,
         }
 
-        const response = await fetch('http://127.0.0.1:8000/deleteReview', {
+        const response = await fetch('https://Math-Electives-API.onrender.com/deleteReview', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
