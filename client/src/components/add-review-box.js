@@ -25,7 +25,7 @@ export default function AddReviewBox(props) {
             reviewManageability: manageRating
         }
 
-        const response = await fetch('https://math-electives-api.onrender.com/addReview', {
+        const response = await fetch('https://math-electives-server.onrender.com/addReview', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
