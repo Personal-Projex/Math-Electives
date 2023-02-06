@@ -21,7 +21,7 @@ export default function ReviewBox(props) {
                 });
                 let reviewArr = await result.json();
 
-                let userReview = await fetch('https://math-electives-server.onrender.com/getReviewByUser?courseCode' + code + "&username=" + sessionStorage.getItem('name'), {
+                let userReview = await fetch('https://math-electives-server.onrender.com/getReviewByUser?courseCode=' + code + "&username=" + sessionStorage.getItem('name'), {
                     method: 'GET',
                     redirect: 'follow'
                 });
