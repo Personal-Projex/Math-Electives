@@ -20,7 +20,7 @@ export default function ReviewBox(props) {
                     redirect: 'follow'
                 });
                 let reviewArr = await result.json();
-                
+
                 console.log('hello' + sessionStorage.getItem('name'));
 
                 let userReview = await fetch('https://math-electives-server.onrender.com/getReviewByUser?courseCode=' + code + "&username=" + sessionStorage.getItem('name'), {
@@ -110,7 +110,7 @@ export default function ReviewBox(props) {
                                         <Stars numStars={review.reviewManageability} />
                                     </div>
                                 </div>
-                                <div className="comment">
+                                <div className="review-text">
                                     <p>{review.reviewText}</p>
                                 </div>
                             </div>
