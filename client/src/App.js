@@ -12,7 +12,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route exact path="/review/:id" element={<CoursePage />} />
         <Route exact path="/404-page" element={<ErrorPage />} />
-        <Route path="*" element={<ErrorPage />} />
+        <Route path="/*" element={<ErrorPage />} />
       </Routes>
     </div>
   );
