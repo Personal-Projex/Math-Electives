@@ -110,7 +110,7 @@ export default function ReviewBox(props) {
                                         <Stars numStars={review.reviewManageability} />
                                     </div>
                                 </div>
-                                <div className="review-text">
+                                <div className="comment">
                                     <p>{review.reviewText}</p>
                                 </div>
                             </div>
