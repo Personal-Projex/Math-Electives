@@ -8,11 +8,17 @@ import ErrorPage from "./components/ErrorPage";
 function App() {
   return (
     <div className="App">
-      <Routes>
+      {/* <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/review/:id" element={<CoursePage />} />
         <Route exact path="/404-page" element={<ErrorPage />} />
         <Route path="*" element={<ErrorPage />} />
+      </Routes> */}
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/review/:id" element={<CoursePage />} />
+        <Route exact path="/404-page" element={<ErrorPage />} />
+        <Route element={<ErrorPage />} />
       </Routes>
     </div>
   );
