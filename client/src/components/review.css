@@ -509,9 +509,9 @@ span.li {
 }
 
 .review-text {
-    color: #4b4b4b;
-    font-size: calc(9px + 0.390625vw);
-    margin-left: 20px;
+    color: black;
+    font-size: 23px;
+    text-align: center;
 }
 
 .review-box:hover {
@@ -929,6 +929,22 @@ input[type="submit"] {
 
 .select-box .option .radio {
     display: none;
+}
+
+.comment p {
+    font-size: calc(9px + 0.390625vw);
+    color: #4b4b4b;
+    margin-left: 20px;
+}
+
+
+@media (max-width:400px) {
+    .comment p {
+        font-size: calc(4px + 0.390625vw);
+        color: #4b4b4b;
+        margin-left: 20px;
+    }
+
 }
 
 @media (max-width:580px) {
