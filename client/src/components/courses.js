@@ -21,6 +21,9 @@ export default function Courses(props) {
                     redirect: 'follow'
                 });
                 const coursesArr = await result.json();
+                console.log(coursesArr);
+                coursesArr.sort((a, b) => a.courseObj.courseCode - b.courseObj.courseCode);
+                console.log(coursesArr);
                 const courses = coursesArr.filter((course) => [course.courseObj.courseCode.toLowerCase(), course.courseObj.courseName.toLowerCase(), course.courseObj.term1.toLowerCase(), course.courseObj.term2.toLowerCase(), course.courseObj.term3.toLowerCase(), course.courseObj.major].find((info) => info.includes(search.toLowerCase()))).map((course, pos) => {
                     let ratings = course.ratings;
                     course = course.courseObj;
@@ -45,9 +48,6 @@ export default function Courses(props) {
                             </Link >
                         </div >)
                 })
-                console.log(courses);
-                courses.sort((a, b) => a.courseObj.courseCode - b.courseObj.courseCode);
-                console.log(courses);
                 setDisplay(courses);
             } catch (e) {
                 console.log(e);
