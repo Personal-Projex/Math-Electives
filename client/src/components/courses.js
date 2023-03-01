@@ -45,6 +45,7 @@ export default function Courses(props) {
                             </Link >
                         </div >)
                 })
+                courses.sort((a, b) => a.courseObj.courseCode - b.courseObj.courseCode);
                 setDisplay(courses);
             } catch (e) {
                 console.log(e);
