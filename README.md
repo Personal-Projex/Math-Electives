@@ -3,7 +3,7 @@ Math-Electives is a platform designed to help students find the best math course
 
 You can visit our website here https://math-electives.onrender.com/
 
-**Please note that the courses may take some time to load initially**
+**Please note that courses may take some time to load initially**
 <br />
 
 #### CURRENT VERSION:
