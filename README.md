@@ -2,10 +2,9 @@
 Math-Electives is a platform designed to help students find the best math courses suited to their needs. Users can read and write reviews of math courses and rate them based on enjoyment, manageability, and usefulness. 
 
 You can visit our website here https://math-electives.onrender.com/
-**Please note that the courses may take some time to load initially**
 
 <br />
-**(Please note that the database may take time to initially load all the courses)**
+**Please note that the courses may take some time to load initially**
 <br />
 
 #### MOST-UPDATED VERSION:
