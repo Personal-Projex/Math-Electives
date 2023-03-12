@@ -3,11 +3,10 @@ Math-Electives is a platform designed to help students find the best math course
 
 You can visit our website here https://math-electives.onrender.com/
 
-
 **Please note that the courses may take some time to load initially**
 <br />
 
-#### MOST-UPDATED VERSION:
+#### CURRENT VERSION:
 
 https://user-images.githubusercontent.com/109339363/212607052-310d7e52-a359-41d2-9d76-18d6bfed86af.mp4
 
@@ -56,3 +55,22 @@ https://user-images.githubusercontent.com/109339363/212607416-564c5358-2b98-4b0e
     • Users can search keywords to sort reviews
     <br />
     • Users can upvote reviews that were helpful or report
+
+#### BUILT WITH:
+    • HTML
+    <br />
+    • CSS
+    <br />
+    • React
+    <br />
+    • Puppeteer API
+    <br />
+    • Express.js
+    <br />
+    • JWT
+    <br />
+    • MongoDB
+    <br />
+    
+
+
