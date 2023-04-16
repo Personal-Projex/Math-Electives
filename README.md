@@ -3,22 +3,19 @@ Math-Electives is a platform designed to help students find the best math course
 
 You can visit our website here https://math-electives.onrender.com/
 
-**Please note that courses may take some time to load initially**
+**Please note that the courses may take up to one minute to load initially**
 <br />
 
-#### CURRENT VERSION:
+#### PREVIOUS VERSIONS:
 
 https://user-images.githubusercontent.com/109339363/212607052-310d7e52-a359-41d2-9d76-18d6bfed86af.mp4
 
-#### PREVIOUS VERSION(S):
 
 https://user-images.githubusercontent.com/109339363/212607416-564c5358-2b98-4b0e-ad37-051bd302d39f.mp4
 
 
 #### FEATURES:
-   • Users can request a new course to be added (create a form or smthn)
-    <br />
-    • Users can delete/ edit reviews (show edit status)
+    • Users can delete / edit reviews 
     <br />
     • Users can send one review per course (can delete and resend or edit)
     <br />
