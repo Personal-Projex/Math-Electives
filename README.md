@@ -15,11 +15,8 @@ https://user-images.githubusercontent.com/109339363/212607052-310d7e52-a359-41d2
 
 
 
-
-
-
 #### FEATURES:
-    • Users can delete / edit reviews 
+   • Users can delete / edit reviews 
     <br />
     • Users can send one review per course (can delete and resend or edit)
     <br />
@@ -42,6 +39,7 @@ https://user-images.githubusercontent.com/109339363/212607052-310d7e52-a359-41d2
     • Special border colour or key for specific major (dashboard page)
     <br />
     • Users can search keywords to sort reviews
+    
 
 
 #### BUILT WITH:
