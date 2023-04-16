@@ -7,11 +7,15 @@ You can visit our website here https://math-electives.onrender.com/
 <br />
 
 #### PREVIOUS VERSIONS:
+#### V1:
+https://user-images.githubusercontent.com/109339363/212607416-564c5358-2b98-4b0e-ad37-051bd302d39f.mp4
 
+#### V2:
 https://user-images.githubusercontent.com/109339363/212607052-310d7e52-a359-41d2-9d76-18d6bfed86af.mp4
 
 
-https://user-images.githubusercontent.com/109339363/212607416-564c5358-2b98-4b0e-ad37-051bd302d39f.mp4
+
+
 
 
 #### FEATURES:
