@@ -70,9 +70,9 @@ export default function Courses(props) {
 
     return (
         <AnimatePresence>
-            <div className="course-box-container">
+            <motion.div className="course-box-container">
                 {display}
-            </div>
+            </motion.div>
         </AnimatePresence>
     )
 }

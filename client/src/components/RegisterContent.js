@@ -25,17 +25,7 @@ const RegisterContent = props => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(user)
-        }).catch(() => { });
-
-        if (!response || !response.ok) {
-            response = await fetch('http://localhost:8000/register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(user)
-            }).catch(() => { });
-        }
+        });
 
         const returnData = await response.json();
         console.log(returnData);
