@@ -31,10 +31,11 @@ db.once('open', () => {
     console.log('Connected to database')
 });
 
-
-app.use(cors({
-    origin: ['http://localhost:3000', 'https://math-electives.onrender.com']
-}))
+const corsOptions = {
+    origin: ['http://localhost:3000', 'https://math-electives.onrender.com'],
+    optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 
 
 app.get('/', (req, res) => {
