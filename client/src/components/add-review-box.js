@@ -31,17 +31,7 @@ export default function AddReviewBox(props) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(review)
-        }).catch(() => { });
-
-        if (!response || !response.ok) {
-            response = await fetch('http://localhost:8000/addReview', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(review)
-            }).catch(() => { });
-        }
+        });
 
         setAlert(alert => !alert);
         let added = false;

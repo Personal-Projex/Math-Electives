@@ -21,18 +21,7 @@ const LoginContent = props => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(user)
-        }).catch(() => { });
-
-        if (!response || !response.ok) {
-            response = await fetch('http://localhost:8000/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(user)
-            }).catch(() => { });
-        }
-
+        });
 
         console.log(user.username);
 
@@ -40,7 +29,7 @@ const LoginContent = props => {
         console.log(returnData);
 
 
-        setAlert(alert => true);
+        setAlert(true);
         let added = false;
         if (returnData.message == null) {
             setRetVal(retVal => 'Logged in');
@@ -54,7 +43,6 @@ const LoginContent = props => {
             setRetVal(retVal => returnData.message);
             document.documentElement.style.setProperty('--timerBarColour', 'red');
         }
-
         if (added) {
             document.documentElement.style.setProperty('--timerBarLength', '1.3s');
             setTimeout(() => {

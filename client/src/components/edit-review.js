@@ -32,17 +32,7 @@ export default function EditReview(props) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(editedData)
-        }).catch(() => { });
-
-        if (!response || !response.ok) {
-            response = await fetch('http://localhost:8000/editReview', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(editedData)
-            }).catch(() => { });
-        }
+        });
 
         setAlert(alert => !alert);
         let added = false;

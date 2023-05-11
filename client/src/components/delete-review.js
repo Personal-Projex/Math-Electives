@@ -19,17 +19,7 @@ export default function DeleteReview(props) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(deleteData)
-        }).catch(() => { });
-
-        if (!response || !response.ok) {
-            response = await fetch('http://localhost:8000/deleteReview', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(deleteData)
-            }).catch(() => { });
-        }
+        });
 
         setAlert(alert => !alert);
         let added = false;
