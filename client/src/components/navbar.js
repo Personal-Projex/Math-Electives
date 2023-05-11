@@ -23,12 +23,11 @@ export default function Nav() {
         <div className="header">
             <a href="/" className="link">Math-Electives</a>
             <div className="header-right">
-                {loggedIn === 'Logout' && <div className='navbar-text'>Logged in as:</div>}
-                <div className='navbar-username'>{username}</div>
-                {loggedIn === 'Logout' && <div className='navbar-text'>|</div>}
-                {loggedIn !== 'Logout' && <RegisterButton handleUsername={updateUsername} />}
-                {loggedIn !== 'Logout' && <div className='navbar-text'>|</div>}
+                {/* {loggedIn === 'Logout' && <div className='navbar-text'>Logged in as:</div>} */}
                 <LoginButton handleUsername={updateUsername} />
+                <div className='navbar-text'>|</div>
+                {loggedIn === 'Logout' && <div className='navbar-username'>{username}</div>}
+                {loggedIn !== 'Logout' && <RegisterButton handleUsername={updateUsername} />}
             </div>
         </div >
     )
