@@ -16,14 +16,20 @@ export default function Nav() {
     useEffect(() => {
         setUsername(sessionName);
     }, [sessionName]);
+    const loggedIn = sessionStorage.getItem('login');
 
     return (
 
         <div className="header">
             <a href="/" className="link">Math-Electives</a>
-            <RegisterButton handleUsername={updateUsername} />
-            <LoginButton handleUsername={updateUsername} />
-            <div className='navbar-username'>{username}</div>
-        </div>
+            <div className="header-right">
+                {loggedIn === 'Logout' && <div className='navbar-text'>Logged in as:</div>}
+                <div className='navbar-username'>{username}</div>
+                {loggedIn === 'Logout' && <div className='navbar-text'>|</div>}
+                {loggedIn !== 'Logout' && <RegisterButton handleUsername={updateUsername} />}
+                {loggedIn !== 'Logout' && <div className='navbar-text'>|</div>}
+                <LoginButton handleUsername={updateUsername} />
+            </div>
+        </div >
     )
 }

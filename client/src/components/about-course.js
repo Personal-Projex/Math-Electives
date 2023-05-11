@@ -10,11 +10,18 @@ export default function AboutInfo(props) {
     useEffect(() => {
         const fetchNumReviews = async (code) => {
             try {
-                const result = await fetch("https://math-electives-server.onrender.com/getCourseInfo?courseCode=" + code, {
+                let result = await fetch("https://math-electives-server.onrender.com/getCourseInfo?courseCode=" + code, {
                     method: 'GET',
                     redirect: 'follow'
-                });
-                
+                }).catch(() => { });
+
+                if (!result || !result.ok) {
+                    result = await fetch('http://localhost:8000/getCourseInfo?courseCode=' + code, {
+                        method: 'GET',
+                        redirect: 'follow'
+                    }).catch(() => { });
+                }
+
                 const course = await result.json();
                 const numReviews = course.reviews.length;
                 const courseInfo = course.courseObj;

@@ -15,10 +15,17 @@ export default function ReviewBox(props) {
     useEffect(() => {
         const fetchReviews = async (search, code) => {
             try {
-                const result = await fetch('https://math-electives-server.onrender.com/getReviews?courseCode=' + code, {
+                let result = await fetch('https://math-electives-server.onrender.com/getReviews?courseCode=' + code, {
                     method: 'GET',
                     redirect: 'follow'
-                });
+                }).catch(() => { });
+
+                if (!result || !result.ok) {
+                    result = await fetch('http://localhost:8000/getReviews?courseCode=' + code, {
+                        method: 'GET',
+                        redirect: 'follow'
+                    }).catch(() => { });
+                }
                 let reviewArr = await result.json();
 
                 console.log('hello' + sessionStorage.getItem('name'));
@@ -26,7 +33,14 @@ export default function ReviewBox(props) {
                 let userReview = await fetch('https://math-electives-server.onrender.com/getReviewByUser?courseCode=' + code + "&username=" + sessionStorage.getItem('name'), {
                     method: 'GET',
                     redirect: 'follow'
-                });
+                }).catch(() => { });
+
+                if (!userReview || !userReview.ok) {
+                    userReview = await fetch('http://localhost:8000/getReviewByUser?courseCode=' + code + "&username=" + sessionStorage.getItem('name'), {
+                        method: 'GET',
+                        redirect: 'follow'
+                    }).catch(() => { });
+                }
 
                 userReview = await userReview.json();
 

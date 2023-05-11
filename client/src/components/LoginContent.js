@@ -15,13 +15,24 @@ const LoginContent = props => {
             password: password,
         }
 
-        const response = await fetch('https://math-electives-server.onrender.com/login', {
+        let response = await fetch('https://math-electives-server.onrender.com/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(user)
-        })
+        }).catch(() => { });
+
+        if (!response || !response.ok) {
+            response = await fetch('http://localhost:8000/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(user)
+            }).catch(() => { });
+        }
+
 
         console.log(user.username);
 

@@ -370,6 +370,14 @@ a {
   color: #0a59e1;
 }
 
+.header-right {
+  display: flex;
+  position: absolute;
+  gap: 0.8rem;
+  align-items: baseline;
+  right: 1%;
+}
+
 .navbar-username {
   background: none;
   border: none;
@@ -378,13 +386,21 @@ a {
   font-family: inherit;
   font-size: inherit;
   cursor: pointer;
-  padding: 0;
   transition: all 0.3s ease-out;
-  position: absolute;
   font-size: 20px;
   font-weight: 900;
-  right: 1%;
   color: orange;
+}
+
+.navbar-text {
+  background: none;
+  border: none;
+  color: #fff;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
+  transition: all 0.3s ease-out;
+  font-size: large;
 }
 
 .navbar-username:hover {

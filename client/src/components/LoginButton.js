@@ -26,12 +26,21 @@ const LoginButton = props => {
             props.handleUsername('');
 
             // Invalidate the user's token
-            const response = await fetch('https://math-electives-server.onrender.com/logout', {
+            let response = await fetch('https://math-electives-server.onrender.com/logout', {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-            })
+            }).catch(() => { });
+
+            if (!response || !response.ok) {
+                response = await fetch('http://localhost:8000/logout', {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                }).catch(() => { });
+            }
 
             const returnData = await response.json();
             console.log(returnData);

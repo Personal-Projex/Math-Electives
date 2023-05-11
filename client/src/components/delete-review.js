@@ -13,13 +13,23 @@ export default function DeleteReview(props) {
             reviewObj: props.reviewObj,
         }
 
-        const response = await fetch('https://math-electives-server.onrender.com/deleteReview', {
+        let response = await fetch('https://math-electives-server.onrender.com/deleteReview', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(deleteData)
-        })
+        }).catch(() => { });
+
+        if (!response || !response.ok) {
+            response = await fetch('http://localhost:8000/deleteReview', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(deleteData)
+            }).catch(() => { });
+        }
 
         setAlert(alert => !alert);
         let added = false;

@@ -26,13 +26,23 @@ export default function EditReview(props) {
             reviewManageability: manageRating
         }
 
-        const response = await fetch('https://math-electives-server.onrender.com/editReview', {
+        let response = await fetch('https://math-electives-server.onrender.com/editReview', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(editedData)
-        })
+        }).catch(() => { });
+
+        if (!response || !response.ok) {
+            response = await fetch('http://localhost:8000/editReview', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(editedData)
+            }).catch(() => { });
+        }
 
         setAlert(alert => !alert);
         let added = false;

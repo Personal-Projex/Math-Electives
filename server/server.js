@@ -33,9 +33,7 @@ db.once('open', () => {
 
 
 app.use(cors({
-    //origin: 'http://localhost:3000'
-    //origin: 'https://technotes-ndd9.onrender.com/'
-    origin: 'https://math-electives.onrender.com'
+    origin: ['http://localhost:3000', 'https://math-electives.onrender.com']
 }))
 
 

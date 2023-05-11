@@ -16,10 +16,16 @@ export default function Courses(props) {
     useEffect(() => {
         const fetchCourses = async (search) => {
             try {
-                const result = await fetch('https://math-electives-server.onrender.com/getCourses', {
+                let result = await fetch('https://math-electives-server.onrender.com/getCourses', {
                     method: 'GET',
                     redirect: 'follow'
-                });
+                }).catch(() => { });
+                if (!result || !result.ok) {
+                    result = await fetch('http://localhost:8000/getCourses', {
+                        method: 'GET',
+                        redirect: 'follow'
+                    }).catch(() => { });
+                }
                 const coursesArr = await result.json();
                 coursesArr.sort((a, b) => b.reviews.length - a.reviews.length);
                 const courses = coursesArr.filter((course) => [course.courseObj.courseCode.toLowerCase(), course.courseObj.courseName.toLowerCase(), course.courseObj.term1.toLowerCase(), course.courseObj.term2.toLowerCase(), course.courseObj.term3.toLowerCase(), course.courseObj.major].find((info) => info.includes(search.toLowerCase()))).map((course, pos) => {
