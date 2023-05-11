@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
 import EditReview from './edit-review';
 import DeleteReview from './delete-review';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import './review.css';
 
@@ -79,7 +80,13 @@ export default function ReviewBox(props) {
                     }
                     const sortedReviews = reviewArr.map((review, pos) => {
                         return (
-                            <div className="review-box" key={pos}>
+                            <motion.div layout
+                                animate={{ opacity: 1, scale: 1 }}
+                                initial={{ opacity: 0, scale: 0 }}
+                                exit={{ opacity: 0, scale: 0 }}
+                                className="review-box"
+                                key={pos}
+                            >
                                 <div className='review-header'>
                                     <div className="title">
                                         <strong>{review.reviewTitle}</strong>
@@ -127,7 +134,7 @@ export default function ReviewBox(props) {
                                 <div className="comment">
                                     <p>{review.reviewText}</p>
                                 </div>
-                            </div>
+                            </motion.div>
                         )
                     })
                     setReviews(sortedReviews);
@@ -140,8 +147,10 @@ export default function ReviewBox(props) {
     }, [props.search, props.code, editPopup, setEditPopup, deletePopup, setDeletePopup])
 
     return (
-        <div className="review-box-container">
-            {reviews}
-        </div>
+        <AnimatePresence>
+            <div className="review-box-container">
+                {reviews}
+            </div>
+        </AnimatePresence>
     )
 }
