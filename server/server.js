@@ -204,7 +204,7 @@ app.post('/editReview', async (req, res) => {
         const courseObj = await Course.findOne({ reviews: { $elemMatch: { _id: reviewId } } });
         let ratings = courseObj.ratings;
         let reviewsArr = courseObj.reviews;
-        
+
 
         // error checking:
         if (token === null || token === '') {

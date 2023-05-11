@@ -141,7 +141,8 @@ a {
 
 .search-bar input {
   display: flex;
-  padding: 28px 16px;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   border: none;
   outline: none;

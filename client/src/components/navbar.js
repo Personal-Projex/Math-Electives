@@ -24,7 +24,6 @@ export default function Nav() {
             <RegisterButton handleUsername={updateUsername} />
             <LoginButton handleUsername={updateUsername} />
             <div className='navbar-username'>{username}</div>
-
         </div>
     )
 }
