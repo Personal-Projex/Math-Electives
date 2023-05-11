@@ -303,6 +303,17 @@ a {
   z-index: 1;
 }
 
+.logout-popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 .box {
   position: relative;
   width: 55%;

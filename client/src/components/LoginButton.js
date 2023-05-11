@@ -71,14 +71,13 @@ const LoginButton = props => {
     return (
         <div>
             {alert &&
-                <div>
+                <div className="logout-popup">
                     <div className="timer-bar"></div>
                     <div class="alert-box">
                         <p class="alert">Successfully Logged out</p>
                     </div>
                 </div>
             }
-
             <button className="register-button" onClick={togglePopup}>{login}</button>
             {isOpen && <Login
                 handleClose={togglePopup}

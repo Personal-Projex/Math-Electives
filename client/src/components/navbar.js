@@ -19,7 +19,6 @@ export default function Nav() {
     const loggedIn = sessionStorage.getItem('login');
 
     return (
-
         <div className="header">
             <a href="/" className="link">Math-Electives</a>
             <div className="header-right">
