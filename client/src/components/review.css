@@ -784,7 +784,7 @@ span.li {
 }
 
 
-form lable {
+form label {
     text-transform: uppercase;
     font-weight: 500;
     letter-spacing: 3px;
@@ -798,6 +798,8 @@ textarea {
     border-radius: 5px;
     box-sizing: border-box;
     resize: vertical;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 input[type="submit"] {

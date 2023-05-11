@@ -422,7 +422,7 @@ a {
   border-color: #160053;
   letter-spacing: -0.05em;
   cursor: pointer;
-  margin-bottom: 5px;
+  margin-top: 10px;
   transition: all 0.3s ease-out;
   margin-left: 0.5rem;
 }
