@@ -74,8 +74,8 @@ const LoginContent = props => {
             {alert &&
                 <div>
                     <div className="timer-bar"></div>
-                    <div class="alert-box">
-                        <p class="alert">{retVal}</p>
+                    <div className="alert-box">
+                        <p className="alert">{retVal}</p>
                     </div>
                 </div>
             }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import Stars from './generateStars';
+import { motion, AnimatePresence } from 'framer-motion';
 
 
 export default function Courses(props) {
@@ -32,7 +33,13 @@ export default function Courses(props) {
                     let ratings = course.ratings;
                     course = course.courseObj;
                     return (
-                        <div className="course-box" key={pos}>
+                        <motion.div layout
+                            animate={{ opacity: 1, scale: 1 }}
+                            initial={{ opacity: 0, scale: 0 }}
+                            exit={{ opacity: 0, scale: 0 }}
+                            className="course-box"
+                            key={pos}
+                        >
                             <Link to={"/review/" + course.courseCode} className='link'>
                                 <div className="box-top">
                                     <div className="profile">
@@ -50,7 +57,7 @@ export default function Courses(props) {
                                     {handleTerms([course.term1, course.term2, course.term3])}
                                 </div>
                             </Link >
-                        </div >)
+                        </motion.div >)
                 })
                 setDisplay(courses);
             } catch (e) {
@@ -62,8 +69,10 @@ export default function Courses(props) {
     }, [props.search])
 
     return (
-        <div className="course-box-container">
-            {display}
-        </div>
+        <AnimatePresence>
+            <div className="course-box-container">
+                {display}
+            </div>
+        </AnimatePresence>
     )
 }

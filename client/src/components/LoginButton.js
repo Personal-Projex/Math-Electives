@@ -73,8 +73,8 @@ const LoginButton = props => {
             {alert &&
                 <div className="logout-popup">
                     <div className="timer-bar"></div>
-                    <div class="alert-box">
-                        <p class="alert">Successfully Logged out</p>
+                    <div className="alert-box">
+                        <p className="alert">Successfully Logged out</p>
                     </div>
                 </div>
             }
