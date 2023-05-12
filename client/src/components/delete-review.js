@@ -62,7 +62,7 @@ export default function DeleteReview(props) {
                 <div className='delete-content'>
                     <FontAwesomeIcon className='delete-icon' icon={faTrash} size='4x'></FontAwesomeIcon>
                     <div className="delete-review-header">Are you sure?</div>
-                    <p className='delete-review-text'>Do your really want to delete this review?</p>
+                    <p className='delete-review-text'>Do you really want to delete this review?</p>
                     <button className="delete-review-button" onClick={submitHandler}>Delete</button>
                 </div>
             </div>

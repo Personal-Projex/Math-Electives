@@ -15,7 +15,7 @@ export default function Courses(props) {
         )
     }
 
-    const fetchCourses = async (search) => {
+    const fetchCourses = async () => {
         try {
             let result = await fetch('https://math-electives-server.onrender.com/getCourses', {
                 method: 'GET',
