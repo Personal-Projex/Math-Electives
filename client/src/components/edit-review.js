@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Rate from "./star-ratings";
 
 export default function EditReview(props) {
 
     const review = props.reviewObj;
+    useEffect(() => {
+        setTitle(review.reviewTitle);
+        setDescription(review.reviewText);
+        setTermTaken(review.termTaken);
+    }, [review])
 
     const [enjoyRating, setEnjoyRating] = useState(review.reviewEnjoyment);
     const [usefulRating, setUsefulRating] = useState(review.reviewUsefulness);
@@ -77,11 +82,11 @@ export default function EditReview(props) {
                     <div className='edit-review-container'>
                         <form action="" onSubmit={submitHandler}>
                             <label>Review title</label>
-                            <input type="text" placeholder={review.reviewTitle} onChange={e => setTitle(e.target.value)} />
+                            <input type="text" value={title} onChange={e => setTitle(e.target.value)} />
                             <label>Review description</label>
-                            <input type="text" placeholder={review.reviewText} onChange={e => setDescription(e.target.value)} />
+                            <textarea className='review-desc' type="text" value={description} onChange={e => setDescription(e.target.value)} />
                             <label>Term taken</label>
-                            <input type="text" placeholder={review.termTaken} onChange={e => setTermTaken(e.target.value)} />
+                            <input type="text" value={termTaken} onChange={e => setTermTaken(e.target.value)} />
                             <div className='edit-review-ratings'>
                                 <div className='ratings-box'>
                                     <label>Enjoyment</label>
