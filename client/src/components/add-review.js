@@ -2,15 +2,17 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 import AddReviewBox from './add-review-box';
+import sessionStorage from 'sessionstorage';
 
 export default function AddReview(props) {
     const [isOpen, setIsOpen] = useState(false);
     const [alert, setAlert] = useState(false);
 
     const togglePopup = () => {
-        const token = sessionStorage.getItem('token');
+        const user = sessionStorage.getItem('name');
+        console.log(user);
         // checking if user not logged in before reviewing
-        if (token === null || token === '') {
+        if (user === null || user === '') {
             document.documentElement.style.setProperty('--timerBarColour', 'red');
             setAlert(!alert);
             // Make the alert disappear after 2 seconds
