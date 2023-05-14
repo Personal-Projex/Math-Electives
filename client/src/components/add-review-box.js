@@ -84,7 +84,7 @@ export default function AddReviewBox(props) {
                             </div>
                             <input type="text" placeholder='Your review title' onChange={e => setTitle(e.target.value)} />
                             <label>Review description</label>
-                            <input type="text" placeholder='Your review description' onChange={e => setDescription(e.target.value)} />
+                            <textarea className='review-desc' type="text" placeholder='Your review description' onChange={e => setDescription(e.target.value)} />
                             <label>Term taken</label>
                             <input type="text" placeholder='e.g. 22T3' onChange={e => setTermTaken(e.target.value)} />
                             <div className='add-review-ratings'>

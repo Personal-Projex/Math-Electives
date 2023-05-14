@@ -566,7 +566,8 @@ span.li {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    margin-top: 15px;
 }
 
 .ratings-box {
@@ -800,6 +801,7 @@ textarea {
     resize: vertical;
     margin-top: 5px;
     margin-bottom: 5px;
+    font-size: 18px;
 }
 
 input[type="submit"] {
