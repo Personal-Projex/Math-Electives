@@ -31,16 +31,7 @@ const LoginButton = props => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-            }).catch(() => { });
-
-            if (!response || !response.ok) {
-                response = await fetch('http://localhost:8000/logout', {
-                    method: 'DELETE',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                }).catch(() => { });
-            }
+            })
 
             const returnData = await response.json();
             console.log(returnData);

@@ -80,7 +80,7 @@ const LoginContent = props => {
                         <div>
                             <input type="text" placeholder='Password' className="password-text" onChange={e => setPassword(e.target.value)} />
                         </div>
-                        <button type='submit'>Submit</button>
+                        <button type='submit' onClick={submitHandler}>Submit</button>
                     </form>
                 </div>
             </div>

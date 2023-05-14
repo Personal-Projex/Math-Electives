@@ -20,13 +20,7 @@ export default function Courses(props) {
             let result = await fetch('https://math-electives-server.onrender.com/getCourses', {
                 method: 'GET',
                 redirect: 'follow'
-            }).catch(() => { });
-            if (!result || !result.ok) {
-                result = await fetch('http://localhost:8000/getCourses', {
-                    method: 'GET',
-                    redirect: 'follow'
-                }).catch(() => { });
-            }
+            });
             const coursesArr = await result.json();
             coursesArr.sort((a, b) => b.reviews.length - a.reviews.length);
             setAllCourses(coursesArr);
