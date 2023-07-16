@@ -9,7 +9,6 @@ library.add(faMagnifyingGlass, faCaretDown, faCaretUp);
 export default function CourseHeader({ loading, coursesRecieved }) {
     const [currSearch, setCurrSearch] = useState("");
     const [clicked, setClicked] = useState(false);
-    console.log(loading)
 
     const dropDown = () => {
         let list = document.getElementById("list");
