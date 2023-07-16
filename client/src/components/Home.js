@@ -1,23 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import ScaleLoader from "react-spinners/ScaleLoader";
+import sessionStorage from 'sessionstorage';
 
 import CourseHeader from './course-heading';
 import NavBar from './navbar';
 import './home.css';
 
 export default function Home() {
-    const [loading, setLoading] = useState(localStorage.getItem('loadingCourses') !== 'false');
+    const [loading, setLoading] = useState(sessionStorage.getItem('loadingCourses') !== 'false');
 
     const coursesReceived = () => {
         setLoading(false);
+        sessionStorage.setItem('loadingCourses', 'false');
     };
-
-    useEffect(() => {
-        if (localStorage.getItem('loadingCourses') === null) {
-            localStorage.setItem('loadingCourses', 'false');
-            setLoading(true);
-        }
-    }, []);
 
     return (
         <>
