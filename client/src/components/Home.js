@@ -1,18 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ScaleLoader from "react-spinners/ScaleLoader";
 
 import CourseHeader from './course-heading';
-// import Courses from './courses';
 import NavBar from './navbar';
 import './home.css';
 
 export default function Home() {
+    const [loading, setLoading] = useState(true);
+
+    const coursesRecieved = () => {
+        setLoading(false);
+    }
+
     return (
-        <div className='body-home'>
-            < NavBar />
-            <section id="courses">
-                <CourseHeader />
-                {/* <Courses /> */}
-            </section>
-        </div >
+        <>
+            {loading && (
+                <div className="loader-container">
+                    <ScaleLoader color={"orange"} loading={loading} size={45} />
+                    <h1 className='loader-text'>Please wait while we compute 100 digits of Pi...</h1>
+                </div>
+            )}
+
+            <div className='body-home'>
+                {!loading && (
+                    < NavBar />
+                )}
+                <section id="courses">
+                    <CourseHeader loading={loading} coursesRecieved={coursesRecieved} />
+                </section>
+            </div >
+        </>
     )
 }

@@ -17,6 +17,26 @@
   height: 5px;
 }
 
+.loader-container {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: white;
+}
+
+.container h1 {
+  font-size: 250px;
+  margin: 0;
+  font-weight: 900;
+}
+
+.loader-text {
+  margin-bottom: 3.0rem;
+  font-size: 18px;
+}
+
 
 .body-home {
   background-color: #160053;

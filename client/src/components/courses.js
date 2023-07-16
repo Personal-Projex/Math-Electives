@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function Courses(props) {
     const [display, setDisplay] = useState([]);
     const [allCourses, setAllCourses] = useState([]);
+
     const handleTerms = (arr) => {
         return (
             arr.map((term, i) => {
@@ -22,8 +23,11 @@ export default function Courses(props) {
                 redirect: 'follow'
             });
             const coursesArr = await result.json();
-            coursesArr.sort((a, b) => b.reviews.length - a.reviews.length);
-            setAllCourses(coursesArr);
+            setTimeout(() => {
+                props.recievedCourses();
+                coursesArr.sort((a, b) => b.reviews.length - a.reviews.length);
+                setAllCourses(coursesArr);
+            }, 1500);
         } catch (e) {
             console.log(e);
         }
@@ -31,7 +35,7 @@ export default function Courses(props) {
 
     useEffect(() => {
         fetchCourses();
-    }, []);
+    });
 
     useEffect(() => {
         const courses = allCourses.filter((course) => [course.courseObj.courseCode.toLowerCase(), course.courseObj.courseName.toLowerCase(), course.courseObj.term1.toLowerCase(), course.courseObj.term2.toLowerCase(), course.courseObj.term3.toLowerCase(), course.courseObj.major].find((info) => info.includes(props.search.toLowerCase()))).map((course, pos) => {
@@ -68,10 +72,12 @@ export default function Courses(props) {
     }, [props.search, allCourses])
 
     return (
-        <AnimatePresence>
-            <motion.div className="course-box-container">
-                {display}
-            </motion.div>
-        </AnimatePresence>
-    )
+        <>
+            <AnimatePresence>
+                <motion.div className="course-box-container">
+                    {display}
+                </motion.div>
+            </AnimatePresence>
+        </>
+    );
 }
