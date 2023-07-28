@@ -9,9 +9,9 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/review/:id" element={<CoursePage />} />
-        <Route path="/404-page" element={<ErrorPage />} />
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/review/:id" element={<CoursePage />} />
+        <Route exact path="/404-page" element={<ErrorPage />} />
         <Route path="*" element={<Navigate to="/404-page" replace />} />
       </Routes>
     </div>
