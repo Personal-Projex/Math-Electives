@@ -11,10 +11,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <div className="App body">
-      {/* <BrowserRouter>
-        <App />
-      </BrowserRouter> */}
-      <Router>
+      <Router basename="/">
         <App />
       </Router>
     </div>
