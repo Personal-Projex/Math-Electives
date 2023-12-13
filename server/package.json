@@ -2,7 +2,7 @@
   "name": "math-electives",
   "version": "1.0.0",
   "description": "#### FEATURES:",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
     "agent-base": "^6.0.2",
     "ansi-styles": "^3.2.1",
