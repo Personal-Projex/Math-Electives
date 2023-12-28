@@ -1,6 +1,6 @@
 # Math-Electives: Your Ultimate Math Course Companion!
 
-Discover the power of personalised course selection tailored to your academic needs with Math-Electives!
+Discover the power of personalised course selection tailored to your academic needs!
 
 You can visit our website here https://math-electives.onrender.com/
 
