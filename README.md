@@ -37,8 +37,9 @@ You can visit our website here https://math-electives.onrender.com/
 
 #### Course Page:
 <img width="1420" alt="Screenshot 2023-12-29 at 2 28 04 am" src="https://github.com/Personal-Projex/Math-Electives/assets/95948346/deba9ed8-a7f6-4eb8-a4c5-9e83a99fb833">
+<img width="1405" alt="Screenshot 2023-12-29 at 2 30 55 am" src="https://github.com/Personal-Projex/Math-Electives/assets/95948346/925fef50-bac8-4030-89ae-45f8b1d89780">
 
-<img width="1424" alt="Screenshot 2023-12-29 at 2 28 25 am" src="https://github.com/Personal-Projex/Math-Electives/assets/95948346/ff8969f1-e973-40e0-b962-7628e6e0f333">
+
 
 
 
