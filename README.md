@@ -31,6 +31,15 @@ You can visit our website here https://math-electives.onrender.com/
    • MongoDB
     <br />
 
+#### Home Page:
+<img width="1418" alt="Screenshot 2023-12-29 at 2 13 10 am" src="https://github.com/Personal-Projex/Math-Electives/assets/95948346/859eafd7-5bb2-46f1-8cc4-c437f9760e64">
+<img width="1417" alt="Screenshot 2023-12-29 at 2 13 20 am" src="https://github.com/Personal-Projex/Math-Electives/assets/95948346/ef9ae0d1-4bbe-4ad3-b636-b4a4fbbe8b1f">
+
+#### Course Page:
+<img width="1420" alt="Screenshot 2023-12-29 at 2 13 32 am" src="https://github.com/Personal-Projex/Math-Electives/assets/95948346/f6825763-9b2a-4db7-8c15-7bb5c510b7d7">
+<img width="1431" alt="Screenshot 2023-12-29 at 2 13 58 am" src="https://github.com/Personal-Projex/Math-Electives/assets/95948346/4a233e9e-5d71-491e-853f-387cfbe6dd36">
+<img width="1418" alt="Screenshot 2023-12-29 at 2 15 16 am" src="https://github.com/Personal-Projex/Math-Electives/assets/95948346/c3f672ce-626c-43d1-92e2-42142c6f4c92">
+
 
 
 #### PREVIOUS VERSIONS:
